@@ -1,0 +1,64 @@
+[alias]
+  a       = add .
+  adp     = add -p
+  rch     = branch -r
+  sw      = switch
+  rs      = restore
+  co      = checkout
+  bch     = branch
+  cm      = commit
+  cma     = commit --amend
+  cp      = cherry-pick
+  sts     = status
+[core]
+  editor  = code --wait
+  excludesfile  = ~/.gitignore
+  autoCRLF = false
+  quotepath = false
+  commentChar = ";"
+[ghq]
+  root    = ~/src
+[color]
+  ui      = true
+[pager]
+  log     = diff-highlight | less
+  show    = diff-highlight | less
+  diff    = diff-highlight | less
+[diff]
+  compactionHeuristic = true
+[difftool]
+  prompt = true
+[mergetool]
+  keepBackup = false
+[commit]
+  cleanup = strip
+  template = ~/.gitmessage
+[grep]
+  lineNumber = true
+[credential]
+  helper = /usr/share/git/credential/libsecret/git-credential-libsecret
+  helper = /usr/lib/git-core/git-credential-gnome-keyring
+  helper = osxkeychain
+  helper = wincred
+  helper = manager-core
+  helper = cache --timeout 86400
+  helper = store
+[include]
+  path = ~/.gitconfig.local
+  path = ~/.gitconfig.windows
+[fetch]
+  prune = true
+[user]
+  useConfigOnly = true
+[includeif "gitdir:~/src/github.com/"]
+  path = ~/.gitconfig.identity.default
+[includeif "gitdir:~/.dotfiles/"]
+  path = ~/.gitconfig.identity.default
+[pull]
+  rebase = false
+[push]
+  default = simple
+[rerere]
+  enabled = true
+[init]
+  defaultBranch = main

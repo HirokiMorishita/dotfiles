@@ -1,0 +1,20 @@
+; WHAT
+; [issue id][Task/Bug] (this commit will...) <subject>[;000][Task/Bug] <subject>
+; WHY and HOW
+; Explain why this change is being made
+
+- hoge
+- hoge
+- hoge
+
+; RELATED
+; Provide links or keys to any relevant issues or other resources
+
+; REMEMBER
+; use lower case in the subject line
+; start with a verb in imperative tone in the subject line
+; do not end the subject line with a period
+; separate subject from body with a blank line
+; use the body to explain what and why vs. how
+; can use multiple lines with "-" for bullet points in body
+

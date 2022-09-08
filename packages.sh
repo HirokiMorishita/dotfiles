@@ -23,6 +23,7 @@ utils=(
   "unzip"
   "wget"
   "fzf"
+  "make"
 )
 utils_arch=(
   "${utils[@]}"

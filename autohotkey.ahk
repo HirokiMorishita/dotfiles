@@ -24,25 +24,18 @@ vk1D & M::Send,{Blind}!{Down}
 vk1D & ,::Send,{Blind}!{Up}
 vk1D & .::Send,{Blind}^{Right}
 
-;画面横分割
-vk1D & Q::Send, {Blind}^+{\}
-;画面横分割
-vk1D & W::Send, {Blind}^{\}
-;ファイル選択
+vk1D & Q::Send, {Blind}^{q}
+vk1D & W::Send, {Blind}^{w}
 vk1D & E::Send, {Blind}^{e}
 ;Rename
 vk1D & R::Send, {Blind}{F2}
 ;アドレスバーにフォーカス
 vk1D & T::Send, {Blind}^{l}
 
-;サイドバーに移動
-vk1D & A::Send, {Blind}^{0}
-;エディタに移動
-vk1D & S::Send, {Blind}^{1}
-;スマート選択
+vk1D & A::Send, {Blind}^{a}
+vk1D & S::Send, {Blind}^{s}
 vk1D & D::Send, {Blind}^{d}
 vk1D & F::Send, {Blind}^{f}
-;jumpy
 vk1D & G::Send, {Blind}^{g}
 
 vk1D & Z::Send, {Blind}^{z}
@@ -133,15 +126,48 @@ vk1C & 0::Send, #!{0}
 
 vk1C & Space::Send, {Delete}
 vk1C & Enter::Send, {Blind}^{Enter}
-
 ;---------- LAlt ----------
-LAlt::LCtrl
+;LAlt::Return
+~LAlt & q::Send, {7}
+LAlt & w::Send, {8}
+LAlt & e::Send, {9}
+LAlt & r::Send, {^}
 
+LAlt & a::Send, {3}
+LAlt & s::Send, {4}
+LAlt & d::Send, {5}
+LAlt & f::Send, {6}
+LAlt & g::Send, {~}
+
+LAlt & z::Send, {0}
+LAlt & x::Send, {1}
+LAlt & c::Send, {2}
+LAlt & v::Send, {\}
+
+LAlt & y::Send, {+}
+LAlt & u::Send, {-}
+LAlt & i::Send, {*}
+LAlt & o::Send, {/}
+LAlt & p::Send, {`%}
+
+LAlt & h::Send, {=}
+LAlt & j::Send, {(}
+LAlt & k::Send, {)}
+LAlt & l::Send, {!}
+
+LAlt & n::Send, {|}
+LAlt & m::Send, {[}
+LAlt & ,::Send, {]}
+LAlt & .::Send, {&}
+
+; script のリロード
+LAlt & vk1D::Reload
 ;---------- Ctrl ----------
 ;半角英数に変換
 ^Space::Send, {F10}
 ^[::Send, {Esc}
 
+;---------- アプリごとのショートカット ----------
 ;Slack
 #IfWinActive,ahk_exe slack.exe
 
@@ -167,6 +193,29 @@ vk1C & K::Send, !{P}
 
 ;VSCode
 #IfWinActive,ahk_exe Code.exe
+
+
+;---------- 無変換キー ----------
+;画面横分割
+vk1D & Q::Send, {Blind}^+{\}
+;画面横分割
+vk1D & W::Send, {Blind}^{\}
+
+;Rename
+vk1D & R::
+Send, ^{0}
+Send, {Blind}{F2}
+Return
+
+;スマート選択
+vk1D & D::Send, {Blind}^{d}
+;jumpy
+vk1D & G::Send, {Blind}^{g}
+;---------- 変換キー ----------
+
+; アンドゥ、リドゥ
+vk1C & H::Send, ^{z}
+vk1C & L::Send, ^+{z}
 ;タブ切り替え
 vk1C & K::
 SetKeyDelay -1
@@ -179,11 +228,10 @@ SetKeyDelay -1
 Send {Blind}{LCtrl Up}
 Return
 
-vk1C & B::Send, {Blind}^{p}
 
-
-; アンドゥ、リドゥ
-vk1C & H::Send, ^{z}
-vk1C & L::Send, ^+{z}
+;サイドバーに移動
+LAlt & Space::Send, ^{0}
+;エディタに移動
+LAlt & vk1C::Send, ^{1}
 
 #IfWinActive

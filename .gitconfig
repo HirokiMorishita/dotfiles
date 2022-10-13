@@ -11,7 +11,7 @@
   cp      = cherry-pick
   sts     = status
 [core]
-  editor  = code --wait
+  editor  = code --wait --reuse-window
   excludesfile  = ~/.gitignore
   autoCRLF = false
   quotepath = false

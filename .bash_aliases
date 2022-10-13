@@ -14,7 +14,6 @@ eval "$(starship init bash)"
 alias fd=fdfind
 alias bat=batcat
 alias g='cd $(ghq root)/$(ghq list | fzf --reverse)'
-alias code="/mnt/c/Users/asumanino/AppData/Local/Programs/Microsoft VS Code/Code.exe"
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND='fd --type f'
 export FZF_ALT_C_COMMAND='fd --type d'

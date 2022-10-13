@@ -53,7 +53,7 @@ $PACKAGES = @(
   "jq"
   "powertoys"
   "ripgrep"
-  "vscode"
+  # "vscode"
   "firacode"
   "autohotkey"
 )

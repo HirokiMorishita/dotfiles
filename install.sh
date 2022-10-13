@@ -66,8 +66,8 @@ _cli_dep_install() {
     bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
     test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-    ln -sf $DOTFILES/.bash_aliases $HOME
   fi
+  ln -sf $DOTFILES/.bash_aliases $HOME
 
   echo "install starship"
   curl -sS https://starship.rs/install.sh | sh

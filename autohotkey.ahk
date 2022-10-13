@@ -235,3 +235,14 @@ LAlt & Space::Send, ^{0}
 LAlt & vk1C::Send, ^{1}
 
 #IfWinActive
+
+
+;Kindle
+#IfWinActive,ahk_exe Kindle.exe
+
+vk1C & h::Send, ^+{Tab}
+vk1C & j::Send, !+{Down}
+vk1C & k::Send, !+{Up}
+vk1C & l::Send, ^{Tab}
+
+#IfWinActive

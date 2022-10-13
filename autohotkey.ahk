@@ -246,3 +246,18 @@ vk1C & k::Send, !+{Up}
 vk1C & l::Send, ^{Tab}
 
 #IfWinActive
+
+
+;Windows Terminal
+#IfWinActive,ahk_exe WindowsTerminal.exe
+
+vk1D & t::Send, ^+{Space}
+vk1D & w::Send, ^+{w}
+
+vk1C & t::Send, ^+{t}
+vk1C & w::Send, ^+{w}
+
+vk1C & j::Send, ^+{Tab}
+vk1C & k::Send, ^{Tab}
+
+#IfWinActive

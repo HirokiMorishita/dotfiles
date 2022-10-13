@@ -15,6 +15,13 @@ alias fd=fdfind
 alias bat=batcat
 alias g='cd $(ghq root)/$(ghq list | fzf --reverse)'
 alias h='history | fzf --reverse'
+alias e='explorer.exe .'
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND='fd --type f'
 export FZF_ALT_C_COMMAND='fd --type d'
+fbr() {
+  local branches branch
+  branches=$(git branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}

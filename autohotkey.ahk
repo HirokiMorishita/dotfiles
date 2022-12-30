@@ -91,13 +91,6 @@ vk1D & N::Send,{Blind}^{Left}
 vk1D & .::Send,{Blind}^{Right}
 
 /**
- * タブを閉じる
- *
- * @hotkey 無変換+{w}
- * @target デフォルト
- */
-vk1D & W::Send, {Blind}^{w}
-/**
  * リネーム
  *
  * @hotkey 無変換+{R}
@@ -644,6 +637,24 @@ vk1C & J::Send, !{Up}
 
 
 ;---------- 無変換キー ----------
+
+
+/**
+ * コードを折りたたみ
+ *
+ * @hotkey 無変換+{W}
+ * @target VSCode
+ */
+vk1D & W::Send, {Blind}^+{[}
+
+/**
+ * コードを展開
+ *
+ * @hotkey 無変換+{T}
+ * @target VSCode
+ */
+vk1D & T::Send, {Blind}^+{]}
+
 /**
  * 行入れ替え(下)
  *
@@ -680,13 +691,6 @@ vk1D & D::Send, {Blind}^{d}
  * @target VSCode
  */
 vk1D & G::Send, {Blind}^{g}
-/**
- * 画面横分割
- *
- * @hotkey 無変換+{W}
- * @target VSCode
- */
-vk1D & W::Send, {Blind}^{\}
 
 /**
  * リネーム
@@ -698,6 +702,14 @@ vk1D & R::
 Send, ^{0}
 Send, {Blind}{F2}
 Return
+
+/**
+ * ターミナルにフォーカス
+ *
+ * @hotkey 無変換+{Enter}
+ * @target VSCode
+ */
+vk1D & Enter::Send, ^+{Enter}
 ;---------- 変換キー ----------
 
 /**
@@ -731,14 +743,7 @@ SetKeyDelay -1
 Send {Blind}{LCtrl Up}
 Return
 
-/**
- * ターミナルにフォーカス
- *
- * @hotkey 無変換+{Enter}
- * @target VSCode
- */
-vk1D & Enter::Send, ^+{Enter}
-
+;---------- LAltキー ----------
 /**
  * サイドバーに移動
  *
@@ -754,6 +759,12 @@ LAlt & Space::Send, ^{0}
  */
 LAlt & vk1C::Send, ^{1}
 
+/**
+ * エディタグループ移動[デフォルト]
+ *
+ * @hotkey Ctrl+{1,2,3...}
+ * @target VSCode
+ */
 #IfWinActive
 
 

@@ -3,6 +3,7 @@
   "editor.formatOnPaste": true,
   "editor.tabSize": 2,
   "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 160,
   "editor.renderWhitespace": "all",
   "editor.fontFamily": "FIra Code",
   "editor.fontLigatures": true,

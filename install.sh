@@ -8,38 +8,11 @@ DOTFILES=$PWD
 XDG_CONFIG_BASE=$DOTFILES/.config
 XDG_CONFIG_HOME=$HOME/.config
 
-usage_exit() {
-  echo "Usage: $PROGNAME [-h|-c|-g|-r]" 1>&2
-  echo
-  echo "Options:"
-  echo "  -h  show this text"
-  echo "  -c  for cli environment"
-  echo
-  exit 1
-}
 
 if [ "$(id -u)" = "0" ]; then
   echo "must run under non-root user"
   exit 1
 fi
-
-MODE=""
-
-while getopts cgrhx OPT
-do
-  case $OPT in
-    h) usage_exit
-      ;;
-    \?) usage_exit
-      ;;
-    c) MODE="CLI"
-      ;;
-    x) MODE="CODE"
-      ;;
-  esac
-done
-
-echo $MODE
 
 cli_install() {
   _cli_dep_install
@@ -91,7 +64,7 @@ _cli_dep_install() {
 }
 
 _cli_settings() {
-  mkdir -p $HOME/.config
+  mkdir -p $XDG_CONFIG_HOME
   ln -sf $DOTFILES/.editorconfig $HOME
 
   ln -sf $DOTFILES/.gitconfig $HOME
@@ -103,40 +76,4 @@ _cli_settings() {
 
 }
 
-code_settings() {
-  cmds="code vscode"
-  for cmd in ${cmds[@]}; do
-    if type $cmd > /dev/null 2>&1; then
-      _code_ext "$cmd"
-    fi
-  done
-  _code_cfg
-}
-
-_code_ext() {
-  echo "install extensions to $cmd"
-  \cat $XDG_CONFIG_BASE/Code/extensions | while read line; do
-    echo "add ${line} to ${cmd}"
-    $cmd --install-extension $line --force
-  done
-  echo "uninstall extensions to $cmd"
-  \cat $XDG_CONFIG_BASE/Code/x_extensions | while read line; do
-    echo "remove ${line} from ${cmd}"
-    $cmd --uninstall-extension $line --force
-  done
-}
-
-_code_cfg() {
-  echo "place configs"
-  mkdir -p $XDG_CONFIG_HOME/Code/User
-  ln -sf $XDG_CONFIG_BASE/Code/User/settings.json $XDG_CONFIG_HOME/Code/User
-  ln -sf $XDG_CONFIG_BASE/Code/User/keybindings.json $XDG_CONFIG_HOME/Code/User
-}
-
-if [ "$MODE" = "CLI" ]; then
-  cli_install
-elif [ "$MODE" = "CODE" ]; then
-  code_settings
-else
-  usage_exit
-fi
+cli_install

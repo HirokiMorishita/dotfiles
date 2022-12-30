@@ -3,22 +3,10 @@
 
 # envs
 $newPath = @(
-  "$env:USERPROFILE\.poetry\bin"
-  "$env:USERPROFILE\.dotnet\tools"
   "$env:USERPROFILE\bin"
   "$env:USERPROFILE\scoop\shims"
-  "$env:USERPROFILE\scoop\apps\python\current"
-  "$env:USERPROFILE\scoop\apps\python\current\Scripts"
-  "$env:USERPROFILE\scoop\apps\nodejs-lts\current\bin"
-  "$env:USERPROFILE\scoop\apps\nodejs-lts\current"
-  "$env:USERPROFILE\scoop\apps\ruby\current\gems\bin"
-  "$env:USERPROFILE\scoop\apps\ruby\current\bin"
   "$env:USERPROFILE\scoop\apps\git\current\usr\bin"
-  "$env:USERPROFILE\scoop\apps\git\current\mingw64\bin"
-  "$env:USERPROFILE\scoop\apps\git\current\mingw64\libexec\git-core"
-  "$env:LOCALAPPDATA\Programs\Python\Launcher"
   "$env:LOCALAPPDATA\Microsoft\WindowsApps"
-  "$env:LOCALAPPDATA\Programs\Microsoft VS Code\bin"
 ) -join ";"
 
 [System.Environment]::SetEnvironmentVariable("PATH", $newPath, "User")
@@ -38,8 +26,8 @@ catch [System.Management.Automation.CommandNotFoundException] {
 # git is required by `scoop bucket add *`
 
 $UTILS = @(
-  "aria2"
-  "lessmsi"
+  # scoop needs dark and innounp
+  "innounp"
   "dark"
   "7zip"
   "git"
@@ -53,14 +41,12 @@ $PACKAGES = @(
   "jq"
   "powertoys"
   "ripgrep"
-  # "vscode"
   "firacode"
   "autohotkey"
 )
 scoop install $UTILS
 scoop bucket add versions
 scoop bucket add extras
-scoop bucket add java
 scoop bucket add nerd-fonts
 scoop update *
 scoop install $PACKAGES

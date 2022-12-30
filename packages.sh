@@ -5,7 +5,7 @@ alts=(
   #"exa"  # ls wslではデフォルトのUBUNTUのバージョンが低くaptで入らない
   "fd-find"  # find
   "htop"  # top
-  "mtr"  # tracepath
+  "mtr"  # traceroute
   "ncdu"  # du
   "neovim"  # vim
   #"procs"  # ps aptにないのでbrewで入れる

@@ -13,7 +13,6 @@ eval "$(starship init bash)"
 
 alias fd=fdfind
 alias bat=batcat
-alias g='cd $(ghq root)/$(ghq list | fzf --reverse)'
 alias h='history | fzf --reverse'
 alias e='explorer.exe .'
 alias ..='cd ..'
@@ -31,6 +30,7 @@ alias gco='git checkout'
 alias gc='git commit'
 alias gca='git commit --ammend'
 alias gcp='git cherry-pick'
+alias gcd='cd $(ghq root)/$(ghq list | fzf --reverse)'
 
 alias nls='exa'
 alias nps='procs'
@@ -41,6 +41,10 @@ alias ndu='ncdu'
 alias ngrep='rg'
 alias nsed='sd'
 alias nfind='fdfind'
+alias fgco='fgco'
+alias fgcor='fgcor'
+alias fcd='fcd'
+alias open='open'
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND='fd --type f'
 export FZF_ALT_C_COMMAND='fd --type d'

@@ -779,33 +779,33 @@ LAlt & vk1C::Send, ^{1}
  */
 vk1C & f::Send, ^{g}
 /**
- * 次のページ
+ * 前のページ
  *
- * @hotkey 変換+{h}
+ * @hotkey 変換+{H}
  * @target Kindle
  */
-vk1C & h::Send, {Blind}{Down}
+vk1C & h::Send, {Blind}{Up}
 /**
  * 目次を開く
  *
- * @hotkey 変換+{j}
+ * @hotkey 変換+{L}
  * @target Kindle
  */
 vk1C & j::Send, ^{l}
 /**
  * フルスクリーン
  *
- * @hotkey 変換+{k}
+ * @hotkey 変換+{K}
  * @target Kindle
  */
 vk1C & k::Send, {F11}
 /**
- * 前のページ
+ * 次のページ
  *
- * @hotkey 変換+{l}
+ * @hotkey 変換+{L}
  * @target Kindle
  */
-vk1C & l::Send, {Blind}{Up}
+vk1C & l::Send, {Blind}{Down}
 
 #IfWinActive
 

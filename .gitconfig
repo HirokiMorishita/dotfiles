@@ -1,9 +1,7 @@
 [alias]
   a       = add .
   adp     = add -p
-  rch     = branch -r
   sw      = switch
-  rs      = restore
   co      = checkout
   bch     = branch
   cm      = commit

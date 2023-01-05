@@ -2,16 +2,6 @@ fsutil 8dot3name set 1
 $DOTFILES = "$env:USERPROFILE\.dotfiles"
 $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"
 
-# Add-MpPreference -ExclusionPath $env:USERPROFILE\.cache
-# Add-MpPreference -ExclusionPath $env:USERPROFILE\.config
-# Add-MpPreference -ExclusionPath $env:USERPROFILE\.dotfiles
-# Add-MpPreference -ExclusionPath $env:USERPROFILE\bin
-# Add-MpPreference -ExclusionPath $env:USERPROFILE\scoop
-# Add-MpPreference -ExclusionPath $env:USERPROFILE\src
-# Add-MpPreference -ExclusionPath $env:USERPROFILE\pkg
-# Add-MpPreference -ExclusionPath "$env:USERPROFILE\Hyper-V"
-# Add-MpPreference -ExclusionPath "$env:USERPROFILE\VirtualBox VMs"
-# Add-MpPreference -ExclusionPath $env:ProgramData\scoop
 Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1
 
 switch ((Get-WmiObject -Class Win32_ComputerSystem).Model) {
@@ -71,9 +61,7 @@ New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.editorconfig -Val
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfig -Value $DOTFILES\.gitconfig
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfig.identity.default -Value $DOTFILES\.gitconfig.identity.default
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfig.windows -Value $DOTFILES\.gitconfig.windows
-# New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitignore -Value $DOTFILES\.gitignore
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitmessage -Value $DOTFILES\.gitmessage
-# New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.bashrc -Value $DOTFILES\.bashrc.windows
 
 # code
 New-Item -Force -ItemType SymbolicLink -Path $env:APPDATA\Code\User\settings.json -Value $DOTFILES\.config\Code\User\settings.json

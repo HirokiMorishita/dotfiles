@@ -58,7 +58,7 @@ if (Test-Path ("$DOTFILES")) {
 }
 else {
   git config --global core.autoCRLF false
-  git clone https://github.com/asumanino/dotfiles.git $DOTFILES
+  git clone https://github.com/HirokiMorishita/dotfiles.git $DOTFILES
 }
 
 winget install --id=Microsoft.WindowsTerminal -e

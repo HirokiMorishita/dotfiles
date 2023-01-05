@@ -60,7 +60,6 @@ New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.editorconfig -Val
 # git
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfig -Value $DOTFILES\.gitconfig
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfig.identity.default -Value $DOTFILES\.gitconfig.identity.default
-New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfig.windows -Value $DOTFILES\.gitconfig.windows
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitmessage -Value $DOTFILES\.gitmessage
 
 # code

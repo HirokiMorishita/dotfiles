@@ -13,6 +13,7 @@ eval "$(starship init bash)"
 
 alias fd=fdfind
 alias bat=batcat
+alias a='alias | less'
 alias h='history | fzf --reverse'
 alias e='explorer.exe .'
 alias ..='cd ..'

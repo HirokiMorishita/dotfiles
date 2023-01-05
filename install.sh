@@ -69,6 +69,7 @@ _cli_settings() {
 
   ln -sf $DOTFILES/.gitconfig $HOME
   ln -sf $DOTFILES/.gitconfig.identity.default $HOME
+  ln -sf $DOTFILES/.gitconfig.pager $HOME
   ln -sf $DOTFILES/.gitignore $HOME
   ln -sf $DOTFILES/.gitmessage $HOME
 

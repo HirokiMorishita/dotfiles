@@ -10,6 +10,7 @@
   cma     = commit --amend
   cp      = cherry-pick
   sts     = status
+  plog    = log --graph --pretty=format:'%C(red)%h %C(green)%an %Creset%s %C(yellow)%d%Creset'
 [core]
   editor  = code --wait --reuse-window
   excludesfile  = ~/.gitignore

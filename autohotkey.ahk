@@ -18,6 +18,14 @@ SetTitleMatchMode, 2
 vk1D::Return
 
 /**
+ * コンテキストメニューを開く
+ *
+ * @hotkey Ctrl+{無変換}
+ * @target デフォルト
+ */
+^vk1D::Send,+{F10}
+
+/**
  * カーソルキー(左)
  *
  * @hotkey 無変換+{H}
@@ -187,13 +195,22 @@ vk1D & vk1C::Send, {vkF3sc029}
 ;---------- 変換キー ----------
 vk1C::Return
 
+
+/**
+ * Escape
+ *
+ * @hotkey Ctrl+{変換}
+ * @target デフォルト
+ */
+^vk1C::Send,{Escape}
+
 /**
  * 仮想デスクトップの切り替え(左)
  *
  * @hotkey 変換+{Y}
  * @target デフォルト
  */
-~vk1C & Y::Send, #^{Left}
+vk1C & Y::Send, #^{Left}
 /**
  * ウィンドウの切り替え(左)
  *
@@ -252,28 +269,28 @@ vk1C & L::Send, !{Right}
  * @hotkey 変換+{N}
  * @target デフォルト
  */
-vk1C & N::Send, #{Left}
+vk1C & N::Send, {Blind}#{Left}
 /**
  * ウィンドウ移動(下)
  *
  * @hotkey 変換+{M}
  * @target デフォルト
  */
-vk1C & M::Send, #{Down}
+vk1C & M::Send, {Blind}#{Down}
 /**
  * ウィンドウ移動(上)
  *
  * @hotkey 変換+{,}
  * @target デフォルト
  */
-vk1C & ,::Send, #{Up}
+vk1C & ,::Send, {Blind}#{Up}
 /**
  * ウィンドウ移動(右)
  *
  * @hotkey 変換+{.}
  * @target デフォルト
  */
-vk1C & .::Send, #{Right}
+vk1C & .::Send, {Blind}#{Right}
 
 
 /**
@@ -313,6 +330,14 @@ vk1C & R::Send, {Blind}{F5}
 vk1C & T::Send, {Blind}^{t}
 
 /**
+ * OCR (powertoys)
+ *
+ * @hotkey 変換+{A}
+ * @target デフォルト
+ */
+vk1C & A::Send, #+{T}
+
+/**
  * スクリーンショットをとる
  *
  * @hotkey 変換+{S}
@@ -320,12 +345,12 @@ vk1C & T::Send, {Blind}^{t}
  */
 vk1C & S::Send, #+{S}
 /**
- * ショートカットメニューを表示する
+ * カラーピッカー(powertoys)
  *
  * @hotkey 変換+{D}
  * @target デフォルト
  */
-vk1C & D::Send, {Blind}+{F10}
+vk1C & D::Send, #+{C}
 /**
  * 置換
  *
@@ -334,6 +359,13 @@ vk1C & D::Send, {Blind}+{F10}
  */
 vk1C & F::Send, {Blind}^{h}
 
+/**
+ * ピクセル測定(powertoys)
+ *
+ * @hotkey 変換+{G}
+ * @target デフォルト
+ */
+vk1C & G::Send, #+{M}
 /**
  * 仮想デスクトップ切り替え(左)
  *
@@ -712,6 +744,13 @@ Return
 vk1D & Enter::Send, ^+{Enter}
 ;---------- 変換キー ----------
 
+/**
+ * 新規ファイル追加
+ *
+ * @hotkey 変換+{T}
+ * @target VSCode
+ */
+vk1C & T::Send, ^{n}
 /**
  * アンドゥ
  *
@@ -1125,7 +1164,7 @@ HotkeyHelp()
 /**
  * 設定されたホットキー/ホットストリングを一覧表示
  *
- * @hotkey 無変換+[/]
+ * @hotkey 無変換+{P}
  * @target デフォルト
  */
 vk1D & P::

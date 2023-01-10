@@ -37,9 +37,6 @@
   helper = manager-core
   helper = cache --timeout 86400
   helper = store
-[include]
-  path = ~/.gitconfig.local
-  path = ~/.gitconfig.pager
 [fetch]
   prune = true
 [user]
@@ -56,3 +53,6 @@
   enabled = true
 [init]
   defaultBranch = main
+[include]
+  path = ~/.gitconfig.local
+  path = ~/.gitconfig.pager

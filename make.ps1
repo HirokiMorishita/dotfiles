@@ -42,7 +42,8 @@ $PACKAGES = @(
   "powertoys"
   "ripgrep"
   "firacode"
-  "autohotkey"
+  # manual install autohotkey because scoop install only v2 autohotkey but my ahk script dont follow v2 autohotkey
+  # "autohotkey"
 )
 scoop install $UTILS
 scoop bucket add versions

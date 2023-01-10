@@ -70,8 +70,9 @@ New-Item -Force -ItemType SymbolicLink -Path $env:APPDATA\Code\User\keybindings.
 New-Item -Force -ItemType SymbolicLink -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json -Value $DOTFILES\.config\WindowsTerminal\LocalState\settings.json
 
 # autohotkey
-cmd.exe /C 'assoc .ahk=AutoHotKey'
-cmd.exe /C 'ftype AutoHotKey=%USERPROFILE%\scoop\apps\autohotkey\current\autohotkeyU64.exe %1'
+# manual install because my ahk script dont follow v2 autohotkey
+# cmd.exe /C 'assoc .ahk=AutoHotKey'
+# cmd.exe /C 'ftype AutoHotKey=%USERPROFILE%\scoop\apps\autohotkey\current\autohotkeyU64.exe %1'
 New-Item -Force -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup/autohotkey.ahk" -Value $DOTFILES\autohotkey.ahk
 
 

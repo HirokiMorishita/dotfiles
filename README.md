@@ -5,12 +5,12 @@ windowsのセットアップを行うdotfiles。
 ## usage
 ### windows
 ```
-git clone ${url} ~/.dotfiles
+git -C $HOME clone git@github.com:HirokiMorishita/dotfiles.git .dotfiles
 powershell -ExecutionPolicy Unrestricted ./make.ps1
 ```
 ### wsl
 ```
-ln -s /mnt/c/Users/$(powershell.exe '$env:UserName')/.dotfiles ~/.dotfiles
+ln -s $(wslpath "$(wslvar USERPROFILE)")/.dotfiles ~/.dotfiles
 cd ~/.dotfiles
 ./install.sh
 ```

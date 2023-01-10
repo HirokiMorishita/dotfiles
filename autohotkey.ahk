@@ -841,7 +841,7 @@ vk1C & h::Send, {Blind}{Up}
 /**
  * 目次を開く
  *
- * @hotkey 変換+{L}
+ * @hotkey 変換+{J}
  * @target Kindle
  */
 vk1C & j::Send, ^{l}

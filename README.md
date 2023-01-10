@@ -17,3 +17,4 @@ cd ~/.dotfiles
 
 ## 参考にしたURL
 https://qiita.com/kentac55/items/733bdc21e66b44904332
+https://qiita.com/draganmaistir/items/36bd90fa6c5a93736c70

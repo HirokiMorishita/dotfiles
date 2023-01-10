@@ -18,12 +18,12 @@ SetTitleMatchMode, 2
 vk1D::Return
 
 /**
- * コンテキストメニューを開く
+ * エスケープ
  *
  * @hotkey Ctrl+{無変換}
  * @target デフォルト
  */
-^vk1D::Send,+{F10}
+^vk1D::Send,{Escape}
 
 /**
  * カーソルキー(左)
@@ -197,12 +197,12 @@ vk1C::Return
 
 
 /**
- * Escape
+ * コンテキストメニューを開く
  *
  * @hotkey Ctrl+{変換}
  * @target デフォルト
  */
-^vk1C::Send,{Escape}
+^vk1C::Send,+{F10}
 
 /**
  * 仮想デスクトップの切り替え(左)
@@ -308,12 +308,12 @@ vk1C & Q::WinClose,A
  */
 vk1C & W::Send, {Blind}^{w}
 /**
- * Windows検索
+ * 閉じたタブを開く
  *
  * @hotkey 変換+{E}
  * @target デフォルト
  */
-vk1C & E::Send, #{s}
+vk1C & E::Send, {Blind}^+{t}
 /**
  * リロード
  *
@@ -477,98 +477,98 @@ vk1C & Space::Send, {Delete}
 ;LAlt::Return
 
 /**
- * -
- *
- * @hotkey LAlt + {Y}
- * @target デフォルト
- */
-LAlt & y::Send, {-}
-/**
  * /
  *
- * @hotkey LAlt + {u}
+ * @hotkey LAlt + {Z}
  * @target デフォルト
  */
-LAlt & u::Send, {/}
+LAlt & z::Send, {/}
 /**
- * *
+ * -
  *
- * @hotkey LAlt + {I}
+ * @hotkey LAlt + {X}
  * @target デフォルト
  */
-LAlt & i::Send, {*}
+LAlt & x::Send, {-}
 /**
  * +
  *
- * @hotkey LAlt + {O}
+ * @hotkey LAlt + {C}
  * @target デフォルト
  */
-LAlt & o::Send, {+}
+LAlt & c::Send, {+}
+/**
+ * *
+ *
+ * @hotkey LAlt + {V}
+ * @target デフォルト
+ */
+LAlt & v::Send, {*}
 /**
  * %
  *
- * @hotkey LAlt + {P}
+ * @hotkey LAlt + {B}
  * @target デフォルト
  */
-LAlt & p::Send, {`%}
+LAlt & b::Send, {`%}
 
 /**
  * !
  *
- * @hotkey LAlt + {H}
+ * @hotkey LAlt + {A}
  * @target デフォルト
  */
-LAlt & h::Send, {!}
+LAlt & a::Send, {!}
 /**
  * (
  *
- * @hotkey LAlt + {J}
+ * @hotkey LAlt + {S}
  * @target デフォルト
  */
-LAlt & j::Send, {(}
+LAlt & s::Send, {(}
 /**
  * )
  *
- * @hotkey LAlt + {K}
+ * @hotkey LAlt + {D}
  * @target デフォルト
  */
-LAlt & k::Send, {)}
+LAlt & d::Send, {)}
 /**
  * =
  *
- * @hotkey LAlt + {L}
+ * @hotkey LAlt + {F}
  * @target デフォルト
  */
-LAlt & l::Send, {=}
+LAlt & f::Send, {=}
 
 /**
  * |
  *
- * @hotkey LAlt + {N}
+ * @hotkey LAlt + {Q}
  * @target デフォルト
  */
-LAlt & n::Send, {|}
+LAlt & q::Send, {|}
 /**
  * [
  *
- * @hotkey LAlt + {M}
+ * @hotkey LAlt + {W}
  * @target デフォルト
  */
-LAlt & m::Send, {[}
+LAlt & w::Send, {[}
 /**
  * ]
  *
- * @hotkey LAlt + {,}
+ * @hotkey LAlt + {E}
  * @target デフォルト
  */
-LAlt & ,::Send, {]}
+LAlt & e::Send, {]}
 /**
  * &
  *
- * @hotkey LAlt + {.}
+ * @hotkey LAlt + {R}
  * @target デフォルト
  */
-LAlt & .::Send, {&}
+LAlt & r::Send, {&}
 
 /**
  * script のリロード
@@ -688,19 +688,19 @@ vk1D & W::Send, {Blind}^+{[}
 vk1D & T::Send, {Blind}^+{]}
 
 /**
- * 行入れ替え(下)
+ * マルチカーソル(下)
  *
  * @hotkey 無変換+{M}
  * @target VSCode
  */
-vk1D & M::Send,{Blind}!{Down}
+vk1D & M::Send,{Blind}!^{Down}
 /**
- * 行入れ替え(上)
+ * マルチカーソル(上)
  *
  * @hotkey 無変換+{,}
  * @target VSCode
  */
-vk1D & ,::Send,{Blind}!{Up}
+vk1D & ,::Send,{Blind}!^{Up}
 /**
  * ファイル選択
  *
@@ -784,19 +784,33 @@ Return
 
 ;---------- LAltキー ----------
 /**
- * サイドバーに移動
+ * フォーカス移動(左)
  *
- * @hotkey LAlt+{Space}
+ * @hotkey LAlt + {H}
  * @target VSCode
  */
-LAlt & Space::Send, ^{0}
+LAlt & h::Send, !{h}
 /**
- * エディタに移動
+ * フォーカス移動(下)
  *
- * @hotkey LAlt+{変換}
+ * @hotkey LAlt + {J}
  * @target VSCode
  */
-LAlt & vk1C::Send, ^{1}
+LAlt & j::Send, !{j}
+/**
+ * フォーカス移動(上)
+ *
+ * @hotkey LAlt + {K}
+ * @target VSCode
+ */
+LAlt & k::Send, !{k}
+/**
+ * フォーカス移動(右)
+ *
+ * @hotkey LAlt + {L}
+ * @target VSCode
+ */
+LAlt & l::Send, !{l}
 
 /**
  * エディタグループ移動[デフォルト]
@@ -879,21 +893,17 @@ HotkeyHelp()
     Static sTab
     Static sHotkeyTree
     Static sHotkeyList
-    Static sHotstrTree
-    Static sHotstrList
 
     ;GUIのウィンドウハンドル
     Static sHwndTab
     Static sHwndHotkeyTree
     Static sHwndHotkeyList
-    Static sHwndHotstrTree
-    Static sHwndHotstrList
 
     ;ホットキーヘルプのGUIを作成
     Gui, HotkeyHelp:New, , AutoHotkey設定一覧
 
     ;タブを追加
-    Gui, HotkeyHelp:Add, Tab2, HwndsHwndTab VsTab W700 H400, ホットキー|ホットストリング
+    Gui, HotkeyHelp:Add, Tab2, HwndsHwndTab VsTab W700 H400, ホットキー
 
     ;1つ目のタブを選択
     Gui, Tab, 1
@@ -903,23 +913,7 @@ HotkeyHelp()
     TV_Add("全てのホットキー", 0, "Expand")
 
     ;1つ目のタブにリストビューを追加
-    Gui, HotkeyHelp:Add, ListView, HwndsHwndHotkeyList VsHotkeyList X+5 W550 H360 Grid ReadOnly, 対象|ホットキー|条件|説明|
-
-    ;リストビューの項目幅を設定
-    LV_ModifyCol(1, 100)
-    LV_ModifyCol(2, 145)
-    LV_ModifyCol(3, 90)
-    LV_ModifyCol(4, 350)
-
-    ;2つ目のタブを選択
-    Gui, Tab, 2
-
-    ;2つ目のタブにツリービューを追加
-    Gui, HotkeyHelp:Add, TreeView, HwndsHwndHotstrTree VsHotstrTree GSelectTree W120 H360,
-    TV_Add("全てのホットストリング", 0, "Expand")
-
-    ;2つ目のタブにリストビューを追加
-    Gui, HotkeyHelp:Add, ListView, HwndsHwndHotstrList VsHotstrList X+5 W550 H360 Grid ReadOnly, 対象|ホットストリング|条件|説明
+    Gui, HotkeyHelp:Add, ListView, HwndsHwndHotkeyList VsHotkeyList X+5 W550 H360 Grid ReadOnly, 対象|説明|ホットキー|
 
     ;リストビューの項目幅を設定
     LV_ModifyCol(1, 100)
@@ -948,17 +942,6 @@ HotkeyHelp()
 
                 ;リスト項目を全削除
                 Gui, ListView, %sHwndHotkeyList%
-                LV_Delete()
-            }
-
-            If (vCurrentTab == "ホットストリング")
-            {
-                ;ホットストリングタブの場合、ホットストリングのツリービューとリストビューを選択
-                Gui, TreeView, %sHwndHotstrTree%
-                Gui, ListView, %sHwndHotstrList%
-
-                ;リスト項目を全削除
-                Gui, ListView, %sHwndHotstrList%
                 LV_Delete()
             }
 
@@ -1007,26 +990,11 @@ HotkeyHelp()
                         ;ホットキーコメントが複数あった場合、改行で区切って格納
                         vHotkey := vHotkey == "" ? vCommand : vHotkey . "`r`n" . vCommand
                     }
-                    Else If (RegExMatch(A_LoopReadLine, "\s\*[\s|\t]*@hotstr[\s|\t]*"))
-                    {
-                        ;ホットストリングコメント( * @hotstr)
-                        RegExMatch(A_LoopReadLine, "(?<=@hotstr[\s|\t]).*$", vCommand)
-                        vCommand := Trim(vCommand)
-
-                        ;ホットストリングコメントが複数あった場合、改行で区切って格納
-                        vHotstr := vHotstr == "" ? vCommand : vHotstr . "`r`n" . vCommand
-                    }
                     Else If (RegExMatch(A_LoopReadLine, "\s\*[\s|\t]*@target[\s|\t]*"))
                     {
                         ;対象コメント( * @target)
                         RegExMatch(A_LoopReadLine, "(?<=@target[\s|\t]).*$", vTarget)
                         vTarget := Trim(vTarget)
-                    }
-                    Else If (RegExMatch(A_LoopReadLine, "\s\*[\s|\t]*@condition[\s|\t]*"))
-                    {
-                        ;条件コメント( * @condition)
-                        RegExMatch(A_LoopReadLine, "(?<=@condition[\s|\t]).*$", vCondition)
-                        vCondition := Trim(vCondition)
                     }
                     Else If (RegExMatch(A_LoopReadLine, "\s\*[\s|\t]*@.+[\s|\t]*"))
                     {
@@ -1092,56 +1060,7 @@ HotkeyHelp()
                                 If (vCurrentTree == vTreeTop || vCurrentTree == vTargetTreeId)
                                 {
                                     ;ツリートップ選択中または読み込み行が選択中のツリーアイテムIDと一致する場合、リストビューに追加
-                                    vListItemId := LV_Add("Col1", vTarget, A_LoopField, vCondition, vDesc)
-                                }
-                            }
-                        }
-
-                        If (vHotstr != "")
-                        {
-                            ;@hotstr行が存在していた場合、ツリービューとリストビューを選択
-                            Gui, TreeView, %sHwndHotstrTree%
-                            Gui, ListView, %sHwndHotstrList%
-
-                            ;ツリーの先頭項目を取得
-                            vTreeItemId := TV_GetNext()
-
-                            ;読み込み行のツリーアイテムID
-                            vTargetTreeId := ""
-
-                            ;ツリーの項目数分ループ
-                            Loop, % TV_GetCount()
-                            {
-                                ;ツリーの項目名称を取得
-                                TV_GetText(vTreeText, vTreeItemId)
-                                If (vTreeText == vTarget)
-                                {
-                                    ;ツリーの項目名称に存在した場合、ループ処理を終了
-                                    vTargetTreeId := vTreeItemId
-                                    Break
-                                }
-
-                                ;ツリーの項目名称に存在しない場合、次のツリー項目を取得しループを継続
-                                vTreeItemId := TV_GetNext(vTreeItemId, "Full")
-                            }
-
-                            If (!vTargetTreeId)
-                            {
-                                ;ツリーの項目名称に存在しない場合、ツリーに項目を追加
-                                vTargetTreeId := TV_Add(vTarget, TV_GetNext())
-                            }
-
-                            ;ホットストリングをリストビューに追加
-                            Loop, Parse, vHotstr, `r, `n
-                            {
-                                ;ホットストリングのツリービューとリストビューを選択
-                                Gui, TreeView, %sHwndHotstrTree%
-                                Gui, ListView, %sHwndHotstrList%
-
-                                If (vCurrentTree == vTreeTop || vCurrentTree == vTargetTreeId)
-                                {
-                                    ;ツリートップ選択中・読み込み行が選択中のツリーアイテムIDと一致する場合、リストビューに追加
-                                    vListItemId := LV_Add("Col1", vTarget, A_LoopField, vCondition, vDesc)
+                                    vListItemId := LV_Add("Col1", vTarget, vDesc, A_LoopField)
                                 }
                             }
                         }

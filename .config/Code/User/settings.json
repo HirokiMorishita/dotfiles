@@ -44,5 +44,6 @@
     }
   },
   "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
-  "terminal.integrated.fontFamily": "Fira Code"
+  "terminal.integrated.fontFamily": "Fira Code",
+  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?、。「」【】『』（）！？　てにをはがのともへでや"
 }

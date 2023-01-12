@@ -888,14 +888,14 @@ vk1D & P:: {
 
 class HotKeyHelpGui {
   __New() {
-    this.Gui := Gui("","AutoHotkey設定一覧",this)
+    this.Gui := Gui("+Resize","AutoHotkey設定一覧",this)
     this.Tab := this.Gui.Add("Tab3", "VsTab W700 H400", ["ホットキー"])
     this.Tab.UseTab(1)
     this.TreeView := this.Gui.Add("TreeView","W120 H360")
     this.TreeView.Add("全てのホットキー", 0, "Expand")
     this.ListView := this.Gui.Add("ListView", "X+5 W550 H360 Grid ReadOnly", ["対象","説明","ホットキー"])
     this.ListView.ModifyCol(1, 100)
-    this.ListView.ModifyCol(2, 350)
+    this.ListView.ModifyCol(2, 250)
     this.ListView.ModifyCol(3, 145)
     this.Gui.Show()
 

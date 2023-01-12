@@ -1,18 +1,18 @@
-﻿;----------Setting----------
+﻿#Requires AutoHotkey v2.0-a
+;----------Setting----------
 
-#Persistent
-#SingleInstance, Force
-#NoEnv
+Persistent()
+#SingleInstance Force
 #UseHook
-#InstallKeybdHook
-#InstallMouseHook
-#HotkeyInterval, 2000
-#MaxHotkeysPerInterval, 200
-Process, Priority,, Realtime
-SendMode, Input
-SetWorkingDir %A_ScriptDir%
-SetTitleMatchMode, 2
-
+InstallKeybdHook
+InstallMouseHook
+A_HotkeyInterval := 2000
+A_MaxHotkeysPerInterval := 200
+A_SendMode := "Input"
+ProcessSetPriority "Realtime"
+SetWorkingDir A_ScriptDir
+SetTitleMatchMode 2
+SetKeyDelay 20
 
 ;---------- 無変換キー ----------
 vk1D::Return
@@ -23,7 +23,7 @@ vk1D::Return
  * @hotkey Ctrl+{無変換}
  * @target デフォルト
  */
-^vk1D::Send,{Escape}
+^vk1D::Send "{Esc}"
 
 /**
  * カーソルキー(左)
@@ -31,28 +31,28 @@ vk1D::Return
  * @hotkey 無変換+{H}
  * @target デフォルト
  */
-~vk1D & H::Send,{Blind}{Left}
+~vk1D & H::Send "{Blind}{Left}"
 /**
  * カーソルキー(下)
  *
  * @hotkey 無変換+{J}
  * @target デフォルト
  */
-vk1D & J::Send,{Blind}{Down}
+vk1D & J::Send "{Blind}{Down}"
 /**
  * カーソルキー(上)
  *
  * @hotkey 無変換+{K}
  * @target デフォルト
  */
-vk1D & K::Send,{Blind}{Up}
+vk1D & K::Send "{Blind}{Up}"
 /**
  * カーソルキー(右)
  *
  * @hotkey 無変換+{L}
  * @target デフォルト
  */
-vk1D & L::Send,{Blind}{Right}
+vk1D & L::Send "{Blind}{Right}"
 
 /**
  * Homeキー
@@ -60,28 +60,28 @@ vk1D & L::Send,{Blind}{Right}
  * @hotkey 無変換+{Y}
  * @target デフォルト
  */
-vk1D & Y::Send,{Blind}{Home}
+vk1D & Y::Send "{Blind}{Home}"
 /**
  * Page Downキー
  *
  * @hotkey 無変換+{U}
  * @target デフォルト
  */
-vk1D & U::Send,{Blind}{PgDn}
+vk1D & U::Send "{Blind}{PgDn}"
 /**
  * Page Upキー
  *
  * @hotkey 無変換+{I}
  * @target デフォルト
  */
-vk1D & I::Send,{Blind}{PgUp}
+vk1D & I::Send "{Blind}{PgUp}"
 /**
  * Endキー
  *
  * @hotkey 無変換+{O}
  * @target デフォルト
  */
-vk1D & O::Send,{Blind}{End}
+vk1D & O::Send "{Blind}{End}"
 
 /**
  * ctrl + 左カーソルキー
@@ -89,14 +89,14 @@ vk1D & O::Send,{Blind}{End}
  * @hotkey 無変換+{N}
  * @target デフォルト
  */
-vk1D & N::Send,{Blind}^{Left}
+vk1D & N::Send "{Blind}^{Left}"
 /**
  * ctrl + 右カーソルキー
  *
  * @hotkey 無変換+{.}
  * @target デフォルト
  */
-vk1D & .::Send,{Blind}^{Right}
+vk1D & .::Send "{Blind}^{Right}"
 
 /**
  * リネーム
@@ -104,14 +104,14 @@ vk1D & .::Send,{Blind}^{Right}
  * @hotkey 無変換+{R}
  * @target デフォルト
  */
-vk1D & R::Send, {Blind}{F2}
+vk1D & R::Send "{Blind}{F2}"
 /**
  * アドレスバーにフォーカス
  *
  * @hotkey 無変換+{T}
  * @target デフォルト
  */
-vk1D & T::Send, {Blind}^{l}
+vk1D & T::Send "{Blind}^{l}"
 
 /**
  * 全選択
@@ -119,21 +119,21 @@ vk1D & T::Send, {Blind}^{l}
  * @hotkey 無変換+{A}
  * @target デフォルト
  */
-vk1D & A::Send, {Blind}^{a}
+vk1D & A::Send "{Blind}^{a}"
 /**
  * 上書き保存
  *
  * @hotkey 無変換+{S}
  * @target デフォルト
  */
-vk1D & S::Send, {Blind}^{s}
+vk1D & S::Send "{Blind}^{s}"
 /**
  * 検索
  *
  * @hotkey 無変換+{F}
  * @target デフォルト
  */
-vk1D & F::Send, {Blind}^{f}
+vk1D & F::Send "{Blind}^{f}"
 
 /**
  * アンドゥ
@@ -141,56 +141,56 @@ vk1D & F::Send, {Blind}^{f}
  * @hotkey 無変換+{Z}
  * @target デフォルト
  */
-vk1D & Z::Send, {Blind}^{z}
+vk1D & Z::Send "{Blind}^{z}"
 /**
  * 切り取り
  *
  * @hotkey 無変換+{X}
  * @target デフォルト
  */
-vk1D & X::Send, {Blind}^{x}
+vk1D & X::Send "{Blind}^{x}"
 /**
  * コピー
  *
  * @hotkey 無変換+{C}
  * @target デフォルト
  */
-vk1D & C::Send, {Blind}^{c}
+vk1D & C::Send "{Blind}^{c}"
 /**
  * 貼り付け
  *
  * @hotkey 無変換+{V}
  * @target デフォルト
  */
-vk1D & V::Send, {Blind}#{v}
+vk1D & V::Send "{Blind}#{v}"
 /**
  * ブックマーク
  *
  * @hotkey 無変換+{B}
  * @target デフォルト
  */
-vk1D & B::Send, {Blind}^{b}
+vk1D & B::Send "{Blind}^{b}"
 /**
  * エスケープ
  *
  * @hotkey 無変換+{[}
  * @target デフォルト
  */
-vk1D & [::Send, {Esc}
+vk1D & [::Send "{Esc}"
 /**
  * バックスペース
  *
  * @hotkey 無変換+{Space}
  * @target デフォルト
  */
-vk1D & Space::Send, {BS}
+vk1D & Space::Send "{BS}"
 /**
  * 半角/全角
  *
  * @hotkey 無変換+変換
  * @target デフォルト
  */
-vk1D & vk1C::Send, {vkF3sc029}
+vk1D & vk1C::Send "{vkF3sc029}"
 
 ;---------- 変換キー ----------
 vk1C::Return
@@ -202,7 +202,7 @@ vk1C::Return
  * @hotkey Ctrl+{変換}
  * @target デフォルト
  */
-^vk1C::Send,+{F10}
+^vk1C::Send "+{F10}"
 
 /**
  * 仮想デスクトップの切り替え(左)
@@ -210,7 +210,7 @@ vk1C::Return
  * @hotkey 変換+{Y}
  * @target デフォルト
  */
-vk1C & Y::Send, #^{Left}
+vk1C & Y::Send "#^{Left}"
 /**
  * ウィンドウの切り替え(左)
  *
@@ -231,7 +231,7 @@ vk1C & I::AltTab
  * @hotkey 変換+{O}
  * @target デフォルト
  */
-vk1C & O::Send, #^{Right}
+vk1C & O::Send "#^{Right}"
 
 /**
  * 戻る
@@ -239,28 +239,28 @@ vk1C & O::Send, #^{Right}
  * @hotkey 変換+{H}
  * @target デフォルト
  */
-vk1C & H::Send, !{Left}
+vk1C & H::Send "!{Left}"
 /**
  * タブの切り替え(左)
  *
  * @hotkey 変換+{J}
  * @target デフォルト
  */
-vk1C & J::Send, ^+{Tab}
+vk1C & J::Send "^+{Tab}"
 /**
  * タブの切り替え(右)
  *
  * @hotkey 変換+{K}
  * @target デフォルト
  */
-vk1C & K::Send, ^{Tab}
+vk1C & K::Send "^{Tab}"
 /**
  * 進む
  *
  * @hotkey 変換+{L}
  * @target デフォルト
  */
-vk1C & L::Send, !{Right}
+vk1C & L::Send "!{Right}"
 
 
 /**
@@ -269,28 +269,28 @@ vk1C & L::Send, !{Right}
  * @hotkey 変換+{N}
  * @target デフォルト
  */
-vk1C & N::Send, {Blind}#{Left}
+vk1C & N::Send "{Blind}#{Left}"
 /**
  * ウィンドウ移動(下)
  *
  * @hotkey 変換+{M}
  * @target デフォルト
  */
-vk1C & M::Send, {Blind}#{Down}
+vk1C & M::Send "{Blind}#{Down}"
 /**
  * ウィンドウ移動(上)
  *
  * @hotkey 変換+{,}
  * @target デフォルト
  */
-vk1C & ,::Send, {Blind}#{Up}
+vk1C & ,::Send "{Blind}#{Up}"
 /**
  * ウィンドウ移動(右)
  *
  * @hotkey 変換+{.}
  * @target デフォルト
  */
-vk1C & .::Send, {Blind}#{Right}
+vk1C & .::Send "{Blind}#{Right}"
 
 
 /**
@@ -299,35 +299,35 @@ vk1C & .::Send, {Blind}#{Right}
  * @hotkey 変換+{Q}
  * @target デフォルト
  */
-vk1C & Q::WinClose,A
+vk1C & Q::WinClose "A"
 /**
  * タブを閉じる
  *
  * @hotkey 変換+{W}
  * @target デフォルト
  */
-vk1C & W::Send, {Blind}^{w}
+vk1C & W::Send "{Blind}^{w}"
 /**
  * 閉じたタブを開く
  *
  * @hotkey 変換+{E}
  * @target デフォルト
  */
-vk1C & E::Send, {Blind}^+{t}
+vk1C & E::Send "{Blind}^+{t}"
 /**
  * リロード
  *
  * @hotkey 変換+{R}
  * @target デフォルト
  */
-vk1C & R::Send, {Blind}{F5}
+vk1C & R::Send "{Blind}{F5}"
 /**
  * 新規タブを開く
  *
  * @hotkey 変換+{T}
  * @target デフォルト
  */
-vk1C & T::Send, {Blind}^{t}
+vk1C & T::Send "{Blind}^{t}"
 
 /**
  * OCR (powertoys)
@@ -335,7 +335,7 @@ vk1C & T::Send, {Blind}^{t}
  * @hotkey 変換+{A}
  * @target デフォルト
  */
-vk1C & A::Send, #+{T}
+vk1C & A::Send "#+{T}"
 
 /**
  * スクリーンショットをとる
@@ -343,21 +343,21 @@ vk1C & A::Send, #+{T}
  * @hotkey 変換+{S}
  * @target デフォルト
  */
-vk1C & S::Send, #+{S}
+vk1C & S::Send "#+{S}"
 /**
  * カラーピッカー(powertoys)
  *
  * @hotkey 変換+{D}
  * @target デフォルト
  */
-vk1C & D::Send, #+{C}
+vk1C & D::Send "#+{C}"
 /**
  * 置換
  *
  * @hotkey 変換+{F}
  * @target デフォルト
  */
-vk1C & F::Send, {Blind}^{h}
+vk1C & F::Send "{Blind}^{h}"
 
 /**
  * ピクセル測定(powertoys)
@@ -365,35 +365,35 @@ vk1C & F::Send, {Blind}^{h}
  * @hotkey 変換+{G}
  * @target デフォルト
  */
-vk1C & G::Send, #+{M}
+vk1C & G::Send "#+{M}"
 /**
  * 仮想デスクトップ切り替え(左)
  *
  * @hotkey 変換+{Z}
  * @target デフォルト
  */
-vk1C & Z::Send, {Blind}#^{Left}
+vk1C & Z::Send "{Blind}#^{Left}"
 /**
  * 仮想デスクトップを閉じる
  *
  * @hotkey 変換+{X}
  * @target デフォルト
  */
-vk1C & X::Send, {Blind}#^{F4}
+vk1C & X::Send "{Blind}#^{F4}"
 /**
  * 仮想デスクトップを開く
  *
  * @hotkey 変換+{C}
  * @target デフォルト
  */
-vk1C & C::Send, {Blind}#^d
+vk1C & C::Send "{Blind}#^d"
 /**
  * 仮想デスクトップ切り替え(右)
  *
  * @hotkey 変換+{V}
  * @target デフォルト
  */
-vk1C & V::Send, {Blind}#^{Right}
+vk1C & V::Send "{Blind}#^{Right}"
 
 /**
  * タスクバーのピン止めメニューを開く
@@ -401,70 +401,70 @@ vk1C & V::Send, {Blind}#^{Right}
  * @hotkey 変換+{1}
  * @target デフォルト
  */
-vk1C & 1::Send, #!{1}
+vk1C & 1::Send "#!{1}"
 /**
  * タスクバーのピン止めメニューを開く
  *
  * @hotkey 変換+{2}
  * @target デフォルト
  */
-vk1C & 2::Send, #!{2}
+vk1C & 2::Send "#!{2}"
 /**
  * タスクバーのピン止めメニューを開く
  *
  * @hotkey 変換+{3}
  * @target デフォルト
  */
-vk1C & 3::Send, #!{3}
+vk1C & 3::Send "#!{3}"
 /**
  * タスクバーのピン止めメニューを開く
  *
  * @hotkey 変換+{4}
  * @target デフォルト
  */
-vk1C & 4::Send, #!{4}
+vk1C & 4::Send "#!{4}"
 /**
  * タスクバーのピン止めメニューを開く
  *
  * @hotkey 変換+{5}
  * @target デフォルト
  */
-vk1C & 5::Send, #!{5}
+vk1C & 5::Send "#!{5}"
 /**
  * タスクバーのピン止めメニューを開く
  *
  * @hotkey 変換+{6}
  * @target デフォルト
  */
-vk1C & 6::Send, #!{6}
+vk1C & 6::Send "#!{6}"
 /**
  * タスクバーのピン止めメニューを開く
  *
  * @hotkey 変換+{7}
  * @target デフォルト
  */
-vk1C & 7::Send, #!{7}
+vk1C & 7::Send "#!{7}"
 /**
  * タスクバーのピン止めメニューを開く
  *
  * @hotkey 変換+{8}
  * @target デフォルト
  */
-vk1C & 8::Send, #!{8}
+vk1C & 8::Send "#!{8}"
 /**
  * タスクバーのピン止めメニューを開く
  *
  * @hotkey 変換+{9}
  * @target デフォルト
  */
-vk1C & 9::Send, #!{9}
+vk1C & 9::Send "#!{9}"
 /**
  * タスクバーのピン止めメニューを開く
  *
  * @hotkey 変換+{0}
  * @target デフォルト
  */
-vk1C & 0::Send, #!{0}
+vk1C & 0::Send "#!{0}"
 
 /**
  * Delete
@@ -472,9 +472,8 @@ vk1C & 0::Send, #!{0}
  * @hotkey 変換+{Space}
  * @target デフォルト
  */
-vk1C & Space::Send, {Delete}
+vk1C & Space::Send "{Delete}"
 ;---------- LAlt ----------
-;LAlt::Return
 
 /**
  * /
@@ -482,35 +481,35 @@ vk1C & Space::Send, {Delete}
  * @hotkey LAlt + {Z}
  * @target デフォルト
  */
-LAlt & z::Send, {/}
+LAlt & z::Send "{/}"
 /**
  * -
  *
  * @hotkey LAlt + {X}
  * @target デフォルト
  */
-LAlt & x::Send, {-}
+LAlt & x::Send "{-}"
 /**
  * +
  *
  * @hotkey LAlt + {C}
  * @target デフォルト
  */
-LAlt & c::Send, {+}
+LAlt & c::Send "{+}"
 /**
  * *
  *
  * @hotkey LAlt + {V}
  * @target デフォルト
  */
-LAlt & v::Send, {*}
+LAlt & v::Send "{*}"
 /**
  * %
  *
  * @hotkey LAlt + {B}
  * @target デフォルト
  */
-LAlt & b::Send, {`%}
+LAlt & b::Send "{`%}"
 
 /**
  * !
@@ -518,28 +517,28 @@ LAlt & b::Send, {`%}
  * @hotkey LAlt + {A}
  * @target デフォルト
  */
-LAlt & a::Send, {!}
+LAlt & a::Send "{!}"
 /**
  * (
  *
  * @hotkey LAlt + {S}
  * @target デフォルト
  */
-LAlt & s::Send, {(}
+LAlt & s::Send "{(}"
 /**
  * )
  *
  * @hotkey LAlt + {D}
  * @target デフォルト
  */
-LAlt & d::Send, {)}
+LAlt & d::Send "{)}"
 /**
  * =
  *
  * @hotkey LAlt + {F}
  * @target デフォルト
  */
-LAlt & f::Send, {=}
+LAlt & f::Send "{=}"
 
 /**
  * |
@@ -547,28 +546,28 @@ LAlt & f::Send, {=}
  * @hotkey LAlt + {Q}
  * @target デフォルト
  */
-LAlt & q::Send, {|}
+LAlt & q::Send "{|}"
 /**
  * [
  *
  * @hotkey LAlt + {W}
  * @target デフォルト
  */
-LAlt & w::Send, {[}
+LAlt & w::Send "{[}"
 /**
  * ]
  *
  * @hotkey LAlt + {E}
  * @target デフォルト
  */
-LAlt & e::Send, {]}
+LAlt & e::Send "{]}"
 /**
  * &
  *
  * @hotkey LAlt + {R}
  * @target デフォルト
  */
-LAlt & r::Send, {&}
+LAlt & r::Send "{&}"
 
 /**
  * script のリロード
@@ -585,500 +584,292 @@ LAlt & vk1D::Reload
  * @hotkey Ctrl + Space
  * @target デフォルト
  */
-^Space::Send, {F10}
+^Space::Send "{F10}"
 /**
  * エスケープ
  *
  * @hotkey Ctrl + [
  * @target デフォルト
  */
-^[::Send, {Esc}
+^[::Send "{Esc}"
 
 ;---------- アプリごとのショートカット ----------
 ;Slack
-#IfWinActive,ahk_exe slack.exe
+#HotIf WinActive("ahk_exe slack.exe")
 
-/**
- * ワークスペースの切り替え(下)
- *
- * @hotkey 変換 + {H}
- * @target Slack
- */
-vk1C & h::Send, ^{Tab}
-/**
- * チャンネルの切り替え(下)
- *
- * @hotkey 変換 + {J}
- * @target Slack
- */
-vk1C & j::Send, !+{Down}
-/**
- * チャンネルの切り替え(上)
- *
- * @hotkey 変換 + {K}
- * @target Slack
- */
-vk1C & k::Send, !+{Up}
-/**
- * ワークスペースの切り替え(上)
- *
- * @hotkey 変換 + {L}
- * @target Slack
- */
-vk1C & l::Send, ^+{Tab}
-/**
- * ブックマークを開く
- *
- * @hotkey 変換 + {B}
- * @target Slack
- */
-vk1C & b::Send, ^+{S}
-/**
- * チャンネルをブラウズする
- *
- * @hotkey 変換 + {F}
- * @target Slack
- */
-vk1C & f::Send, ^+{L}
-
-#IfWinActive
+  /**
+  * ワークスペースの切り替え(下)
+  *
+  * @hotkey 変換 + {H}
+  * @target Slack
+  */
+  vk1C & h::Send "^{Tab}"
+  /**
+  * チャンネルの切り替え(下)
+  *
+  * @hotkey 変換 + {J}
+  * @target Slack
+  */
+  vk1C & j::Send "!+{Down}"
+  /**
+  * チャンネルの切り替え(上)
+  *
+  * @hotkey 変換 + {K}
+  * @target Slack
+  */
+  vk1C & k::Send "!+{Up}"
+  /**
+  * ワークスペースの切り替え(上)
+  *
+  * @hotkey 変換 + {L}
+  * @target Slack
+  */
+  vk1C & l::Send "^+{Tab}"
+  /**
+  * ブックマークを開く
+  *
+  * @hotkey 変換 + {B}
+  * @target Slack
+  */
+  vk1C & b::Send "^+{S}"
+  /**
+  * チャンネルをブラウズする
+  *
+  * @hotkey 変換 + {F}
+  * @target Slack
+  */
+  vk1C & f::Send "^+{L}"
+#HotIf
 
 ;エクスプローラ
-#IfWinActive,ahk_exe Explorer.EXE
+#HotIf WinActive("ahk_exe Explorer.EXE")
+  /**
+  * アドレスバーにフォーカス
+  *
+  * @hotkey Ctrl + {L}
+  * @target エクスプローラ
+  */
+  ^L::Send "^{E}"
 
-/**
- * アドレスバーにフォーカス
- *
- * @hotkey Ctrl + {L}
- * @target エクスプローラ
- */
-^L::Send, ^{E}
+  /**
+  * 親フォルダを開く
+  *
+  * @hotkey 変換 + {J}
+  * @target エクスプローラ
+  */
+  vk1C & J::Send "!{Up}"
+#HotIf
 
-/**
- * 親フォルダを開く
- *
- * @hotkey 変換 + {J}
- * @target エクスプローラ
- */
-vk1C & J::Send, !{Up}
-
-#IfWinActive
 
 ;VSCode
-#IfWinActive,ahk_exe Code.exe
+#HotIf WinActive("ahk_exe Code.exe")
+  ;---------- 無変換キー ----------
 
+  /**
+  * コードを折りたたみ
+  *
+  * @hotkey 無変換+{W}
+  * @target VSCode
+  */
+  vk1D & W::Send "{Blind}^+{vkDB}"
 
-;---------- 無変換キー ----------
+  /**
+  * コードを展開
+  *
+  * @hotkey 無変換+{T}
+  * @target VSCode
+  */
+  vk1D & T::Send "{Blind}^+{vkDD}"
 
+  /**
+  * マルチカーソル(下)
+  *
+  * @hotkey 無変換+{M}
+  * @target VSCode
+  */
+  vk1D & M::Send "{Blind}!^{Down}"
+  /**
+  * マルチカーソル(上)
+  *
+  * @hotkey 無変換+{,}
+  * @target VSCode
+  */
+  vk1D & ,::Send "{Blind}!^{Up}"
+  /**
+  * ファイル選択
+  *
+  * @hotkey 無変換+{E}
+  * @target VSCode
+  */
+  vk1D & E::Send "{Blind}^{e}"
 
-/**
- * コードを折りたたみ
- *
- * @hotkey 無変換+{W}
- * @target VSCode
- */
-vk1D & W::Send, {Blind}^+{[}
+  /**
+  * スマート選択
+  *
+  * @hotkey 無変換+{D}
+  * @target VSCode
+  */
+  vk1D & D::Send "{Blind}^{d}"
+  /**
+  * jumpy起動
+  *
+  * @hotkey 無変換+{G}
+  * @target VSCode
+  */
+  vk1D & G::Send "{Blind}^{g}"
 
-/**
- * コードを展開
- *
- * @hotkey 無変換+{T}
- * @target VSCode
- */
-vk1D & T::Send, {Blind}^+{]}
+  /**
+  * リネーム
+  *
+  * @hotkey 無変換+{R}
+  * @target VSCode
+  */
+  vk1D & R:: {
+    Send "^{0}"
+    Send "{Blind}{F2}"
+  }
 
-/**
- * マルチカーソル(下)
- *
- * @hotkey 無変換+{M}
- * @target VSCode
- */
-vk1D & M::Send,{Blind}!^{Down}
-/**
- * マルチカーソル(上)
- *
- * @hotkey 無変換+{,}
- * @target VSCode
- */
-vk1D & ,::Send,{Blind}!^{Up}
-/**
- * ファイル選択
- *
- * @hotkey 無変換+{E}
- * @target VSCode
- */
-vk1D & E::Send, {Blind}^{e}
+  /**
+  * ターミナルにフォーカス
+  *
+  * @hotkey 無変換+{Enter}
+  * @target VSCode
+  */
+  vk1D & Enter::Send "^+{Enter}"
+  ;---------- 変換キー ----------
 
-/**
- * スマート選択
- *
- * @hotkey 無変換+{D}
- * @target VSCode
- */
-vk1D & D::Send, {Blind}^{d}
-/**
- * jumpy起動
- *
- * @hotkey 無変換+{G}
- * @target VSCode
- */
-vk1D & G::Send, {Blind}^{g}
+  /**
+  * 新規ファイル追加
+  *
+  * @hotkey 変換+{T}
+  * @target VSCode
+  */
+  vk1C & T::Send "^{n}"
+  /**
+  * アンドゥ
+  *
+  * @hotkey 変換+{H}
+  * @target VSCode
+  */
+  vk1C & H::Send "^{z}"
+  /**
+  * リドゥ
+  *
+  * @hotkey 変換+{L}
+  * @target VSCode
+  */
+  vk1C & L::Send "^+{z}"
+  /**
+  * タブ切り替え
+  *
+  * @hotkey 変換+{K}
+  * @target VSCode
+  */
+  vk1C & K:: {
+    SetKeyDelay -1
+    Send "{Blind}{LCtrl Down}"
+    Send "{Tab}"
+  }
 
-/**
- * リネーム
- *
- * @hotkey 無変換+{R}
- * @target VSCode
- */
-vk1D & R::
-Send, ^{0}
-Send, {Blind}{F2}
-Return
+  vk1C up:: {
+    SetKeyDelay -1
+    Send "{Blind}{LCtrl Up}"
+  }
 
-/**
- * ターミナルにフォーカス
- *
- * @hotkey 無変換+{Enter}
- * @target VSCode
- */
-vk1D & Enter::Send, ^+{Enter}
-;---------- 変換キー ----------
+  ;---------- LAltキー ----------
+  /**
+  * フォーカス移動(左)
+  *
+  * @hotkey LAlt + {H}
+  * @target VSCode
+  */
+  LAlt & h::Send "!{h}"
+  /**
+  * フォーカス移動(下)
+  *
+  * @hotkey LAlt + {J}
+  * @target VSCode
+  */
+  LAlt & j::Send "!{j}"
+  /**
+  * フォーカス移動(上)
+  *
+  * @hotkey LAlt + {K}
+  * @target VSCode
+  */
+  LAlt & k::Send "!{k}"
+  /**
+  * フォーカス移動(右)
+  *
+  * @hotkey LAlt + {L}
+  * @target VSCode
+  */
+  LAlt & l::Send "!{l}"
 
-/**
- * 新規ファイル追加
- *
- * @hotkey 変換+{T}
- * @target VSCode
- */
-vk1C & T::Send, ^{n}
-/**
- * アンドゥ
- *
- * @hotkey 変換+{H}
- * @target VSCode
- */
-vk1C & H::Send, ^{z}
-/**
- * リドゥ
- *
- * @hotkey 変換+{L}
- * @target VSCode
- */
-vk1C & L::Send, ^+{z}
-/**
- * タブ切り替え
- *
- * @hotkey 変換+{K}
- * @target VSCode
- */
-vk1C & K::
-SetKeyDelay -1
-Send {Blind}{LCtrl Down}
-Send, {Tab}
-Return
-
-vk1C up::
-SetKeyDelay -1
-Send {Blind}{LCtrl Up}
-Return
-
-;---------- LAltキー ----------
-/**
- * フォーカス移動(左)
- *
- * @hotkey LAlt + {H}
- * @target VSCode
- */
-LAlt & h::Send, !{h}
-/**
- * フォーカス移動(下)
- *
- * @hotkey LAlt + {J}
- * @target VSCode
- */
-LAlt & j::Send, !{j}
-/**
- * フォーカス移動(上)
- *
- * @hotkey LAlt + {K}
- * @target VSCode
- */
-LAlt & k::Send, !{k}
-/**
- * フォーカス移動(右)
- *
- * @hotkey LAlt + {L}
- * @target VSCode
- */
-LAlt & l::Send, !{l}
-
-/**
- * エディタグループ移動[デフォルト]
- *
- * @hotkey Ctrl+{1,2,3...}
- * @target VSCode
- */
-#IfWinActive
-
+  /**
+  * エディタグループ移動[デフォルト]
+  *
+  * @hotkey Ctrl+{1,2,3...}
+  * @target VSCode
+  */
+#HotIf
 
 ;Kindle
-#IfWinActive,ahk_exe Kindle.exe
-
-/**
- * 位置Noに移動
- *
- * @hotkey 変換+{F}
- * @target Kindle
- */
-vk1C & f::Send, ^{g}
-/**
- * 前のページ
- *
- * @hotkey 変換+{H}
- * @target Kindle
- */
-vk1C & h::Send, {Blind}{Up}
-/**
- * 目次を開く
- *
- * @hotkey 変換+{J}
- * @target Kindle
- */
-vk1C & j::Send, ^{l}
-/**
- * フルスクリーン
- *
- * @hotkey 変換+{K}
- * @target Kindle
- */
-vk1C & k::Send, {F11}
-/**
- * 次のページ
- *
- * @hotkey 変換+{L}
- * @target Kindle
- */
-vk1C & l::Send, {Blind}{Down}
-
-#IfWinActive
-
+#HotIf WinActive("ahk_exe Kindle.exe")
+  /**
+  * 位置Noに移動
+  *
+  * @hotkey 変換+{F}
+  * @target Kindle
+  */
+  vk1C & f::Send "^{g}"
+  /**
+  * 前のページ
+  *
+  * @hotkey 変換+{H}
+  * @target Kindle
+  */
+  vk1C & h::Send "{Blind}{Up}"
+  /**
+  * 目次を開く
+  *
+  * @hotkey 変換+{J}
+  * @target Kindle
+  */
+  vk1C & j::Send "^{l}"
+  /**
+  * フルスクリーン
+  *
+  * @hotkey 変換+{K}
+  * @target Kindle
+  */
+  vk1C & k::Send "{F11}"
+  /**
+  * 次のページ
+  *
+  * @hotkey 変換+{L}
+  * @target Kindle
+  */
+  vk1C & l::Send "{Blind}{Down}"
+#HotIf
 
 ;Windows Terminal
-#IfWinActive,ahk_exe WindowsTerminal.exe
-
-/**
- * シェルを選んでタブを開く
- *
- * @hotkey 変換+{T}
- * @target WindowsTerminal
- */
-vk1C & t::Send, ^+{Space}
-/**
- * タブを閉じる
- *
- * @hotkey 変換+{W}
- * @target WindowsTerminal
- */
-vk1C & w::Send, ^+{w}
-
-#IfWinActive
-
-
-/**
- * AutoHotkey設定一覧を表示する。
- */
-HotkeyHelp()
-{
-    ;GUIの値格納変数
-    Static sTab
-    Static sHotkeyTree
-    Static sHotkeyList
-
-    ;GUIのウィンドウハンドル
-    Static sHwndTab
-    Static sHwndHotkeyTree
-    Static sHwndHotkeyList
-
-    ;ホットキーヘルプのGUIを作成
-    Gui, HotkeyHelp:New, , AutoHotkey設定一覧
-
-    ;タブを追加
-    Gui, HotkeyHelp:Add, Tab2, HwndsHwndTab VsTab W700 H400, ホットキー
-
-    ;1つ目のタブを選択
-    Gui, Tab, 1
-
-    ;1つ目のタブにツリービューを追加
-    Gui, HotkeyHelp:Add, TreeView, HwndsHwndHotkeyTree VsHotkeyTree GSelectTree W120 H360,
-    TV_Add("全てのホットキー", 0, "Expand")
-
-    ;1つ目のタブにリストビューを追加
-    Gui, HotkeyHelp:Add, ListView, HwndsHwndHotkeyList VsHotkeyList X+5 W550 H360 Grid ReadOnly, 対象|説明|ホットキー|
-
-    ;リストビューの項目幅を設定
-    LV_ModifyCol(1, 100)
-    LV_ModifyCol(2, 145)
-    LV_ModifyCol(3, 90)
-    LV_ModifyCol(4, 350)
-
-    ;GUIの表示
-    Gui, HotkeyHelp:Show
-
-    /**
-    * ツリーアイテム選択時の動作。
-    */
-    SelectTree:
-        ;シングルクリックの場合のみリストビューを更新
-        If (A_GuiEvent == "S")
-        {
-            ;選択中のタブを取得
-            GuiControlGet, vCurrentTab, , %sHwndTab%,
-
-            If (vCurrentTab == "ホットキー")
-            {
-                ;ホットキータブの場合、ホットキーのツリービューとリストビューを選択
-                Gui, TreeView, %sHwndHotkeyTree%
-                Gui, ListView, %sHwndHotkeyList%
-
-                ;リスト項目を全削除
-                Gui, ListView, %sHwndHotkeyList%
-                LV_Delete()
-            }
-
-            ;先頭のツリーアイテムを取得
-            vTreeTop := TV_GetNext()
-
-            ;選択中のツリーアイテムを取得
-            vCurrentTree := TV_GetSelection()
-
-            ;ドキュメンテーションブロック判定フラグ
-            vIsDoc := False
-
-            ;スクリプトファイル読み込み
-            Loop, Read, %A_ScriptFullPath%
-            {
-                If (ErrorLevel)
-                {
-                    ;エラーの場合はバルーンメッセージを表示して終了
-                    TrayTip, AutoHotkey, スクリプトファイル読み込みでエラーが発生しました。`r`n%A_Index%行目 %ErrorLevel%, 1, 18
-                    Break
-                }
-
-                If (A_LoopReadLine == "/**") {
-                    ;ドキュメンテーション開始(/**)
-                    vIsDoc := True
-
-                    ;変数を初期化
-                    vCommand := ""
-                    vHotkey := ""
-                    vHotstr := ""
-                    vTarget := ""
-                    vCondition := ""
-                    vDesc := ""
-
-                    Continue
-                }
-
-                If (vIsDoc) {
-                    ;ドキュメンテーションブロックの場合のみ読み込み
-                    If (RegExMatch(A_LoopReadLine, "^\s\*[\s|\t]*@hotkey[\s|\t]*"))
-                    {
-                        ;ホットキーコメント( * @hotkey)
-                        RegExMatch(A_LoopReadLine, "(?<=@hotkey[\s|\t]).*$", vCommand)
-                        vCommand := Trim(vCommand)
-
-                        ;ホットキーコメントが複数あった場合、改行で区切って格納
-                        vHotkey := vHotkey == "" ? vCommand : vHotkey . "`r`n" . vCommand
-                    }
-                    Else If (RegExMatch(A_LoopReadLine, "\s\*[\s|\t]*@target[\s|\t]*"))
-                    {
-                        ;対象コメント( * @target)
-                        RegExMatch(A_LoopReadLine, "(?<=@target[\s|\t]).*$", vTarget)
-                        vTarget := Trim(vTarget)
-                    }
-                    Else If (RegExMatch(A_LoopReadLine, "\s\*[\s|\t]*@.+[\s|\t]*"))
-                    {
-                        ;上記以外のドキュメンテーションタグは読み飛ばす( * @hogehoge)
-                        Continue
-                    }
-                    Else
-                    {
-                        ;それ以外はディスクリプションコメント( * )
-                        RegExMatch(A_LoopReadLine, "(?<=\*[\s|\t]).*$", vText)
-                        If (vText != "")
-                        {
-                            vDesc := vDesc . vText
-                        }
-                    }
-
-                    If (A_LoopReadLine == " */") {
-                        ;ドキュメンテーション終了( */)
-                        vIsDoc := False
-
-                        ;ツリーアイテムを追加
-                        If (vHotkey != "")
-                        {
-                            ;@hotkey行が存在していた場合、ツリービューとリストビューを選択
-                            Gui, TreeView, %sHwndHotkeyTree%
-                            Gui, ListView, %sHwndHotkeyList%
-
-                            ;ツリーの先頭項目を取得
-                            vTreeItemId := TV_GetNext()
-
-                            ;読み込み行のツリーアイテムID
-                            vTargetTreeId := ""
-
-                            ;ツリーの項目数分ループ
-                            Loop, % TV_GetCount()
-                            {
-                                ;ツリーの項目名称を取得
-                                TV_GetText(vTreeText, vTreeItemId)
-                                If (vTreeText == vTarget)
-                                {
-                                    ;ツリーの項目名称に存在した場合、ループ処理を終了
-                                    vTargetTreeId := vTreeItemId
-                                    Break
-                                }
-
-                                ;ツリーの項目名称に存在しない場合、次のツリー項目を取得しループを継続
-                                vTreeItemId := TV_GetNext(vTreeItemId, "Full")
-                            }
-
-                            If (!vTargetTreeId)
-                            {
-                                ;ツリーの項目名称に存在しない場合、ツリーに項目を追加
-                                vTargetTreeId := TV_Add(vTarget, TV_GetNext())
-                            }
-
-                            ;ホットキーをリストビューに追加
-                            Loop, Parse, vHotkey, `r, `n
-                            {
-                                ;ホットキーのツリービューとリストビューを選択
-                                Gui, TreeView, %sHwndHotkeyTree%
-                                Gui, ListView, %sHwndHotkeyList%
-
-                                If (vCurrentTree == vTreeTop || vCurrentTree == vTargetTreeId)
-                                {
-                                    ;ツリートップ選択中または読み込み行が選択中のツリーアイテムIDと一致する場合、リストビューに追加
-                                    vListItemId := LV_Add("Col1", vTarget, vDesc, A_LoopField)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    Return
-
-    /**
-    * [Esc][閉じる]ボタンクリック時の動作。
-    */
-    HotkeyHelpGuiEscape:
-    HotkeyHelpGuiClose:
-        ;GUIウィンドウを破棄
-        Gui, HotkeyHelp:Destroy
-    Return
-}
+#HotIf WinActive("ahk_exe WindowsTerminal.exe")
+  /**
+  * シェルを選んでタブを開く
+  *
+  * @hotkey 変換+{T}
+  * @target WindowsTerminal
+  */
+  vk1C & t::Send "^+{Space}"
+  /**
+  * タブを閉じる
+  *
+  * @hotkey 変換+{W}
+  * @target WindowsTerminal
+  */
+  vk1C & w::Send "^+{w}"
+#HotIf
 
 /**
  * 設定されたホットキー/ホットストリングを一覧表示
@@ -1086,13 +877,113 @@ HotkeyHelp()
  * @hotkey 無変換+{P}
  * @target デフォルト
  */
-vk1D & P::
-    IfWinNotExist, AutoHotkey設定一覧
-    {
-        HotkeyHelp()
+vk1D & P:: {
+  If not WinExist("AutoHotkey設定一覧") {
+    HotKeyHelpGui()
+  }
+  Else {
+    WinActivate
+  }
+}
+
+class HotKeyHelpGui {
+  __New() {
+    this.Gui := Gui("","AutoHotkey設定一覧",this)
+    this.Tab := this.Gui.Add("Tab3", "VsTab W700 H400", ["ホットキー"])
+    this.Tab.UseTab(1)
+    this.TreeView := this.Gui.Add("TreeView","W120 H360")
+    this.TreeView.Add("全てのホットキー", 0, "Expand")
+    this.ListView := this.Gui.Add("ListView", "X+5 W550 H360 Grid ReadOnly", ["対象","説明","ホットキー"])
+    this.ListView.ModifyCol(1, 100)
+    this.ListView.ModifyCol(2, 350)
+    this.ListView.ModifyCol(3, 145)
+    this.Gui.Show()
+
+    this.TreeView.OnEvent("ItemSelect", "__TreeViewSelected")
+    this.TreeView.OnEvent("Focus", "__TreeViewSelected")
+    this.Gui.OnEvent("Escape", "__Destroy")
+    this.Gui.OnEvent("Close", "__Destroy")
+    this.__TreeViewSelected()
+  }
+  __Destroy(*) {
+    this.Gui.Destroy()
+  }
+
+  __TreeViewSelected(*) {
+    this.ListView.Delete()
+    ;ドキュメンテーションブロック判定フラグ
+    vIsDoc := False
+    Loop Read A_ScriptFullPath {
+      If (RegExMatch(A_LoopReadLine, "^[\s|\t]*/\*\*[\s|\t]*")) {
+        ;ドキュメンテーション開始(/**)
+        vIsDoc := True
+
+        ;変数を初期化
+        vCommand := ""
+        vHotkey := ""
+        vTarget := ""
+        vDesc := ""
+
+        Continue
+      }
+      If (not vIsDoc) {
+        Continue
+      }
+      ;ドキュメンテーションブロックの場合のみ読み込み
+      If (RegExMatch(A_LoopReadLine, "\*[\s|\t]*@hotkey[\s|\t]*")) {
+        ;ホットキーコメント( * @hotkey)
+        If RegExMatch(A_LoopReadLine, "(?<=@hotkey[\s|\t]).*$", &vCommand) {
+          vCommand := Trim(vCommand[0])
+        }
+
+        ;ホットキーコメントが複数あった場合、改行で区切って格納
+        vHotkey := vHotkey == "" ? vCommand : vHotkey . "`r`n" . vCommand
+      }
+      Else If (RegExMatch(A_LoopReadLine, "\*[\s|\t]*@target[\s|\t]*")) {
+        ;対象コメント( * @target)
+        If RegExMatch(A_LoopReadLine, "(?<=@target[\s|\t]).*$", &vTarget) {
+          vTarget := Trim(vTarget[0])
+        }
+      }
+      Else If (RegExMatch(A_LoopReadLine, "\*[\s|\t]*@.+[\s|\t]*")) {
+        ;上記以外のドキュメンテーションタグは読み飛ばす( * @hogehoge)
+        Continue
+      }
+      Else {
+        ;それ以外はディスクリプションコメント( * )
+        pos := RegExMatch(A_LoopReadLine, "(?<=\*[\s|\t]).*$", &vText)
+        vDesc := pos == 0 ? vDesc : vDesc . "`r`n" . vText[0]
+      }
+      If (RegExMatch(A_LoopReadLine, "^[\s|\t]*\*/[\s|\t]*")) {
+        ;ドキュメンテーション終了( */)
+        vIsDoc := False
+        ItemId := this.TreeView.GetNext()
+        vTargetTreeId := ""
+        Loop this.TreeView.GetCount() {
+          ItemText := this.TreeView.GetText(ItemId)
+          If (ItemText == vTarget) {
+            ;ツリーの項目名称に存在した場合、ループ処理を終了
+            vTargetTreeId := ItemId
+            Break
+          }
+          ItemId := this.TreeView.GetNext(ItemId, "Full")
+        }
+        If (vTargetTreeId == "") {
+          ;ツリーの項目名称に存在しない場合、ツリーに項目を追加
+          vTargetTreeId := this.TreeView.Add(vTarget, this.TreeView.GetNext())
+        }
+
+        vCurrentTree := this.TreeView.GetSelection()
+        Loop Parse, vHotkey, "`r", "`n" {
+          If (this.TreeView.GetText(vCurrentTree) == "全てのホットキー" || vCurrentTree == vTargetTreeId) {
+            ;"全てのホットキー"選択中または読み込み対象が選択中のターゲットと一致する場合、リストビューに追加
+            this.ListView.Add("Col1", vTarget, vDesc, A_LoopField)
+          }
+        }
+      }
     }
-    Else
-    {
-        WinActivate
+    Else {
+      MsgBox "スクリプトファイル読み込みでエラーが発生しました。" A_Index "行目"
     }
-Return
+  }
+}

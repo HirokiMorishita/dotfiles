@@ -6,17 +6,17 @@
         {
             "command": 
             {
-                "action": "nextTab"
-            },
-            "keys": "ctrl+tab"
-        },
-        {
-            "command": 
-            {
                 "action": "switchToTab",
                 "index": 2
             },
             "keys": "alt+3"
+        },
+        {
+            "command": 
+            {
+                "action": "nextTab"
+            },
+            "keys": "ctrl+tab"
         },
         {
             "command": 
@@ -35,11 +35,10 @@
         {
             "command": 
             {
-                "action": "splitPane",
-                "split": "down",
-                "splitMode": "duplicate"
+                "action": "switchToTab",
+                "index": 4
             },
-            "keys": "alt+minus"
+            "keys": "alt+5"
         },
         {
             "command": 
@@ -52,10 +51,11 @@
         {
             "command": 
             {
-                "action": "switchToTab",
-                "index": 4
+                "action": "splitPane",
+                "split": "down",
+                "splitMode": "duplicate"
             },
-            "keys": "alt+5"
+            "keys": "alt+minus"
         },
         {
             "command": 
@@ -64,6 +64,10 @@
                 "index": 1
             },
             "keys": "alt+2"
+        },
+        {
+            "command": "scrollUpPage",
+            "keys": "shift+pgup"
         },
         {
             "command": 
@@ -146,10 +150,6 @@
             "keys": "alt+shift+\\"
         },
         {
-            "command": "scrollUpPage",
-            "keys": "shift+pgup"
-        },
-        {
             "command": "scrollDownPage",
             "keys": "shift+pgdn"
         },
@@ -177,12 +177,17 @@
     "launchMode": "maximized",
     "profiles": 
     {
-        "defaults": {},
+        "defaults": 
+        {
+            "bellStyle": "none",
+            "font": 
+            {
+                "face": "Fira Code"
+            }
+        },
         "list": 
         [
             {
-                "backgroundImage": null,
-                "cursorShape": "filledBox",
                 "font": 
                 {
                     "face": "Fira Code"
@@ -201,12 +206,6 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt"
-            },
-            {
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": false,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
             },
             {
                 "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",

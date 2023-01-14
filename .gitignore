@@ -1,4 +1,4 @@
 *.code-workspace
 .gitconfig.local
 .gitconfig.identity.*
-!.gitconfig.identity.default
+!.gitconfig.identity.personal

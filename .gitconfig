@@ -41,10 +41,6 @@
   prune = true
 [user]
   useConfigOnly = true
-[includeif "gitdir:~/src/github.com/"]
-  path = ~/.gitconfig.identity.default
-[includeif "gitdir:~/.dotfiles/"]
-  path = ~/.gitconfig.identity.default
 [pull]
   rebase = false
 [push]
@@ -55,4 +51,5 @@
   defaultBranch = main
 [include]
   path = ~/.gitconfig.local
+  path = ~/.gitconfig.identity
   path = ~/.gitconfig.pager

@@ -1,7 +1,7 @@
 // 既定値を上書きするには、このファイル内にキー バインドを挿入します
 [
   {
-    "key": "ctrl+n",
+    "key": "ctrl+t",
     "command": "explorer.newFile"
   },
   {
@@ -25,22 +25,30 @@
     "command": "workbench.action.navigateDown"
   },
   {
-    "key": "ctrl+shift+j",
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditorInGroup"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.previousEditorInGroup"
+  },
+  {
+    "key": "ctrl+tab",
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+shift+k",
+    "key": "ctrl+shift+tab",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+shift+t",
+    "key": "ctrl+t",
     "command": "workbench.action.terminal.newInActiveWorkspace",
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+shift+w",
+    "key": "ctrl+w",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
   },
@@ -60,6 +68,11 @@
   },
   {
     "key": "ctrl+g",
+    "command": "extension.jumpy-exit",
+    "when": "editorTextFocus && jumpy.isJumpyMode"
+  },
+  {
+    "key": "escape",
     "command": "extension.jumpy-exit",
     "when": "editorTextFocus && jumpy.isJumpyMode"
   },

@@ -14,9 +14,7 @@ SetWorkingDir A_ScriptDir
 SetTitleMatchMode 2
 SetKeyDelay 20
 
-;---------- 無変換キー ----------
-vk1D::Return
-
+;---------- Ctrl ----------
 /**
  * エスケープ
  *
@@ -24,6 +22,16 @@ vk1D::Return
  * @target デフォルト
  */
 ^vk1D::Send "{Esc}"
+/**
+ * コンテキストメニューを開く
+ *
+ * @hotkey Ctrl+{変換}
+ * @target デフォルト
+ */
+^vk1C::Send "+{F10}"
+
+;---------- 無変換キー ----------
+vk1D::Return
 
 /**
  * カーソルキー(左)
@@ -119,14 +127,14 @@ vk1D & T::Send "{Blind}^{l}"
  * @hotkey 無変換+{A}
  * @target デフォルト
  */
-vk1D & A::Send "{Blind}^{a}"
+vk1D & A::Send "^{a}"
 /**
  * 上書き保存
  *
  * @hotkey 無変換+{S}
  * @target デフォルト
  */
-vk1D & S::Send "{Blind}^{s}"
+vk1D & S::Send "^{s}"
 /**
  * 検索
  *
@@ -141,23 +149,23 @@ vk1D & F::Send "{Blind}^{f}"
  * @hotkey 無変換+{Z}
  * @target デフォルト
  */
-vk1D & Z::Send "{Blind}^{z}"
+vk1D & Z::Send "^{z}"
 /**
  * 切り取り
  *
  * @hotkey 無変換+{X}
  * @target デフォルト
  */
-vk1D & X::Send "{Blind}^{x}"
+vk1D & X::Send "^{x}"
 /**
  * コピー
  *
  * @hotkey 無変換+{C}
  * @target デフォルト
  */
-vk1D & C::Send "{Blind}^{c}"
+vk1D & C::Send "^{c}"
 /**
- * 貼り付け
+ * 履歴から貼り付け
  *
  * @hotkey 無変換+{V}
  * @target デフォルト
@@ -184,25 +192,17 @@ vk1D & [::Send "{Esc}"
  * @target デフォルト
  */
 vk1D & Space::Send "{BS}"
+
 /**
- * 半角/全角
+ * リドゥ
  *
  * @hotkey 無変換+変換
  * @target デフォルト
  */
-vk1D & vk1C::Send "{vkF3sc029}"
+vk1D & vk1C::Send "{Blind}^+z"
 
 ;---------- 変換キー ----------
 vk1C::Return
-
-
-/**
- * コンテキストメニューを開く
- *
- * @hotkey Ctrl+{変換}
- * @target デフォルト
- */
-^vk1C::Send "+{F10}"
 
 /**
  * 仮想デスクトップの切り替え(左)
@@ -330,27 +330,27 @@ vk1C & R::Send "{Blind}{F5}"
 vk1C & T::Send "{Blind}^{t}"
 
 /**
- * OCR (powertoys)
+ * Chromeを開く
  *
  * @hotkey 変換+{A}
  * @target デフォルト
  */
-vk1C & A::Send "#+{T}"
+vk1C & A::Run "C:\Program Files\Google\Chrome\Application\chrome.exe"
 
 /**
- * スクリーンショットをとる
+ * Slackを開く
  *
  * @hotkey 変換+{S}
  * @target デフォルト
  */
-vk1C & S::Send "#+{S}"
+vk1C & S::Run "C:\Users\" . A_UserName . "\AppData\Local\slack\slack.exe"
 /**
- * カラーピッカー(powertoys)
+ * VSCodeを開く
  *
  * @hotkey 変換+{D}
  * @target デフォルト
  */
-vk1C & D::Send "#+{C}"
+vk1C & D::Run "C:\Users\" . A_UserName . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 /**
  * 置換
  *
@@ -360,12 +360,12 @@ vk1C & D::Send "#+{C}"
 vk1C & F::Send "{Blind}^{h}"
 
 /**
- * ピクセル測定(powertoys)
+ * ターミナルを開く
  *
  * @hotkey 変換+{G}
  * @target デフォルト
  */
-vk1C & G::Send "#+{M}"
+vk1C & G::Run "wt.exe"
 /**
  * 仮想デスクトップ切り替え(左)
  *
@@ -473,101 +473,65 @@ vk1C & 0::Send "#!{0}"
  * @target デフォルト
  */
 vk1C & Space::Send "{Delete}"
+
+/**
+ * アンドゥ
+ *
+ * @hotkey 変換+無変換
+ * @target デフォルト
+ */
+vk1C & vk1D::Send "{Blind}^z"
+/**
+ * 半角/全角
+ *
+ * @hotkey 変換 + {LAlt}
+ * @target デフォルト
+ */
+vk1C & LAlt::Send "{vkF3sc029}"
 ;---------- LAlt ----------
+/**
+ * OCR (powertoys)
+ *
+ * @hotkey LAlt+{A}
+ * @target デフォルト
+ */
+LAlt & A::Send "#+{T}"
+/**
+ * スクリーンショットをとる
+ *
+ * @hotkey LAlt+{S}
+ * @target デフォルト
+ */
+LAlt & S::Send "#+{S}"
+/**
+ * 検索
+ *
+ * @hotkey LAlt+{F}
+ * @target デフォルト
+ */
+LAlt & F::Send "{Blind}!{Space}"
 
 /**
- * /
+ * ウィンドウのピン止め
  *
- * @hotkey LAlt + {Z}
+ * @hotkey LAlt+{Z}
  * @target デフォルト
  */
-LAlt & z::Send "{/}"
+LAlt & Z::Send "#^{t}"
 /**
- * -
+ * ピクセル測定(powertoys)
  *
- * @hotkey LAlt + {X}
+ * @hotkey LAlt+{X}
  * @target デフォルト
  */
-LAlt & x::Send "{-}"
+LAlt & X::Send "#+{m}"
 /**
- * +
+ * カラーピッカー(powertoys)
  *
- * @hotkey LAlt + {C}
+ * @hotkey LAlt+{C}
  * @target デフォルト
  */
-LAlt & c::Send "{+}"
-/**
- * *
- *
- * @hotkey LAlt + {V}
- * @target デフォルト
- */
-LAlt & v::Send "{*}"
-/**
- * %
- *
- * @hotkey LAlt + {B}
- * @target デフォルト
- */
-LAlt & b::Send "{`%}"
-
-/**
- * !
- *
- * @hotkey LAlt + {A}
- * @target デフォルト
- */
-LAlt & a::Send "{!}"
-/**
- * (
- *
- * @hotkey LAlt + {S}
- * @target デフォルト
- */
-LAlt & s::Send "{(}"
-/**
- * )
- *
- * @hotkey LAlt + {D}
- * @target デフォルト
- */
-LAlt & d::Send "{)}"
-/**
- * =
- *
- * @hotkey LAlt + {F}
- * @target デフォルト
- */
-LAlt & f::Send "{=}"
-
-/**
- * |
- *
- * @hotkey LAlt + {Q}
- * @target デフォルト
- */
-LAlt & q::Send "{|}"
-/**
- * [
- *
- * @hotkey LAlt + {W}
- * @target デフォルト
- */
-LAlt & w::Send "{[}"
-/**
- * ]
- *
- * @hotkey LAlt + {E}
- * @target デフォルト
- */
-LAlt & e::Send "{]}"
-/**
- * &
- *
- * @hotkey LAlt + {R}
- * @target デフォルト
- */
-LAlt & r::Send "{&}"
+LAlt & C::Send "#+{c}"
 
 /**
  * script のリロード
@@ -576,6 +540,14 @@ LAlt & r::Send "{&}"
  * @target デフォルト
  */
 LAlt & vk1D::Reload
+
+/**
+ * 半角/全角
+ *
+ * @hotkey LAlt + 変換
+ * @target デフォルト
+ */
+LAlt & vk1C::Send "{vkF3sc029}"
 ;---------- Ctrl ----------
 
 /**
@@ -664,6 +636,13 @@ LAlt & vk1D::Reload
 ;VSCode
 #HotIf WinActive("ahk_exe Code.exe")
   ;---------- 無変換キー ----------
+  /**
+  * 最近開いたフォルダを開く
+  *
+  * @hotkey 無変換+{Q}
+  * @target VSCode
+  */
+  vk1D & Q::Send "{Blind}^{r}"
 
   /**
   * コードを折りたたみ
@@ -671,7 +650,7 @@ LAlt & vk1D::Reload
   * @hotkey 無変換+{W}
   * @target VSCode
   */
-  vk1D & W::Send "{Blind}^+{vkDB}"
+  vk1D & W::Send "{Blind}^+{[}"
 
   /**
   * コードを展開
@@ -679,7 +658,7 @@ LAlt & vk1D::Reload
   * @hotkey 無変換+{T}
   * @target VSCode
   */
-  vk1D & T::Send "{Blind}^+{vkDD}"
+  vk1D & T::Send "{Blind}^+{]}"
 
   /**
   * マルチカーソル(下)
@@ -739,13 +718,6 @@ LAlt & vk1D::Reload
   ;---------- 変換キー ----------
 
   /**
-  * 新規ファイル追加
-  *
-  * @hotkey 変換+{T}
-  * @target VSCode
-  */
-  vk1C & T::Send "^{n}"
-  /**
   * アンドゥ
   *
   * @hotkey 変換+{H}
@@ -760,21 +732,19 @@ LAlt & vk1D::Reload
   */
   vk1C & L::Send "^+{z}"
   /**
-  * タブ切り替え
+  * タブ切り替え(←)
+  *
+  * @hotkey 変換+{J}
+  * @target VSCode
+  */
+  vk1C & J::Send "{Blind}^+{Tab}"
+  /**
+  * タブ切り替え(→)
   *
   * @hotkey 変換+{K}
   * @target VSCode
   */
-  vk1C & K:: {
-    SetKeyDelay -1
-    Send "{Blind}{LCtrl Down}"
-    Send "{Tab}"
-  }
-
-  vk1C up:: {
-    SetKeyDelay -1
-    Send "{Blind}{LCtrl Up}"
-  }
+  vk1C & K::Send "{Blind}^{Tab}"
 
   ;---------- LAltキー ----------
   /**

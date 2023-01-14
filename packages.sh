@@ -24,6 +24,7 @@ utils=(
   "wget"
   "fzf"
   "make"
+  "expect"
 )
 utils_arch=(
   "${utils[@]}"

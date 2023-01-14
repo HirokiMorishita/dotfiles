@@ -32,7 +32,7 @@ _cli_dep_install() {
   )
   sudo apt update
   sudo apt upgrade
-  sudo apt install $(IFS=' '; echo "${clidep[*]}")
+  sudo apt install $(IFS=' '; echo "${clidep[*]}") -y
 
   if !(type brew > /dev/null 2>&1); then
     echo "install brew"
@@ -68,7 +68,7 @@ _cli_settings() {
   ln -sf $DOTFILES/.editorconfig $HOME
 
   ln -sf $DOTFILES/.gitconfig $HOME
-  ln -sf $DOTFILES/.gitconfig.identity.default $HOME
+  ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
   ln -sf $DOTFILES/.gitconfig.pager $HOME
   ln -sf $DOTFILES/.gitignore $HOME
   ln -sf $DOTFILES/.gitmessage $HOME

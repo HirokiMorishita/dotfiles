@@ -1,5 +1,7 @@
 # ~/.config/starship.toml
 
+format="$all$custom"
+
 command_timeout = 10000
 
 [battery]
@@ -73,3 +75,9 @@ disabled = false
 [username]
 style_user = "bold dimmed blue"
 show_always = false
+
+[custom.context]
+format = '[$symbol($output)]($style) '
+symbol = ""
+command = "git config --get user.environment"
+when = true

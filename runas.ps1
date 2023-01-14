@@ -59,7 +59,7 @@ New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.editorconfig -Val
 
 # git
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfig -Value $DOTFILES\.gitconfig
-New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfig.identity.default -Value $DOTFILES\.gitconfig.identity.default
+New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfig.identity -Value $DOTFILES\.gitconfig.identity.personal
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitmessage -Value $DOTFILES\.gitmessage
 
 # code
@@ -70,10 +70,9 @@ New-Item -Force -ItemType SymbolicLink -Path $env:APPDATA\Code\User\keybindings.
 New-Item -Force -ItemType SymbolicLink -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json -Value $DOTFILES\.config\WindowsTerminal\LocalState\settings.json
 
 # autohotkey
-# manual install because my ahk script dont follow v2 autohotkey
-# cmd.exe /C 'assoc .ahk=AutoHotKey'
-# cmd.exe /C 'ftype AutoHotKey=%USERPROFILE%\scoop\apps\autohotkey\current\autohotkeyU64.exe %1'
-New-Item -Force -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup/autohotkey.ahk" -Value $DOTFILES\autohotkey.ahk
+cmd.exe /C 'assoc .ahk=AutoHotKey'
+cmd.exe /C 'ftype AutoHotKey=%USERPROFILE%\scoop\apps\autohotkey\current\autohotkeyU64.exe %1'
+New-Item -Force -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\autohotkey.ahk" -Value $DOTFILES\autohotkey.ahk
 
 
 wsl --update

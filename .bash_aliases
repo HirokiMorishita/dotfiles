@@ -126,5 +126,5 @@ use_office_config(){
 }
 
 less_with_unbuffer () {
-    unbuffer "$@" |& less -SR
+  unbuffer "$@" |& less -SR
 }

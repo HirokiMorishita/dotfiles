@@ -23,6 +23,7 @@ alias gc='git commit'
 alias gcm='git commit -m'
 alias gca='git commit --amend'
 alias gcp='git cherry-pick'
+alias gl='git plog'
 
 alias ul='less_with_unbuffer'
 alias nls='exa'

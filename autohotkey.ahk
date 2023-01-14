@@ -30,6 +30,20 @@ SetKeyDelay 20
  */
 ^vk1C::Send "+{F10}"
 
+/**
+ * 半角英数に変換
+ *
+ * @hotkey Ctrl + Space
+ * @target デフォルト
+ */
+^Space::Send "{F10}"
+/**
+ * エスケープ
+ *
+ * @hotkey Ctrl + [
+ * @target デフォルト
+ */
+^[::Send "{Esc}"
 ;---------- 無変換キー ----------
 vk1D::Return
 
@@ -503,13 +517,6 @@ LAlt & A::Send "#+{T}"
  * @target デフォルト
  */
 LAlt & S::Send "#+{S}"
-/**
- * 検索
- *
- * @hotkey LAlt+{F}
- * @target デフォルト
- */
-LAlt & F::Send "{Blind}!{Space}"
 
 /**
  * ウィンドウのピン止め
@@ -548,22 +555,6 @@ LAlt & vk1D::Reload
  * @target デフォルト
  */
 LAlt & vk1C::Send "{vkF3sc029}"
-;---------- Ctrl ----------
-
-/**
- * 半角英数に変換
- *
- * @hotkey Ctrl + Space
- * @target デフォルト
- */
-^Space::Send "{F10}"
-/**
- * エスケープ
- *
- * @hotkey Ctrl + [
- * @target デフォルト
- */
-^[::Send "{Esc}"
 
 ;---------- アプリごとのショートカット ----------
 ;Slack
@@ -651,6 +642,23 @@ LAlt & vk1C::Send "{vkF3sc029}"
   * @target VSCode
   */
   vk1D & W::Send "{Blind}^+{[}"
+  /**
+  * ファイル選択
+  *
+  * @hotkey 無変換+{E}
+  * @target VSCode
+  */
+  vk1D & E::Send "{Blind}^{e}"
+  /**
+  * リネーム
+  *
+  * @hotkey 無変換+{R}
+  * @target VSCode
+  */
+  vk1D & R:: {
+    Send "^{0}"
+    Send "{Blind}{F2}"
+  }
 
   /**
   * コードを展開
@@ -674,13 +682,6 @@ LAlt & vk1C::Send "{vkF3sc029}"
   * @target VSCode
   */
   vk1D & ,::Send "{Blind}!^{Up}"
-  /**
-  * ファイル選択
-  *
-  * @hotkey 無変換+{E}
-  * @target VSCode
-  */
-  vk1D & E::Send "{Blind}^{e}"
 
   /**
   * スマート選択
@@ -696,17 +697,6 @@ LAlt & vk1C::Send "{vkF3sc029}"
   * @target VSCode
   */
   vk1D & G::Send "{Blind}^{g}"
-
-  /**
-  * リネーム
-  *
-  * @hotkey 無変換+{R}
-  * @target VSCode
-  */
-  vk1D & R:: {
-    Send "^{0}"
-    Send "{Blind}{F2}"
-  }
 
   /**
   * ターミナルにフォーカス
@@ -777,11 +767,19 @@ LAlt & vk1C::Send "{vkF3sc029}"
   LAlt & l::Send "!{l}"
 
   /**
-  * エディタグループ移動[デフォルト]
+  * エディタ分割(→)
   *
-  * @hotkey Ctrl+{1,2,3...}
+  * @hotkey LAlt+{F}
   * @target VSCode
   */
+  LAlt & f::Send "^+!{r}"
+  /**
+  * エディタ分割(↓)
+  *
+  * @hotkey LAlt+{D}
+  * @target VSCode
+  */
+  LAlt & d::Send "^+!{d}"
 #HotIf
 
 ;Kindle
@@ -826,6 +824,13 @@ LAlt & vk1C::Send "{vkF3sc029}"
 ;Windows Terminal
 #HotIf WinActive("ahk_exe WindowsTerminal.exe")
   /**
+  * 検索
+  *
+  * @hotkey 無変換+{F}
+  * @target WindowsTerminal
+  */
+  vk1C & f::Send "^+{f}"
+  /**
   * シェルを選んでタブを開く
   *
   * @hotkey 変換+{T}
@@ -839,6 +844,48 @@ LAlt & vk1C::Send "{vkF3sc029}"
   * @target WindowsTerminal
   */
   vk1C & w::Send "^+{w}"
+  /**
+  * フォーカス移動(左)
+  *
+  * @hotkey LAlt + {H}
+  * @target VSCode
+  */
+  LAlt & h::Send "!{Left}"
+  /**
+  * フォーカス移動(下)
+  *
+  * @hotkey LAlt + {J}
+  * @target VSCode
+  */
+  LAlt & j::Send "!{Down}"
+  /**
+  * フォーカス移動(上)
+  *
+  * @hotkey LAlt + {K}
+  * @target VSCode
+  */
+  LAlt & k::Send "!{Up}"
+  /**
+  * フォーカス移動(右)
+  *
+  * @hotkey LAlt + {L}
+  * @target VSCode
+  */
+  LAlt & l::Send "!{Right}"
+  /**
+  * エディタ分割(→)
+  *
+  * @hotkey LAlt+{F}
+  * @target WindowsTerminal
+  */
+  LAlt & f::Send "^+!{r}"
+  /**
+  * エディタ分割(↓)
+  *
+  * @hotkey LAlt+{D}
+  * @target WindowsTerminal
+  */
+  LAlt & d::Send "^+!{d}"
 #HotIf
 
 /**

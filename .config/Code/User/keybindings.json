@@ -85,5 +85,13 @@
     "key": "ctrl+shift+b",
     "command": "editor.action.goToImplementation",
     "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "ctrl+shift+alt+r",
+    "command": "workbench.action.splitEditorRight"
+  },
+  {
+    "key": "ctrl+shift+alt+d",
+    "command": "workbench.action.splitEditorDown"
   }
 ]

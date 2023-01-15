@@ -43,6 +43,7 @@ $PACKAGES = @(
   "ripgrep"
   "firacode"
   "autohotkey"
+  "gh"
 )
 scoop install $UTILS
 scoop bucket add versions
@@ -62,6 +63,7 @@ else {
 }
 
 winget install --id=Microsoft.WindowsTerminal -e
+winget install DevToys
 wsl --install -d ubuntu
 
 # profile

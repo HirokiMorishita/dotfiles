@@ -539,6 +539,13 @@ LAlt & X::Send "#+{m}"
  * @target デフォルト
  */
 LAlt & C::Send "#+{c}"
+/**
+ * DevToys
+ *
+ * @hotkey LAlt+{V}
+ * @target デフォルト
+ */
+LAlt & V::Run "devtoys:"
 
 /**
  * script のリロード
@@ -617,10 +624,17 @@ LAlt & vk1C::Send "{vkF3sc029}"
   /**
   * 親フォルダを開く
   *
-  * @hotkey 変換 + {J}
+  * @hotkey 変換 + {K}
   * @target エクスプローラ
   */
-  vk1C & J::Send "!{Up}"
+  vk1C & k::Send "!{Up}"
+  /**
+  * ナビゲーションに移動
+  *
+  * @hotkey 変換 + {j}
+  * @target エクスプローラ
+  */
+  vk1C & j::Send "^{f}{Tab 2}"
 #HotIf
 
 

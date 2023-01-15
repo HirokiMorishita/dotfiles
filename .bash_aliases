@@ -120,9 +120,11 @@ open() {
 
 use_personal_config(){
   ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
+  ln -sf ~/.config/hub.personal ~/.config/hub
 }
 use_office_config(){
   ln -sf $DOTFILES/.gitconfig.identity.office $HOME/.gitconfig.identity
+  ln -sf ~/.config/hub.office ~/.config/hub
 }
 
 less_with_unbuffer () {

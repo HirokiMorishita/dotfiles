@@ -30,6 +30,7 @@
 [grep]
   lineNumber = true
 [credential]
+  helper = '/mnt/c/Program Files/Git/mingw64/libexec/git-core/git-credential-manager.exe'
   helper = /usr/share/git/credential/libsecret/git-credential-libsecret
   helper = /usr/lib/git-core/git-credential-gnome-keyring
   helper = osxkeychain

@@ -25,7 +25,9 @@ alias gca='git commit --amend'
 alias gcp='git cherry-pick'
 alias gl='git plog'
 
-alias ul='less_with_unbuffer'
+alias spr='start_github_pr_review'
+alias fpr='finish_github_pr_review'
+
 alias nls='exa'
 alias nps='procs'
 alias ncat='bat'
@@ -36,11 +38,14 @@ alias ngrep='rg'
 alias nsed='sd'
 alias nfind='fdfind'
 alias nping='prettyping'
+
 alias fcd='fuzzy_cd'
 alias fgcd='fuzzy_ghq_cd_command'
 alias fgco='fuzzy_git_checkout'
 alias fgcor='fuzzy_git_checkout_remote'
+
 alias open='open'
+alias ul='less_with_unbuffer'
 
 bind -x '"\C-g": fuzzy_ghq_cd_bind'
 bind -x '"\C-a": fuzzy_alias_look_bind'
@@ -129,4 +134,39 @@ use_office_config(){
 
 less_with_unbuffer () {
   unbuffer "$@" |& less -SR
+}
+
+
+start_github_pr_review () {
+    REPOSITORY=${1}
+    BASE_BRANCH=${2}
+    PULL_REQUEST_ID=${3}
+
+    nothing_to_commit=`git status | grep "nothing to commit"`
+    if [ -z "$nothing_to_commit" ] ; then
+        echo "You have something to commit."
+        exit
+    fi
+
+    echo "Starting review."
+​
+    git checkout $BASE_BRANCH
+    git branch -D review/base review/remote review/working
+
+    git fetch $REPOSITORY $BASE_BRANCH:review/base
+    git fetch $REPOSITORY pull/${PULL_REQUEST_ID}/head:review/remote
+
+    git checkout review/base
+    git checkout -b review/working
+
+    git merge --squash review/remote
+}
+
+finish_github_pr_review () {
+    BASE_BRANCH=${1}
+​
+    git reset --hard HEAD
+​
+    git checkout $BASE_BRANCH
+    git branch -D review/base review/remote review/working
 }

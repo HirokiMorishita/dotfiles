@@ -208,12 +208,12 @@ vk1D & [::Send "{Esc}"
 vk1D & Space::Send "{BS}"
 
 /**
- * リドゥ
+ * 半角/全角
  *
  * @hotkey 無変換+変換
  * @target デフォルト
  */
-vk1D & vk1C::Send "{Blind}^+z"
+vk1D & vk1C::Send "{vkF3sc029}"
 
 ;---------- 変換キー ----------
 vk1C::Return
@@ -489,19 +489,12 @@ vk1C & 0::Send "#!{0}"
 vk1C & Space::Send "{Delete}"
 
 /**
- * アンドゥ
+ * 半角/全角
  *
  * @hotkey 変換+無変換
  * @target デフォルト
  */
-vk1C & vk1D::Send "{Blind}^z"
-/**
- * 半角/全角
- *
- * @hotkey 変換 + {LAlt}
- * @target デフォルト
- */
-vk1C & LAlt::Send "{vkF3sc029}"
+vk1C & vk1D::Send "{vkF3sc029}"
 ;---------- LAlt ----------
 /**
  * OCR (powertoys)
@@ -554,14 +547,6 @@ LAlt & V::Run "devtoys:"
  * @target デフォルト
  */
 LAlt & vk1D::Reload
-
-/**
- * 半角/全角
- *
- * @hotkey LAlt + 変換
- * @target デフォルト
- */
-LAlt & vk1C::Send "{vkF3sc029}"
 
 ;---------- アプリごとのショートカット ----------
 ;Slack

@@ -146,11 +146,11 @@ start_github_pr_review () {
     nothing_to_commit=`git status | grep "nothing to commit"`
     if [ -z "$nothing_to_commit" ] ; then
         echo "You have something to commit."
-        exit
+        return
     fi
 
     echo "Starting review."
-​
+
     git checkout $BASE_BRANCH
     git branch -D review/base review/remote review/working
 
@@ -165,9 +165,9 @@ start_github_pr_review () {
 
 finish_github_pr_review () {
     BASE_BRANCH=${1}
-​
+
     git reset --hard HEAD
-​
+
     git checkout $BASE_BRANCH
     git branch -D review/base review/remote review/working
 }

@@ -1,6 +1,6 @@
 
 # dotfiles
-windowsのセットアップを行うdotfiles。
+windowsでのセットアップを行うdotfiles。
 
 ## install
 ### windows
@@ -8,6 +8,7 @@ windowsのセットアップを行うdotfiles。
 git -C $HOME clone git@github.com:HirokiMorishita/dotfiles.git .dotfiles
 powershell -ExecutionPolicy Unrestricted ./make.ps1
 ```
+ctrl2capの反映には再起動が必要
 ### wsl
 ```
 ln -s $(wslpath "$(wslvar USERPROFILE)")/.dotfiles ~/.dotfiles
@@ -18,6 +19,9 @@ cd ~/.dotfiles
 - [Chrome](https://www.google.com/intl/ja_jp/chrome/)
   - [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=ja)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- [VSCode](https://code.visualstudio.com/)
+- [Kindle](https://www.amazon.co.jp/kindle-dbs/fd/kcp)
+- [Slack](https://slack.com/intl/ja-jp/downloads/windows)
 
 ## usage
 ### alias

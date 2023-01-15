@@ -44,11 +44,13 @@ $PACKAGES = @(
   "firacode"
   "autohotkey"
   "gh"
+  "ctrl2cap"
 )
 scoop install $UTILS
 scoop bucket add versions
 scoop bucket add extras
 scoop bucket add nerd-fonts
+scoop bucket add sysinternals
 scoop update *
 scoop install $PACKAGES
 

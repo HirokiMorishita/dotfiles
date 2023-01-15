@@ -79,6 +79,11 @@ Set-Service ssh-agent -StartupType Automatic
 Start-Service ssh-agent
 Get-Service ssh-agent
 
+# ctrl2cap
+Push-Location "$env:USERPROFILE\scoop\apps\ctrl2cap\current"
+ctrl2cap.exe /install
+Pop-Location
+
 wsl --update
 wsl --shutdown
 

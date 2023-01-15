@@ -9,7 +9,7 @@
   sts     = status
   plog    = log --graph --pretty=format:'%C(red)%h %C(green)%an %Creset%s %C(yellow)%d%Creset'
 [core]
-  editor  = code --wait --reuse-window
+  editor = code --wait --reuse-window
   excludesfile  = ~/.gitignore
   autoCRLF = false
   quotepath = false
@@ -29,8 +29,6 @@
   template = ~/.gitmessage
 [grep]
   lineNumber = true
-[credential]
-	helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe
 [fetch]
   prune = true
 [user]

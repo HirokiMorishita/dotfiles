@@ -93,5 +93,19 @@
   {
     "key": "ctrl+shift+alt+d",
     "command": "workbench.action.splitEditorDown"
+  },
+  {
+    "key": "f5",
+    "command": "git.refresh"
+  },
+  {
+    "key": "f5",
+    "command": "-workbench.action.debug.continue",
+    "when": "debugState == 'stopped'"
+  },
+  {
+    "key": "f5",
+    "command": "-workbench.action.debug.start",
+    "when": "debuggersAvailable && debugState == 'inactive'"
   }
 ]

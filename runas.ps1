@@ -74,6 +74,10 @@ cmd.exe /C 'assoc .ahk=AutoHotKey'
 cmd.exe /C 'ftype AutoHotKey=%USERPROFILE%\scoop\apps\autohotkey\current\autohotkeyU64.exe %1'
 New-Item -Force -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\autohotkey.ahk" -Value $DOTFILES\autohotkey.ahk
 
+# ssh-agent for using ssh from devcontainer
+Set-Service ssh-agent -StartupType Automatic
+Start-Service ssh-agent
+Get-Service ssh-agent
 
 wsl --update
 wsl --shutdown

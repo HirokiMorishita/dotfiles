@@ -25,6 +25,7 @@ utils=(
   "fzf"
   "make"
   "expect"
+  "jq"
 )
 utils_arch=(
   "${utils[@]}"

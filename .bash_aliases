@@ -25,8 +25,8 @@ alias gca='git commit --amend'
 alias gcp='git cherry-pick'
 alias gl='git plog'
 
-alias spr='start_github_pr_review'
-alias fpr='finish_github_pr_review'
+alias spr='fuzzy_start_github_pr_review'
+alias fpr='fuzzy_finish_github_pr_review'
 
 alias nls='exa'
 alias nps='procs'
@@ -136,6 +136,23 @@ less_with_unbuffer () {
   unbuffer "$@" |& less -SR
 }
 
+fuzzy_start_github_pr_review() {
+  local default_repository
+  local selected_pr_number
+  default_repository=${1:-"origin"}
+  selected_pr_number=$(gh pr list | fzf | awk '{print $1}')
+  if [ -n "$selected_pr_number" ] ; then
+    local params
+    params=$(gh pr list -q ".[] | if .number == $selected_pr_number then .baseRefName,.number else empty end" --json number,baseRefName)
+    start_github_pr_review $default_repository ${params[0]} ${params[1]}
+  fi
+}
+
+fuzzy_finish_github_pr_review() {
+  local default_branch
+  default_branch=${1:-"$(git remote show origin | grep 'HEAD branch' | awk '{print $NF}')"}
+  finish_github_pr_review ${default_branch}
+}
 
 # Tさんのスクリプト
 start_github_pr_review () {

@@ -38,6 +38,7 @@ _dep_install() {
     echo "install ghq"
     asdf plugin add ghq
     asdf install ghq latest
+    asdf global ghq latest
   fi
 
   if !(type cargo > /dev/null 2>&1); then

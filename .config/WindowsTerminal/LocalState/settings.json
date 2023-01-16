@@ -1,12 +1,22 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [
+    "actions": 
+    [
         {
-            "command": {
+            "command": 
+            {
                 "action": "nextTab"
             },
             "keys": "ctrl+tab"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 2
+            },
+            "keys": "alt+3"
         },
         {
             "command": "unbound",
@@ -17,33 +27,38 @@
             "keys": "alt+shift+plus"
         },
         {
-            "command": {
-                "action": "switchToTab",
-                "index": 2
+            "command": 
+            {
+                "action": "prevTab"
             },
-            "keys": "alt+3"
+            "keys": "ctrl+shift+tab"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "right"
             },
             "keys": "ctrl+alt+shift+r"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "openSettings"
             },
             "keys": "ctrl+shift+p"
         },
         {
-            "command": {
-                "action": "prevTab"
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 0
             },
-            "keys": "ctrl+shift+tab"
+            "keys": "alt+1"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "down",
                 "splitMode": "duplicate"
@@ -51,101 +66,107 @@
             "keys": "alt+minus"
         },
         {
-            "command": {
-                "action": "switchToTab",
-                "index": 0
-            },
-            "keys": "alt+1"
-        },
-        {
-            "command": {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 4
             },
             "keys": "alt+5"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 1
             },
             "keys": "alt+2"
         },
         {
-            "command": {
-                "action": "splitPane",
-                "split": "down"
+            "command": 
+            {
+                "action": "scrollDown"
             },
-            "keys": "ctrl+alt+shift+d"
+            "keys": "ctrl+shift+down"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 3
             },
             "keys": "alt+4"
         },
         {
-            "command": {
-                "action": "scrollDown"
-            },
-            "keys": "ctrl+shift+down"
-        },
-        {
             "command": "scrollUpPage",
             "keys": "shift+pgup"
         },
         {
-            "command": {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "ctrl+alt+shift+d"
+        },
+        {
+            "command": 
+            {
                 "action": "moveFocus",
                 "direction": "up"
             },
             "keys": "alt+up"
         },
         {
-            "command": {
-                "action": "switchToTab",
-                "index": 5
-            },
-            "keys": "alt+6"
-        },
-        {
-            "command": {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 8
             },
             "keys": "alt+9"
         },
         {
-            "command": {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 5
+            },
+            "keys": "alt+6"
+        },
+        {
+            "command": 
+            {
                 "action": "moveFocus",
                 "direction": "left"
             },
             "keys": "alt+left"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 6
             },
             "keys": "alt+7"
         },
         {
-            "command": {
-                "action": "moveFocus",
-                "direction": "down"
-            },
-            "keys": "alt+down"
-        },
-        {
-            "command": {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 7
             },
             "keys": "alt+8"
         },
         {
-            "command": {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "down"
+            },
+            "keys": "alt+down"
+        },
+        {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "right",
                 "splitMode": "duplicate"
@@ -157,13 +178,15 @@
             "keys": "shift+pgdn"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "scrollUp"
             },
             "keys": "ctrl+shift+up"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "moveFocus",
                 "direction": "right"
             },
@@ -172,26 +195,30 @@
     ],
     "alwaysShowTabs": true,
     "copyOnSelect": true,
-    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+    "defaultProfile": "{c0c023f9-a917-4db0-af64-68de344d1ad4}",
     "initialCols": 120,
     "initialRows": 30,
     "launchMode": "maximized",
-    "profiles": {
-        "defaults": {
+    "profiles": 
+    {
+        "defaults": 
+        {
             "bellStyle": "none",
-            "font": {
+            "font": 
+            {
                 "face": "Fira Code"
             }
         },
-        "list": [
+        "list": 
+        [
             {
-                "font": {
-                    "face": "Fira Code"
-                },
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "colorScheme": "Campbell",
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Ubuntu-20.04",
+                "guid": "{c0c023f9-a917-4db0-af64-68de344d1ad4}",
                 "hidden": false,
-                "name": "Ubuntu-20.04 (WSL)",
-                "source": "Windows.Terminal.Wsl"
+                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+                "name": "Ubuntu-20.04",
+                "startingDirectory": "~"
             },
             {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -202,16 +229,11 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt"
-            },
-            {
-                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
-                "hidden": false,
-                "name": "Ubuntu",
-                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
             }
         ]
     },
-    "schemes": [
+    "schemes": 
+    [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",

@@ -1,14 +1,15 @@
+export PATH="$HOME/.cargo/bin:$PATH"
+export LESS='-R'
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND='fd --type f'
+export FZF_ALT_C_COMMAND='fd --type d'
 
-test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-eval $($(brew --prefix)/bin/brew shellenv)
-umask 002
-
-if [[ $(command -v vivid) ]]; then
+if (type vivid > /dev/null 2>&1); then
   export LS_COLORS="$(vivid generate snazzy)"
 fi
 
 eval "$(starship init bash)"
+
 DOTFILES="$HOME/.dotfiles"
 
 # Alias definitions.
@@ -25,11 +26,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export LESS='-R'
-export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_CTRL_T_COMMAND='fd --type f'
-export FZF_ALT_C_COMMAND='fd --type d'
-source /usr/share/doc/fzf/examples/key-bindings.bash
-source /usr/share/doc/fzf/examples/completion.bash
+if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ] ; then
+  source /usr/share/doc/fzf/examples/key-bindings.bash
+  source /usr/share/doc/fzf/examples/completion.bash
+fi
 
-eval "$(ssh-agent -s)" > /dev/null
+if [ -d $HOME/.asdf ] ; then
+  . $HOME/.asdf/asdf.sh
+  . $HOME/.asdf/completions/asdf.bash
+fi
+
+if [ -n "${REMOTE_CONTAINERS:-}" ] ; then
+  source ~/.bashrc.dotfiles
+else
+  eval "$(ssh-agent -s)" > /dev/null
+fi

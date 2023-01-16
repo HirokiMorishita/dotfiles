@@ -66,7 +66,7 @@ else {
 
 winget install --id=Microsoft.WindowsTerminal -e
 winget install DevToys
-wsl --install -d ubuntu
+wsl --install -d Ubuntu-20.04
 
 # profile
 $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"

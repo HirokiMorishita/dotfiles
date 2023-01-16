@@ -75,6 +75,7 @@ _cli_settings() {
   mkdir -p $XDG_CONFIG_HOME
   ln -sf $DOTFILES/.editorconfig $HOME
 
+  ln -sf $DOTFILES/.bashrc $HOME
   ln -sf $DOTFILES/.gitconfig $HOME
   ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
   ln -sf $DOTFILES/.gitconfig.pager $HOME

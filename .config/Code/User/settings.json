@@ -45,5 +45,14 @@
   },
   "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
   "terminal.integrated.fontFamily": "Fira Code",
-  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?、。「」【】『』（）！？　てにをはがのともへでや"
+  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?、。「」【】『』（）！？　てにをはがのともへでや",
+  "dotfiles.repository": "git@github.com:HirokiMorishita/dotfiles.git",
+  "dotfiles.targetPath": "~/.dotfiles",
+  "dotfiles.installCommand": "~/.dotfiles/install.sh",
+  "git.showCommitInput": false,
+  "git.showActionButton": {
+    "commit": false,
+    "publish": false,
+    "sync": false
+  }
 }

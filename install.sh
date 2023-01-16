@@ -14,13 +14,13 @@ if [ "$(id -u)" = "0" ]; then
   exit 1
 fi
 
-cli_install() {
-  _cli_dep_install
-  _cli_settings
+install() {
+  _dep_install
+  _settings
   exec $SHELL -l
 }
 
-_cli_dep_install() {
+_dep_install() {
 
   mkdir -p $HOME/bin
 
@@ -71,11 +71,12 @@ _cli_dep_install() {
   cd $DOTFILES
 }
 
-_cli_settings() {
+_settings() {
   mkdir -p $XDG_CONFIG_HOME
   ln -sf $DOTFILES/.editorconfig $HOME
 
   ln -sf $DOTFILES/.bashrc $HOME
+  ln -sf $DOTFILES/.bash_aliases $HOME
   ln -sf $DOTFILES/.gitconfig $HOME
   ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
   ln -sf $DOTFILES/.gitconfig.pager $HOME
@@ -86,4 +87,38 @@ _cli_settings() {
 
 }
 
-cli_install
+install_for_devcontainer() {
+  echo "install required packages and update system-wide"
+  source $PWD/packages.sh
+  clidep=(
+    "${alts_arch[@]}"
+    "${utils_arch[@]}"
+  )
+  sudo apt update
+  sudo apt upgrade
+  sudo apt install $(IFS=' '; echo "${clidep[*]}") -y
+
+  
+  echo "install starship"
+  curl -sS https://starship.rs/install.sh | sh
+
+  echo "install gh"
+  type -p curl >/dev/null || sudo apt install curl -y
+  curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+  && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+  && sudo apt update \
+  && sudo apt install gh -y
+  
+  ln -sf $DOTFILES/.bash_aliases $HOME
+  ln -sf $DOTFILES/.bashrc $HOME/.bashrc.dotfiles
+  echo "source ~/.bashrc.dotfiles" >> ~/.bashrc
+
+  # TODO: ssh-agentの記述を分離する
+  # TODO: homebrewやめる
+}
+
+if [ -n "$REMOTE_CONTAINERS" ] ; then 
+  install_for_devcontainer
+fi
+install

@@ -1,4 +1,6 @@
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$PATH:"$(wslpath "$(wslvar USERPROFILE)")/AppData/Local/Programs/Microsoft VS Code/bin"
+
 export LESS='-R'
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND='fd --type f'

@@ -9,6 +9,7 @@ alias r='exec bash'
 alias ..='cd ..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
+alias pbcopy='clip.exe'
 
 alias g='git'
 alias ga='git add'

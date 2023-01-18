@@ -41,6 +41,4 @@ fi
 
 if [ -n "${REMOTE_CONTAINERS:-}" ] ; then
   source ~/.bashrc.dotfiles
-else
-  eval "$(ssh-agent -s)" > /dev/null
 fi

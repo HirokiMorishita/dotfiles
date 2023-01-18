@@ -51,6 +51,7 @@ settings() {
 
   ln -sf $DOTFILES/.bashrc $HOME
   ln -sf $DOTFILES/.bash_aliases $HOME
+  ln -sf $DOTFILES/.bash_profile $HOME
   ln -sf $DOTFILES/.gitconfig $HOME
   ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
   ln -sf $DOTFILES/.gitignore $HOME
@@ -58,9 +59,10 @@ settings() {
 }
 
 settings_devcontainer() {
-
-  ln -sf $DOTFILES/.bash_aliases $HOME
+  
   ln -sf $DOTFILES/.bashrc $HOME/.bashrc.dotfiles
+  ln -sf $DOTFILES/.bash_aliases $HOME
+  ln -sf $DOTFILES/.bash_profile $HOME
   ln -sf $DOTFILES/.gitconfig $HOME/.gitconfig.dotfiles
   ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
   ln -sf $DOTFILES/.gitignore $HOME

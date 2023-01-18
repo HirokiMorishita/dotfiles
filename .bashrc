@@ -5,6 +5,7 @@ export LESS='-R'
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND='fd --type f'
 export FZF_ALT_C_COMMAND='fd --type d'
+export LANG=ja_JP.utf-8
 
 if (type vivid > /dev/null 2>&1); then
   export LS_COLORS="$(vivid generate snazzy)"

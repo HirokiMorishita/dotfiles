@@ -85,6 +85,8 @@ install_min() {
   sudo apt upgrade -y
   sudo apt install $(IFS=' '; echo "${clidep[*]}") -y
 
+  sudo update-locale LANG=ja_JP.UTF-8
+
 
   echo "install starship"
   curl -sS https://starship.rs/install.sh | sh -s -- --yes

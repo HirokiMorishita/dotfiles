@@ -10,23 +10,8 @@ mkdir -p $HOME/bin
 mkdir -p $XDG_CONFIG_HOME
 
 
-if [ "$(id -u)" = "0" ]; then
-  echo "must run under non-root user"
-  exit 1
-fi
-
 install() {
-  _dep_install
-  _settings
-}
-
-_dep_install() {
-
-
   install_min
-
-  ln -sf $DOTFILES/.bash_aliases $HOME
-
 
   echo "install asdf"
   if [ ! -d ~/.asdf ]; then
@@ -61,7 +46,7 @@ _dep_install() {
   cd $DOTFILES
 }
 
-_settings() {
+settings() {
   ln -sf $DOTFILES/.editorconfig $HOME
 
   ln -sf $DOTFILES/.bashrc $HOME
@@ -70,8 +55,18 @@ _settings() {
   ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
   ln -sf $DOTFILES/.gitignore $HOME
   ln -sf $DOTFILES/.gitmessage $HOME
+}
 
+settings_devcontainer() {
 
+  ln -sf $DOTFILES/.bash_aliases $HOME
+  ln -sf $DOTFILES/.bashrc $HOME/.bashrc.dotfiles
+  ln -sf $DOTFILES/.gitconfig $HOME/.gitconfig.dotfiles
+  ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
+  ln -sf $DOTFILES/.gitignore $HOME
+  ln -sf $DOTFILES/.gitmessage $HOME
+  echo "\n source ~/.bashrc.dotfiles" >> $HOME/.bashrc
+  git config --global include.path ~/.gitconfig.dotfiles
 }
 
 install_min() {
@@ -112,8 +107,8 @@ install_min() {
 
 if [ -n "${REMOTE_CONTAINERS:-}" ] ; then
   install_min
-  ln -sf $DOTFILES/.bash_aliases $HOME
-  ln -sf $DOTFILES/.bashrc $HOME/.bashrc.dotfiles
+  settings_devcontainer
 else
   install
+  settings
 fi

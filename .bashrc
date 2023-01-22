@@ -1,5 +1,8 @@
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH=$PATH:"$(wslpath "$(wslvar USERPROFILE)")/AppData/Local/Programs/Microsoft VS Code/bin"
+if (type "wslpath" > /dev/null 2>&1); then
+  export PATH=$PATH:"$(wslpath "$(wslvar USERPROFILE)")/AppData/Local/Programs/Microsoft VS Code/bin"
+fi
+
 
 export LESS='-R'
 export FZF_DEFAULT_COMMAND='fd --type f'
@@ -37,8 +40,4 @@ fi
 if [ -d $HOME/.asdf ] ; then
   . $HOME/.asdf/asdf.sh
   . $HOME/.asdf/completions/asdf.bash
-fi
-
-if [ -n "${REMOTE_CONTAINERS:-}" ] ; then
-  source ~/.bashrc.dotfiles
 fi

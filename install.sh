@@ -67,7 +67,7 @@ settings_devcontainer() {
   ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
   ln -sf $DOTFILES/.gitignore $HOME
   ln -sf $DOTFILES/.gitmessage $HOME
-  echo "\n source ~/.bashrc.dotfiles" >> $HOME/.bashrc
+  echo "source ~/.bashrc.dotfiles" >> $HOME/.bashrc
   git config --global --add include.path ~/.gitconfig.dotfiles
 }
 

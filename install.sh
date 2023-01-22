@@ -82,6 +82,9 @@ install_min() {
   sudo apt upgrade -y
   sudo apt install $(IFS=' '; echo "${clidep[*]}") -y
 
+  
+  sudo sed -i -E 's/# (ja_JP.UTF-8)/\1/' /etc/locale.gen
+  sudo locale-gen
   sudo update-locale LANG=ja_JP.UTF-8
 
 

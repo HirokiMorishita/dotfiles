@@ -23,7 +23,7 @@ utils=(
   "expect"
   "jq"
   "gcc"
-  "language-pack-ja"
+  "locales"
 )
 utils_arch=(
   "${utils[@]}"

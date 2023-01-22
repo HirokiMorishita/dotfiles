@@ -68,7 +68,7 @@ settings_devcontainer() {
   ln -sf $DOTFILES/.gitignore $HOME
   ln -sf $DOTFILES/.gitmessage $HOME
   echo "\n source ~/.bashrc.dotfiles" >> $HOME/.bashrc
-  git config --global include.path ~/.gitconfig.dotfiles
+  git config --global --add include.path ~/.gitconfig.dotfiles
 }
 
 install_min() {

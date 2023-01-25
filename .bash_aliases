@@ -177,12 +177,14 @@ start_github_pr_review () {
     git checkout -b review/working
 
     git merge --squash review/remote
+    git reset
 }
 
 finish_github_pr_review () {
     BASE_BRANCH=${1}
 
     git reset --hard HEAD
+    git clean -df
 
     git checkout $BASE_BRANCH
     git branch -D review/base review/remote review/working

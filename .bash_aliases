@@ -177,6 +177,7 @@ start_github_pr_review () {
     git checkout -b review/working
 
     git merge --squash review/remote
+    git submodule update --init
     git reset
 }
 
@@ -187,5 +188,6 @@ finish_github_pr_review () {
     git clean -df
 
     git checkout $BASE_BRANCH
+    git submodule update --init
     git branch -D review/base review/remote review/working
 }

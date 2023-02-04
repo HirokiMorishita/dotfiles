@@ -60,10 +60,12 @@ scoop install $PACKAGES
 if (Test-Path ("$DOTFILES")) {
   Set-Location $DOTFILES
   git pull
+  git submodule update --init
 }
 else {
   git config --global core.autoCRLF false
-  git clone https://github.com/HirokiMorishita/dotfiles.git $DOTFILES
+  git clone --recursive https://github.com/HirokiMorishita/dotfiles.git $DOTFILES
+  Set-Location $DOTFILES
 }
 
 winget install --id=Microsoft.WindowsTerminal -e

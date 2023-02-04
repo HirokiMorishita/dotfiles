@@ -17,6 +17,10 @@ fi
 eval "$(starship init bash)"
 
 DOTFILES="$HOME/.dotfiles"
+export FORGIT_FZF_DEFAULT_OPTS="
+--bind='alt-i:preview-up,alt-u:preview-down'
+"
+source "$DOTFILES/forgit/forgit.plugin.sh"
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then

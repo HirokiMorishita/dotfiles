@@ -41,6 +41,7 @@ alias nfind='fdfind'
 alias nping='prettyping'
 
 alias fcd='fuzzy_cd'
+alias fcdr='fuzzy_cd_parent'
 alias fgcd='fuzzy_ghq_cd_command'
 alias fgco='fuzzy_git_checkout'
 alias fgcor='fuzzy_git_checkout_remote'
@@ -110,9 +111,24 @@ fuzzy_git_checkout_remote() {
 
 fuzzy_cd() {
   local dir
-  dir=$(fd ${1:-.} --type d -H -E .git 2> /dev/null | fzf +m) &&
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
+fuzzy_cd_parent() {
+  local declare dirs=()
+  get_parent_dirs() {
+    if [[ -d "${1}" ]]; then dirs+=("$1"); else return; fi
+    if [[ "${1}" == '/' ]]; then
+      for _dir in "${dirs[@]}"; do echo $_dir; done
+    else
+      get_parent_dirs $(dirname "$1")
+    fi
+  }
+  local DIR=$(get_parent_dirs $(realpath "${1:-$PWD}") | fzf-tmux --tac)
+  cd "$DIR"
+}
+
 
 open() {
   if [ $# -ne 1 ]; then return 1; fi

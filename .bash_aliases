@@ -43,7 +43,6 @@ alias fgco='fuzzy_git_checkout'
 alias fgcor='fuzzy_git_checkout_remote'
 
 alias open='open'
-alias ul='less_with_unbuffer'
 
 bind -x '"\C-g": fuzzy_ghq_cd_bind'
 bind -x '"\C-a": fuzzy_alias_look_bind'
@@ -119,10 +118,6 @@ use_personal_config(){
 }
 use_office_config(){
   ln -sf $DOTFILES/.gitconfig.identity.office $HOME/.gitconfig.identity
-}
-
-less_with_unbuffer () {
-  unbuffer "$@" |& less -SR
 }
 
 fuzzy_start_github_pr_review() {

@@ -20,7 +20,6 @@ utils=(
   "wget"
   "fzf"
   "make"
-  "expect"
   "jq"
   "gcc"
   "locales"

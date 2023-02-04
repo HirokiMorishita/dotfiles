@@ -45,6 +45,8 @@ $PACKAGES = @(
   "autohotkey"
   "gh"
   "ctrl2cap"
+  "less"
+  "delta"
 )
 scoop install $UTILS
 scoop bucket add versions

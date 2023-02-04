@@ -14,16 +14,13 @@
   autoCRLF = false
   quotepath = false
   commentChar = ";"
+  pager = delta
 [ghq]
   root    = ~/src
 [color]
   ui      = true
 [diff]
-  compactionHeuristic = true
-[difftool]
-  prompt = true
-[mergetool]
-  keepBackup = false
+  colorMoved = default
 [commit]
   cleanup = strip
   template = ~/.gitmessage
@@ -37,11 +34,15 @@
   rebase = false
 [push]
   default = simple
-[rerere]
-  enabled = true
 [init]
   defaultBranch = main
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[merge]
+  conflictstyle = diff3
 [include]
   path = ~/.gitconfig.local
   path = ~/.gitconfig.identity
-  path = ~/.gitconfig.pager

@@ -100,13 +100,8 @@ install_min() {
   && sudo apt update \
   && sudo apt install gh -y
 
-
-  if [ -f /usr/share/doc/git/contrib/diff-highlight/diff-highlight ] ; then
-    echo "install diff-highlight"
-    ln -sf /usr/share/doc/git/contrib/diff-highlight/diff-highlight $HOME/bin/diff-highlight
-    sudo chmod +x /usr/share/doc/git/contrib/diff-highlight/diff-highlight
-    ln -sf $DOTFILES/.gitconfig.pager $HOME
-  fi
+  curl -L https://github.com/dandavison/delta/releases/download/0.15.1/git-delta-musl_0.15.1_amd64.deb -o /tmp/git-delta.deb \
+  && sudo dpkg -r /tmp/git-delta.deb
 
 }
 

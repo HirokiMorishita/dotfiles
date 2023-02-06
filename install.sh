@@ -59,7 +59,7 @@ settings() {
 }
 
 settings_devcontainer() {
-  
+
   ln -sf $DOTFILES/.bashrc $HOME/.bashrc.dotfiles
   ln -sf $DOTFILES/.bash_aliases $HOME
   ln -sf $DOTFILES/.bash_profile $HOME
@@ -82,7 +82,7 @@ install_min() {
   sudo apt upgrade -y
   sudo apt install $(IFS=' '; echo "${clidep[*]}") -y
 
-  
+
   sudo sed -i -E 's/# (ja_JP.UTF-8)/\1/' /etc/locale.gen
   sudo locale-gen
   sudo update-locale LANG=ja_JP.UTF-8
@@ -101,7 +101,7 @@ install_min() {
   && sudo apt install gh -y
 
   curl -L https://github.com/dandavison/delta/releases/download/0.15.1/git-delta-musl_0.15.1_amd64.deb -o /tmp/git-delta.deb \
-  && sudo dpkg -r /tmp/git-delta.deb
+  && sudo dpkg -i /tmp/git-delta.deb
 
 }
 

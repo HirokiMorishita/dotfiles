@@ -3,6 +3,7 @@
 set -eux
 
 cd $(dirname $0)
+git submodule update --init
 DOTFILES=$PWD
 XDG_CONFIG_BASE=$DOTFILES/.config
 XDG_CONFIG_HOME=$HOME/.config
@@ -78,6 +79,11 @@ install_min() {
     "${alts_arch[@]}"
     "${utils_arch[@]}"
   )
+
+  # yarnのリポジトリの鍵更新
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo gpg --yes --dearmor -o /usr/share/keyrings/yarn-archive-keyring.gpg
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/yarn-archive-keyring.gpg] https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list > /dev/null
+
   sudo apt update
   sudo apt upgrade -y
   sudo apt install $(IFS=' '; echo "${clidep[*]}") -y

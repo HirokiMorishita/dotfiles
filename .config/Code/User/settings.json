@@ -53,5 +53,9 @@
     "commit": false,
     "publish": false,
     "sync": false
+  },
+  "workbench.startupEditor": "none",
+  "aws.suppressPrompts": {
+    "regionAddAutomatically": true
   }
 }

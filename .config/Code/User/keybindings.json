@@ -111,5 +111,9 @@
   {
     "key": "ctrl+b",
     "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "-editor.action.toggleTabFocusMode"
   }
 ]

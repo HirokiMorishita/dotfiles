@@ -184,7 +184,7 @@ vk1D & C::Send "^{c}"
  * @hotkey 無変換+{V}
  * @target デフォルト
  */
-vk1D & V::Send "{Blind}#{v}"
+vk1D & V::Send "{Blind}^{v}"
 /**
  * ブックマーク
  *
@@ -497,6 +497,13 @@ vk1C & Space::Send "{Delete}"
 vk1C & vk1D::Send "{vkF3sc029}"
 ;---------- LAlt ----------
 /**
+ * DevToys
+ *
+ * @hotkey LAlt+{T}
+ * @target デフォルト
+ */
+LAlt & T::Run "devtoys:"
+/**
  * OCR (powertoys)
  *
  * @hotkey LAlt+{A}
@@ -533,12 +540,12 @@ LAlt & X::Send "#+{m}"
  */
 LAlt & C::Send "#+{c}"
 /**
- * DevToys
+ * 貼り付け履歴
  *
  * @hotkey LAlt+{V}
  * @target デフォルト
  */
-LAlt & V::Run "devtoys:"
+LAlt & V::Send "#{v}"
 
 /**
  * script のリロード
@@ -626,13 +633,6 @@ LAlt & vk1D::Reload
 ;VSCode
 #HotIf WinActive("ahk_exe Code.exe")
   ;---------- 無変換キー ----------
-  /**
-  * 最近開いたフォルダを開く
-  *
-  * @hotkey 無変換+{Q}
-  * @target VSCode
-  */
-  vk1D & Q::Send "{Blind}^{r}"
 
   /**
   * コードを折りたたみ
@@ -666,6 +666,14 @@ LAlt & vk1D::Reload
   * @target VSCode
   */
   vk1D & T::Send "{Blind}^+{]}"
+
+  /**
+  * 最近開いたフォルダを開く
+  *
+  * @hotkey 無変換+{B}
+  * @target VSCode
+  */
+  vk1D & B::Send "{Blind}^{r}"
 
   /**
   * マルチカーソル(下)
@@ -828,7 +836,21 @@ LAlt & vk1D::Reload
   * @hotkey 無変換+{F}
   * @target WindowsTerminal
   */
-  vk1C & f::Send "^+{f}"
+  vk1D & f::Send "^+{f}"
+  /**
+  * 貼り付け
+  *
+  * @hotkey 無変換+{V}
+  * @target WindowsTerminal
+  */
+  vk1D & v::Send "^+{v}"
+  /**
+  * 選択モード
+  *
+  * @hotkey 無変換+{/}
+  * @target WindowsTerminal
+  */
+  vk1D & /::Send "^+{m}"
   /**
   * シェルを選んでタブを開く
   *
@@ -847,28 +869,28 @@ LAlt & vk1D::Reload
   * フォーカス移動(左)
   *
   * @hotkey LAlt + {H}
-  * @target VSCode
+  * @target WindowsTerminal
   */
   LAlt & h::Send "!{Left}"
   /**
   * フォーカス移動(下)
   *
   * @hotkey LAlt + {J}
-  * @target VSCode
+  * @target WindowsTerminal
   */
   LAlt & j::Send "!{Down}"
   /**
   * フォーカス移動(上)
   *
   * @hotkey LAlt + {K}
-  * @target VSCode
+  * @target WindowsTerminal
   */
   LAlt & k::Send "!{Up}"
   /**
   * フォーカス移動(右)
   *
   * @hotkey LAlt + {L}
-  * @target VSCode
+  * @target WindowsTerminal
   */
   LAlt & l::Send "!{Right}"
   /**
@@ -886,6 +908,20 @@ LAlt & vk1D::Reload
   */
   LAlt & d::Send "^+!{d}"
 #HotIf
+
+
+;chrome
+#HotIf WinActive("ahk_exe chrome.exe")
+
+  /**
+  * ブックマーク追加
+  *
+  * @hotkey 変換+{B}
+  * @target Chrome
+  */
+  vk1C & B::Send "^{d}"
+#HotIf
+
 
 /**
  * 設定されたホットキー/ホットストリングを一覧表示

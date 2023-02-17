@@ -635,6 +635,14 @@ LAlt & vk1D::Reload
   ;---------- 無変換キー ----------
 
   /**
+  * 最近開いたフォルダを開く
+  *
+  * @hotkey 無変換+{Q}
+  * @target VSCode
+  */
+  vk1D & Q::Send "{Blind}^{r}"
+
+  /**
   * コードを折りたたみ
   *
   * @hotkey 無変換+{W}
@@ -666,14 +674,6 @@ LAlt & vk1D::Reload
   * @target VSCode
   */
   vk1D & T::Send "{Blind}^+{]}"
-
-  /**
-  * 最近開いたフォルダを開く
-  *
-  * @hotkey 無変換+{B}
-  * @target VSCode
-  */
-  vk1D & B::Send "{Blind}^{r}"
 
   /**
   * マルチカーソル(下)

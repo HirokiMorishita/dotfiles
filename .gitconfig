@@ -1,29 +1,22 @@
 [alias]
   a       = add .
-  adp     = add -p
+  ap     = add -p
   co      = checkout
   bch     = branch
-  cm      = commit
-  cma     = commit --amend
+  m      = commit
+  ma     = commit --amend
   cp      = cherry-pick
   sts     = status
   plog    = log --graph --pretty=format:'%C(red)%h %C(green)%an %Creset%s %C(yellow)%d%Creset'
 [core]
   editor = code --wait --reuse-window
-  excludesfile  = ~/.gitignore
   autoCRLF = false
   quotepath = false
   commentChar = ";"
-  pager = delta
-[ghq]
-  root    = ~/src
 [color]
   ui      = true
 [diff]
   colorMoved = default
-[commit]
-  cleanup = strip
-  template = ~/.gitmessage
 [grep]
   lineNumber = true
 [fetch]
@@ -32,17 +25,16 @@
   useConfigOnly = true
 [pull]
   rebase = false
+  ff = only
 [push]
   default = simple
 [init]
   defaultBranch = main
-[interactive]
-  diffFilter = delta --color-only
-[delta]
-  navigate = true    # use n and N to move between diff sections
-  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 [merge]
   conflictstyle = diff3
+[commit]
+  cleanup = strip
 [include]
-  path = ~/.gitconfig.local
   path = ~/.gitconfig.identity
+  path = ~/.gitconfig.installed
+  path = ~/.gitconfig.local

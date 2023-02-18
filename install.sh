@@ -50,25 +50,30 @@ install() {
 settings() {
   ln -sf $DOTFILES/.editorconfig $HOME
 
-  ln -sf $DOTFILES/.bashrc $HOME
   ln -sf $DOTFILES/.bash_aliases $HOME
   ln -sf $DOTFILES/.bash_profile $HOME
-  ln -sf $DOTFILES/.gitconfig $HOME
+  ln -sf $DOTFILES/.gitconfig.installed $HOME
   ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
   ln -sf $DOTFILES/.gitignore $HOME
   ln -sf $DOTFILES/.gitmessage $HOME
+
+  ln -sf $DOTFILES/.bashrc $HOME
+  ln -sf $DOTFILES/.gitconfig $HOME
 }
 
 settings_devcontainer() {
 
-  ln -sf $DOTFILES/.bashrc $HOME/.bashrc.dotfiles
   ln -sf $DOTFILES/.bash_aliases $HOME
   ln -sf $DOTFILES/.bash_profile $HOME
-  ln -sf $DOTFILES/.gitconfig $HOME/.gitconfig.dotfiles
+  ln -sf $DOTFILES/.gitconfig.installed $HOME
   ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
   ln -sf $DOTFILES/.gitignore $HOME
   ln -sf $DOTFILES/.gitmessage $HOME
+
+  ln -sf $DOTFILES/.bashrc $HOME/.bashrc.dotfiles
   echo "source ~/.bashrc.dotfiles" >> $HOME/.bashrc
+
+  ln -sf $DOTFILES/.gitconfig $HOME/.gitconfig.dotfiles
   git config --global --add include.path ~/.gitconfig.dotfiles
 }
 
@@ -82,7 +87,7 @@ install_min() {
 
   # yarnのリポジトリの鍵更新
   curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo gpg --yes --dearmor -o /usr/share/keyrings/yarn-archive-keyring.gpg
-  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/yarn-archive-keyring.gpg] https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list > /dev/null
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/yarn-archive-keyring.gpg] https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list > /dev/null
 
   sudo apt update
   sudo apt upgrade -y

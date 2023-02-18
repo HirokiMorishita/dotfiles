@@ -4,15 +4,6 @@ format="$all$custom"
 
 command_timeout = 10000
 
-[battery]
-full_symbol = "🔋"
-charging_symbol = "🔌"
-discharging_symbol = "⚡"
-
-[[battery.display]]
-threshold = 30
-style = "bold red"
-
 [character]
 error_symbol = "[✖](bold red) "
 
@@ -40,31 +31,15 @@ format = '[\($state( $progress_current of $progress_total)\)]($style) '
 conflicted = "⚔️ "
 ahead = "🏎️ 💨 x${count}"
 behind = "🐢 x${count}"
-diverged = "🔱 🏎️ 💨 x${ahead_count} 🐢 x${behind_count}"
-untracked = "🛤️  x${count}"
+diverged = "❗ 🏎️ 💨 x${ahead_count} 🐢 x${behind_count}"
+untracked = "❓ x${count}"
 stashed = "📦 "
 modified = "📝 x${count}"
-staged = "🗃️  x${count}"
-renamed = "📛 x${count}"
-deleted = "🗑️  x${count}"
+staged = "📩  x${count}"
+renamed = "📨 x${count}"
+deleted = "🪦  x${count}"
 style = "bright-white"
 format = "$all_status$ahead_behind"
-
-[hostname]
-ssh_only = false
-format = "<[$hostname]($style)>"
-trim_at = "-"
-style = "bold dimmed white"
-disabled = true
-
-[memory_usage]
-format = "$symbol[${ram}( | ${swap})]($style) "
-threshold = 70
-style = "bold dimmed white"
-disabled = false
-
-[package]
-disabled = true
 
 [time]
 time_format = "%T"

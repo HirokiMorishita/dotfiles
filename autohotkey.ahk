@@ -184,7 +184,7 @@ vk1D & C::Send "^{c}"
  * @hotkey 無変換+{V}
  * @target デフォルト
  */
-vk1D & V::Send "{Blind}^{v}"
+vk1D & V::Send "#{v}"
 /**
  * ブックマーク
  *
@@ -497,13 +497,6 @@ vk1C & Space::Send "{Delete}"
 vk1C & vk1D::Send "{vkF3sc029}"
 ;---------- LAlt ----------
 /**
- * DevToys
- *
- * @hotkey LAlt+{T}
- * @target デフォルト
- */
-LAlt & T::Run "devtoys:"
-/**
  * OCR (powertoys)
  *
  * @hotkey LAlt+{A}
@@ -540,12 +533,12 @@ LAlt & X::Send "#+{m}"
  */
 LAlt & C::Send "#+{c}"
 /**
- * 貼り付け履歴
+ * DevToys
  *
  * @hotkey LAlt+{V}
  * @target デフォルト
  */
-LAlt & V::Send "#{v}"
+LAlt & V::Run "devtoys:"
 
 /**
  * script のリロード

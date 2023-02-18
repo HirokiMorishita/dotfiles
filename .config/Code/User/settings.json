@@ -57,5 +57,12 @@
   "workbench.startupEditor": "none",
   "aws.suppressPrompts": {
     "regionAddAutomatically": true
-  }
+  },
+  "[markdown]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+  },
 }

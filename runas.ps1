@@ -65,15 +65,10 @@ New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitmessage -Value
 # code
 New-Item -Force -ItemType SymbolicLink -Path $env:APPDATA\Code\User\settings.json -Value $DOTFILES\.config\Code\User\settings.json
 New-Item -Force -ItemType SymbolicLink -Path $env:APPDATA\Code\User\keybindings.json -Value $DOTFILES\.config\Code\User\keybindings.json
+New-Item -Force -ItemType SymbolicLink -Path $env:APPDATA\Code\User\snippets\common.code-snippets -Value $DOTFILES\.config\Code\User\snippets\common.code-snippets
 
 # Windows Terminal
 New-Item -Force -ItemType SymbolicLink -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json -Value $DOTFILES\.config\WindowsTerminal\LocalState\settings.json
-
-# espanso
-New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\scoop\persist\espanso\.espanso\config\default.yml -Value $DOTFILES\.config\espanso\config\default.yml
-New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\scoop\persist\espanso\.espanso\match\base.yml -Value $DOTFILES\.config\espanso\match\base.yml
-espansod service register
-Start-Job { espansod service start }
 
 # autohotkey
 cmd.exe /C 'assoc .ahk=AutoHotKey'

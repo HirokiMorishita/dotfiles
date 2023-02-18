@@ -69,6 +69,12 @@ New-Item -Force -ItemType SymbolicLink -Path $env:APPDATA\Code\User\keybindings.
 # Windows Terminal
 New-Item -Force -ItemType SymbolicLink -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json -Value $DOTFILES\.config\WindowsTerminal\LocalState\settings.json
 
+# espanso
+New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\scoop\persist\espanso\.espanso\config\default.yml -Value $DOTFILES\.config\espanso\config\default.yml
+New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\scoop\persist\espanso\.espanso\match\base.yml -Value $DOTFILES\.config\espanso\match\base.yml
+espansod service register
+Start-Job { espansod service start }
+
 # autohotkey
 cmd.exe /C 'assoc .ahk=AutoHotKey'
 cmd.exe /C 'ftype AutoHotKey=%USERPROFILE%\scoop\apps\autohotkey\current\autohotkeyU64.exe %1'

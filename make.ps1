@@ -47,6 +47,7 @@ $PACKAGES = @(
   "ctrl2cap"
   "less"
   "delta"
+  "espanso"
 )
 scoop install $UTILS
 scoop bucket add versions
@@ -84,6 +85,10 @@ New-Item $env:APPDATA\Code\User -Force -ItemType Directory
 
 # Windows Terminal
 New-Item -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState -Force -ItemType Directory
+
+# espanso
+New-Item -Path $env:USERPROFILE\scoop\persist\espanso\.espanso\config -Force -ItemType Directory
+New-Item -Path $env:USERPROFILE\scoop\persist\espanso\.espanso\match -Force -ItemType Directory
 
 # ssh
 New-Item -Path $env:USERPROFILE\.ssh -Force -ItemType Directory

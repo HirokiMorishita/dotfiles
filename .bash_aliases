@@ -3,8 +3,6 @@ alias bat=batcat
 alias a='fuzzy_alias_look_command'
 alias h='history | fzf --reverse'
 alias e='explorer.exe .'
-alias p='use_personal_config'
-alias o='use_office_config'
 alias r='exec bash'
 alias ..='cd ..'
 alias ..2='cd ../..'
@@ -111,13 +109,6 @@ open() {
   else
     powershell.exe start "$1"
   fi
-}
-
-use_personal_config(){
-  ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
-}
-use_office_config(){
-  ln -sf $DOTFILES/.gitconfig.identity.office $HOME/.gitconfig.identity
 }
 
 fuzzy_start_github_pr_review() {

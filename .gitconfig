@@ -35,6 +35,5 @@
 [commit]
   cleanup = strip
 [include]
-  path = ~/.gitconfig.identity
   path = ~/.gitconfig.installed
   path = ~/.gitconfig.local

@@ -20,6 +20,11 @@ install() {
   fi
   . $HOME/.asdf/asdf.sh
 
+  echo "install python dependencies"
+  sudo apt install -y build-essential libssl-dev zlib1g-dev \
+    libbz2-dev libreadline-dev libsqlite3-dev curl \
+    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
   if !(type ghq > /dev/null 2>&1); then
     echo "install ghq"
     asdf plugin add ghq
@@ -53,7 +58,6 @@ settings() {
   ln -sf $DOTFILES/.bash_aliases $HOME
   ln -sf $DOTFILES/.bash_profile $HOME
   ln -sf $DOTFILES/.gitconfig.installed $HOME
-  ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
   ln -sf $DOTFILES/.gitignore $HOME
   ln -sf $DOTFILES/.gitmessage $HOME
 
@@ -66,7 +70,6 @@ settings_devcontainer() {
   ln -sf $DOTFILES/.bash_aliases $HOME
   ln -sf $DOTFILES/.bash_profile $HOME
   ln -sf $DOTFILES/.gitconfig.installed $HOME
-  ln -sf $DOTFILES/.gitconfig.identity.personal $HOME/.gitconfig.identity
   ln -sf $DOTFILES/.gitignore $HOME
   ln -sf $DOTFILES/.gitmessage $HOME
 

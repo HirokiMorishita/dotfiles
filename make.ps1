@@ -76,8 +76,6 @@ wsl --install -d Ubuntu-20.04
 $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"
 ## Windows Powershell
 New-Item $PSUSERHOME\WindowsPowerShell -Force -ItemType Directory
-## Powershell Core
-New-Item $PSUSERHOME\PowerShell -Force -ItemType Directory
 
 # vscode
 New-Item $env:APPDATA\Code\User -Force -ItemType Directory
@@ -91,27 +89,6 @@ New-Item -Path $env:USERPROFILE\.ssh -Force -ItemType Directory
 
 # runas
 Start-Process powershell.exe ("-NoProfile -noexit -ExecutionPolicy Unrestricted -Command cd " + $env:USERPROFILE + "\.dotfiles; .\runas.ps1") -Verb runas
-
-# install code extensions
-$CODES = @()
-if (Get-Command * | Where-Object { $_.Name -match "^Code.exe$" }) {
-  $CODES += "code"
-}
-
-foreach ($CODE in $CODES) {
-  foreach ($line in Get-Content $DOTFILES\.config\Code\extensions) {
-    Invoke-Expression "$CODE --install-extension $line --force"
-  }
-  # uninstall code extensions
-  foreach ($line in Get-Content $DOTFILES\.config\Code\x_extensions) {
-    Invoke-Expression "$CODE --uninstall-extension $line --force"
-  }
-}
-
-# gitconfig for windows
-if (!(Test-Path -Path $env:USERPROFILE\.gitconfig.local)) {
-  New-Item -Path $env:USERPROFILE\.gitconfig.local
-}
 
 # ghq
 New-Item $env:USERPROFILE\src -Force -ItemType Directory

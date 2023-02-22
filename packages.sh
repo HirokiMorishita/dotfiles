@@ -23,6 +23,7 @@ utils=(
   "jq"
   "gcc"
   "locales"
+  "bash-completion"
 )
 utils_arch=(
   "${utils[@]}"

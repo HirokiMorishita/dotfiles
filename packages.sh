@@ -24,6 +24,7 @@ utils=(
   "gcc"
   "locales"
   "bash-completion"
+  "nkf"
 )
 utils_arch=(
   "${utils[@]}"

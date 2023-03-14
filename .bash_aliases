@@ -7,7 +7,7 @@ alias r='exec bash'
 alias ..='cd ..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
-alias pbcopy='clip.exe'
+alias pbcopy='nkf -sc | clip.exe'
 
 alias g='git'
 alias gb='git branch'

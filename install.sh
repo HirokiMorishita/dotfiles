@@ -39,7 +39,8 @@ install() {
   fi
 
   echo "install alts"
-  cargo install ripgrep exa procs sd
+  cargo install ripgrep exa sd
+  cargo install --version 0.13.4 procs
 
   echo "install vivid"
   cargo install vivid

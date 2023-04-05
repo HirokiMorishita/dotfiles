@@ -37,8 +37,6 @@ alias nping='prettyping'
 alias fcd='fuzzy_cd'
 alias fcdr='fuzzy_cd_parent'
 alias fgcd='fuzzy_ghq_cd_command'
-alias fgco='fuzzy_git_checkout'
-alias fgcor='fuzzy_git_checkout_remote'
 
 alias open='open'
 

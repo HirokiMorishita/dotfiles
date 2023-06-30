@@ -21,7 +21,7 @@ install() {
   . $HOME/.asdf/asdf.sh
 
   echo "install python dependencies"
-  sudo apt install -y build-essential libssl-dev zlib1g-dev \
+  sudo apt-get install -y build-essential libssl-dev zlib1g-dev \
     libbz2-dev libreadline-dev libsqlite3-dev curl \
     libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
@@ -93,9 +93,8 @@ install_min() {
   curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo gpg --yes --dearmor -o /usr/share/keyrings/yarn-archive-keyring.gpg
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/yarn-archive-keyring.gpg] https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list > /dev/null
 
-  sudo apt update
-  # sudo apt upgrade -y
-  sudo apt install $(IFS=' '; echo "${clidep[*]}") -y
+  sudo apt-get update
+  sudo apt-get install $(IFS=' '; echo "${clidep[*]}") -y
 
 
   sudo sed -i -E 's/# (ja_JP.UTF-8)/\1/' /etc/locale.gen
@@ -108,12 +107,12 @@ install_min() {
   ln -sf $XDG_CONFIG_BASE/starship.toml $XDG_CONFIG_HOME/starship.toml
 
   echo "install gh"
-  type -p curl >/dev/null || sudo apt install curl -y
+  type -p curl >/dev/null || sudo apt-get install curl -y
   curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
   && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-  && sudo apt update \
-  && sudo apt install gh -y
+  && sudo apt-get update \
+  && sudo apt-get install gh -y
 
   curl -L https://github.com/dandavison/delta/releases/download/0.15.1/git-delta-musl_0.15.1_amd64.deb -o /tmp/git-delta.deb \
   && sudo dpkg -i /tmp/git-delta.deb

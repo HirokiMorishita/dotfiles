@@ -30,7 +30,6 @@ $UTILS = @(
   "innounp"
   "dark"
   "7zip"
-  "git"
 )
 
 $PACKAGES = @(
@@ -41,8 +40,6 @@ $PACKAGES = @(
   "jq"
   "powertoys"
   "ripgrep"
-  "firacode"
-  "autohotkey"
   "gh"
   "ctrl2cap"
   "less"
@@ -56,21 +53,13 @@ scoop bucket add sysinternals
 scoop update *
 scoop install $PACKAGES
 
-
-if (Test-Path ("$DOTFILES")) {
-  Set-Location $DOTFILES
-  git pull
-  git submodule update --init
-}
-else {
-  git config --global core.autoCRLF false
-  git clone --recursive https://github.com/HirokiMorishita/dotfiles.git $DOTFILES
-  Set-Location $DOTFILES
-}
+Set-Location $DOTFILES
+git config --global core.autoCRLF false
+git submodule update --init
 
 winget install --id=Microsoft.WindowsTerminal -e
 winget install DevToys
-wsl --install -d Ubuntu-20.04
+winget install --id=AutoHotkey.AutoHotkey -e
 
 # profile
 $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"

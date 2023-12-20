@@ -2,6 +2,11 @@
 # dotfiles
 windowsでのセットアップを行うdotfiles。
 
+## requirement
+```
+winget install --id Git.Git -e --source winget
+```
+
 ## install
 ### windows
 ```

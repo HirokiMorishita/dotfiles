@@ -6,6 +6,29 @@
         {
             "command": 
             {
+                "action": "switchToTab",
+                "index": 5
+            },
+            "keys": "alt+6"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 6
+            },
+            "keys": "alt+7"
+        },
+        {
+            "command": 
+            {
+                "action": "openSettings"
+            },
+            "keys": "ctrl+shift+p"
+        },
+        {
+            "command": 
+            {
                 "action": "nextTab"
             },
             "keys": "ctrl+tab"
@@ -19,6 +42,21 @@
             "keys": "alt+3"
         },
         {
+            "command": 
+            {
+                "action": "prevTab"
+            },
+            "keys": "ctrl+shift+tab"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 7
+            },
+            "keys": "alt+8"
+        },
+        {
             "command": "unbound",
             "keys": "alt+shift+minus"
         },
@@ -29,9 +67,18 @@
         {
             "command": 
             {
-                "action": "prevTab"
+                "action": "splitPane",
+                "split": "down"
             },
-            "keys": "ctrl+shift+tab"
+            "keys": "ctrl+alt+shift+d"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 0
+            },
+            "keys": "alt+1"
         },
         {
             "command": 
@@ -44,17 +91,17 @@
         {
             "command": 
             {
-                "action": "openSettings"
+                "action": "moveFocus",
+                "direction": "down"
             },
-            "keys": "ctrl+shift+p"
+            "keys": "alt+down"
         },
         {
             "command": 
             {
-                "action": "switchToTab",
-                "index": 0
+                "action": "scrollUp"
             },
-            "keys": "alt+1"
+            "keys": "ctrl+shift+up"
         },
         {
             "command": 
@@ -103,34 +150,10 @@
         {
             "command": 
             {
-                "action": "splitPane",
-                "split": "down"
-            },
-            "keys": "ctrl+alt+shift+d"
-        },
-        {
-            "command": 
-            {
                 "action": "moveFocus",
                 "direction": "up"
             },
             "keys": "alt+up"
-        },
-        {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 8
-            },
-            "keys": "alt+9"
-        },
-        {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 5
-            },
-            "keys": "alt+6"
         },
         {
             "command": 
@@ -144,25 +167,9 @@
             "command": 
             {
                 "action": "switchToTab",
-                "index": 6
+                "index": 8
             },
-            "keys": "alt+7"
-        },
-        {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 7
-            },
-            "keys": "alt+8"
-        },
-        {
-            "command": 
-            {
-                "action": "moveFocus",
-                "direction": "down"
-            },
-            "keys": "alt+down"
+            "keys": "alt+9"
         },
         {
             "command": 
@@ -180,13 +187,6 @@
         {
             "command": 
             {
-                "action": "scrollUp"
-            },
-            "keys": "ctrl+shift+up"
-        },
-        {
-            "command": 
-            {
                 "action": "moveFocus",
                 "direction": "right"
             },
@@ -199,6 +199,12 @@
     "initialCols": 120,
     "initialRows": 30,
     "launchMode": "maximized",
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
     "profiles": 
     {
         "defaults": 
@@ -434,6 +440,29 @@
             "cyan": "#3A96DD",
             "foreground": "#FFFFFF",
             "green": "#26A269",
+            "name": "Ubuntu-20.04-ColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
+        },
+        {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
             "name": "Ubuntu-ColorScheme",
             "purple": "#881798",
             "red": "#C21A23",
@@ -468,5 +497,6 @@
     "showTabsInTitlebar": true,
     "showTerminalTitleInTitlebar": true,
     "startOnUserLogin": false,
+    "themes": [],
     "wordDelimiters": " ./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}~?\u2502"
 }

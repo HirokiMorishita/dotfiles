@@ -19,16 +19,16 @@
     "description": "details tag"
   },
   "shebang": {
-    "scope": "shellscript",
     "prefix": "shebang",
+    "scope": "shellscript",
     "body": [
       "#!/bin/env ${1:bash}"
     ],
     "description": "shell script shebang"
   },
   "date_template": {
-    "scope": "shellscript",
     "prefix": "datetemp",
+    "scope": "shellscript",
     "body": [
       "+%Y-%m-%dT%H:%M:%S%:z"
     ],

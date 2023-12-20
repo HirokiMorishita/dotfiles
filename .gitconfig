@@ -10,7 +10,7 @@
   plog    = log --graph --pretty=format:'%C(red)%h %C(green)%an %Creset%s %C(yellow)%d%Creset'
 [core]
   editor = code --wait --reuse-window
-  autoCRLF = false
+	autoCRLF = false
   quotepath = false
   commentChar = ";"
 [color]

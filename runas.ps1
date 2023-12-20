@@ -54,6 +54,9 @@ foreach ($disableFeature in $disableFeatures) {
   }
 }
 
+# 権限が必要みたいなので管理者権限でインストール
+scoop install firacode
+
 # editorconfig
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.editorconfig -Value $DOTFILES\.editorconfig
 
@@ -71,7 +74,7 @@ New-Item -Force -ItemType SymbolicLink -Path $env:LOCALAPPDATA\Packages\Microsof
 
 # autohotkey
 cmd.exe /C 'assoc .ahk=AutoHotKey'
-cmd.exe /C 'ftype AutoHotKey=%USERPROFILE%\scoop\apps\autohotkey\current\autohotkeyU64.exe %1'
+cmd.exe /C 'ftype AutoHotKey=%USERPROFILE%\AppData\Local\Programs\AutoHotkey\UX\AutoHotkeyUX.exe %1'
 New-Item -Force -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\autohotkey.ahk" -Value $DOTFILES\autohotkey.ahk
 
 # ssh-agent for using ssh from devcontainer
@@ -84,6 +87,7 @@ Push-Location "$env:USERPROFILE\scoop\apps\ctrl2cap\current"
 ctrl2cap.exe /install
 Pop-Location
 
+wsl --install -d Ubuntu-20.04
 wsl --update
 wsl --shutdown
 

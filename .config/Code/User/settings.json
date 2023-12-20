@@ -65,4 +65,7 @@
       "strings": true
     },
   },
+  "security.allowedUNCHosts": [
+    "wsl.localhost"
+  ],
 }

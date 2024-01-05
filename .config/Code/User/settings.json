@@ -68,4 +68,5 @@
   "security.allowedUNCHosts": [
     "wsl.localhost"
   ],
+  "extensions.ignoreRecommendations": true,
 }

@@ -38,18 +38,6 @@ install() {
     asdf global rust latest
   fi
 
-  echo "install alts"
-  cargo install ripgrep exa sd
-  cargo install --version 0.13.4 procs
-
-  echo "install vivid"
-  cargo install vivid
-
-  echo "install prettyping"
-  rm -rf $HOME/bin/prettyping
-  wget https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping -O $HOME/bin/prettyping
-  chmod +x $HOME/bin/prettyping
-
   cd $DOTFILES
 }
 
@@ -101,6 +89,13 @@ install_min() {
   sudo locale-gen
   sudo update-locale LANG=ja_JP.UTF-8
 
+  # aptだと古いものが入るのでリポジトリから直接もってくる
+  echo "install fzf"
+  if [ ! -d ~/.fzf ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  fi
+  pushd ~/.fzf && git pull && popd
+  ~/.fzf/install --key-bindings --completion --update-rc
 
   echo "install starship"
   curl -sS https://starship.rs/install.sh | sh -s -- --yes
@@ -114,9 +109,26 @@ install_min() {
   && sudo apt-get update \
   && sudo apt-get install gh -y
 
-  curl -L https://github.com/dandavison/delta/releases/download/0.15.1/git-delta-musl_0.15.1_amd64.deb -o /tmp/git-delta.deb \
+  curl -L https://github.com/dandavison/delta/releases/download/0.16.5/git-delta-musl_0.16.5_amd64.deb -o /tmp/git-delta.deb \
   && sudo dpkg -i /tmp/git-delta.deb
 
+  curl -L https://github.com/muesli/duf/releases/download/v0.8.0/duf_0.8.0_linux_amd64.deb -o /tmp/duf.deb \
+  && sudo dpkg -i /tmp/duf.deb
+
+  curl -L https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb -o /tmp/lsd.deb \
+  && sudo dpkg -i /tmp/lsd.deb
+
+  curl -L https://github.com/BurntSushi/ripgrep/releases/download/14.0.3/ripgrep_14.0.3-1_amd64.deb -o /tmp/ripgrep.deb \
+  && sudo dpkg -i /tmp/ripgrep.deb
+
+  curl -L https://github.com/sharkdp/vivid/releases/download/v0.9.0/vivid-musl_0.9.0_amd64.deb -o /tmp/vivid.deb \
+  && sudo dpkg -i /tmp/vivid.deb
+
+  curl -L https://github.com/sharkdp/bat/releases/download/v0.24.0/bat-musl_0.24.0_amd64.deb -o /tmp/bat.deb \
+  && sudo dpkg -i /tmp/bat.deb
+
+  curl -L https://github.com/sharkdp/fd/releases/download/v9.0.0/fd-musl_9.0.0_amd64.deb -o /tmp/fd.deb \
+  && sudo dpkg -i /tmp/fd.deb
 }
 
 if [ -n "${REMOTE_CONTAINERS:-}" ] ; then

@@ -1,5 +1,3 @@
-alias fd=fdfind
-alias bat=batcat
 alias a='fuzzy_alias_look_command'
 alias h='history | fzf --reverse'
 alias e='explorer.exe .'
@@ -23,15 +21,12 @@ alias gma='git commit --amend'
 alias spr='fuzzy_start_github_pr_review'
 alias fpr='fuzzy_finish_github_pr_review'
 
-alias nls='exa'
-alias nps='procs'
+alias nls='lsd'
 alias ncat='bat'
-alias ndf='dfc'
+alias ndf='duf'
 alias ntop='htop'
-alias ndu='ncdu'
 alias ngrep='rg'
-alias nsed='sd'
-alias nfind='fdfind'
+alias nfind='fd'
 alias nping='prettyping'
 
 alias fcd='fuzzy_cd'

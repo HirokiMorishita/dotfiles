@@ -863,17 +863,17 @@ RAlt & vk1D::Reload
   /**
   * エディタ分割(→)
   *
-  * @hotkey LAlt+{O}
+  * @hotkey LAlt+{.}
   * @target VSCode
   */
-  LAlt & O::Send "^+!{r}"
+  LAlt & .::Send "^+!{r}"
   /**
   * エディタ分割(↓)
   *
-  * @hotkey LAlt+{U}
+  * @hotkey LAlt+{M}
   * @target VSCode
   */
-  LAlt & U::Send "^+!{d}"
+  LAlt & M::Send "^+!{d}"
 #HotIf
 
 ;Kindle
@@ -983,17 +983,17 @@ RAlt & vk1D::Reload
   /**
   * エディタ分割(→)
   *
-  * @hotkey LAlt+{O}
+  * @hotkey LAlt+{.}
   * @target WindowsTerminal
   */
-  LAlt & O::Send "^+!{r}"
+  LAlt & .::Send "^+!{r}"
   /**
   * エディタ分割(↓)
   *
-  * @hotkey LAlt+{U}
+  * @hotkey LAlt+{M}
   * @target WindowsTerminal
   */
-  LAlt & U::Send "^+!{d}"
+  LAlt & M::Send "^+!{d}"
 #HotIf
 
 

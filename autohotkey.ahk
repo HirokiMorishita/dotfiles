@@ -497,41 +497,76 @@ vk1C & Space::Send "{Delete}"
 vk1C & vk1D::Send "{vkF3sc029}"
 ;---------- LAlt ----------
 /**
- * OCR (powertoys)
+ * 1
+ *
+ * @hotkey LAlt+{Q}
+ * @target デフォルト
+ */
+LAlt & Q::Send "1"
+/**
+ * 2
+ *
+ * @hotkey LAlt+{W}
+ * @target デフォルト
+ */
+LAlt & W::Send "2"
+/**
+ * 3
+ *
+ * @hotkey LAlt+{E}
+ * @target デフォルト
+ */
+LAlt & E::Send "3"
+/**
+ * 4
  *
  * @hotkey LAlt+{A}
  * @target デフォルト
  */
-LAlt & A::Send "#+{T}"
+LAlt & A::Send "4"
 /**
- * スクリーンショットをとる
+ * 5
  *
  * @hotkey LAlt+{S}
  * @target デフォルト
  */
-LAlt & S::Send "#+{S}"
+LAlt & S::Send "5"
 
 /**
- * ウィンドウのピン止め
+ * 6
+ *
+ * @hotkey LAlt+{D}
+ * @target デフォルト
+ */
+LAlt & D::Send "6"
+/**
+ * 7
  *
  * @hotkey LAlt+{Z}
  * @target デフォルト
  */
-LAlt & Z::Send "#^{t}"
+LAlt & Z::Send "7"
 /**
- * ピクセル測定(powertoys)
+ * 8
  *
  * @hotkey LAlt+{X}
  * @target デフォルト
  */
-LAlt & X::Send "#+{m}"
+LAlt & X::Send "8"
 /**
- * カラーピッカー(powertoys)
+ * 9
  *
  * @hotkey LAlt+{C}
  * @target デフォルト
  */
-LAlt & C::Send "#+{c}"
+LAlt & C::Send "9"
+/**
+ * 0
+ *
+ * @hotkey LAlt+{F}
+ * @target デフォルト
+ */
+LAlt & F::Send "0"
 /**
  * DevToys
  *
@@ -547,6 +582,58 @@ LAlt & V::Run "devtoys:"
  * @target デフォルト
  */
 LAlt & vk1D::Reload
+;---------- RAlt ----------
+/**
+ * OCR (powertoys)
+ *
+ * @hotkey RAlt+{A}
+ * @target デフォルト
+ */
+RAlt & A::Send "#+{T}"
+/**
+ * スクリーンショットをとる
+ *
+ * @hotkey RAlt+{S}
+ * @target デフォルト
+ */
+RAlt & S::Send "#+{S}"
+
+/**
+ * ウィンドウのピン止め
+ *
+ * @hotkey RAlt+{Z}
+ * @target デフォルト
+ */
+RAlt & Z::Send "#^{t}"
+/**
+ * ピクセル測定(powertoys)
+ *
+ * @hotkey RAlt+{X}
+ * @target デフォルト
+ */
+RAlt & X::Send "#+{m}"
+/**
+ * カラーピッカー(powertoys)
+ *
+ * @hotkey RAlt+{C}
+ * @target デフォルト
+ */
+RAlt & C::Send "#+{c}"
+/**
+ * DevToys
+ *
+ * @hotkey RAlt+{V}
+ * @target デフォルト
+ */
+RAlt & V::Run "devtoys:"
+
+/**
+ * script のリロード
+ *
+ * @hotkey RAlt + 無変換
+ * @target デフォルト
+ */
+RAlt & vk1D::Reload
 
 ;---------- アプリごとのショートカット ----------
 ;Slack
@@ -697,6 +784,13 @@ LAlt & vk1D::Reload
   * @target VSCode
   */
   vk1D & G::Send "{Blind}^{g}"
+  /**
+  * 宣言に移動(+shiftで実装に移動)
+  *
+  * @hotkey 無変換+{B}
+  * @target VSCode
+  */
+  vk1D & B::Send "{Blind}^{b}"
 
   /**
   * ターミナルにフォーカス
@@ -769,17 +863,17 @@ LAlt & vk1D::Reload
   /**
   * エディタ分割(→)
   *
-  * @hotkey LAlt+{F}
+  * @hotkey LAlt+{O}
   * @target VSCode
   */
-  LAlt & f::Send "^+!{r}"
+  LAlt & O::Send "^+!{r}"
   /**
   * エディタ分割(↓)
   *
-  * @hotkey LAlt+{D}
+  * @hotkey LAlt+{U}
   * @target VSCode
   */
-  LAlt & d::Send "^+!{d}"
+  LAlt & U::Send "^+!{d}"
 #HotIf
 
 ;Kindle
@@ -889,17 +983,17 @@ LAlt & vk1D::Reload
   /**
   * エディタ分割(→)
   *
-  * @hotkey LAlt+{F}
+  * @hotkey LAlt+{O}
   * @target WindowsTerminal
   */
-  LAlt & f::Send "^+!{r}"
+  LAlt & O::Send "^+!{r}"
   /**
   * エディタ分割(↓)
   *
-  * @hotkey LAlt+{D}
+  * @hotkey LAlt+{U}
   * @target WindowsTerminal
   */
-  LAlt & d::Send "^+!{d}"
+  LAlt & U::Send "^+!{d}"
 #HotIf
 
 

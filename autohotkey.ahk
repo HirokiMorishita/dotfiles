@@ -568,12 +568,19 @@ LAlt & C::Send "9"
  */
 LAlt & F::Send "0"
 /**
- * DevToys
+ * &
+ *
+ * @hotkey LAlt+{R}
+ * @target デフォルト
+ */
+LAlt & R::Send "&"
+/**
+ * |
  *
  * @hotkey LAlt+{V}
  * @target デフォルト
  */
-LAlt & V::Run "devtoys:"
+LAlt & V::Send "|"
 
 /**
  * script のリロード
@@ -730,12 +737,13 @@ RAlt & vk1D::Reload
   */
   vk1D & W::Send "{Blind}^+{[}"
   /**
-  * ファイル選択
+  * コードを展開
   *
   * @hotkey 無変換+{E}
   * @target VSCode
   */
-  vk1D & E::Send "{Blind}^{e}"
+  vk1D & E::Send "{Blind}^+{]}"
+
   /**
   * リネーム
   *
@@ -748,12 +756,12 @@ RAlt & vk1D::Reload
   }
 
   /**
-  * コードを展開
+  * ファイル選択
   *
   * @hotkey 無変換+{T}
   * @target VSCode
   */
-  vk1D & T::Send "{Blind}^+{]}"
+  vk1D & T::Send "{Blind}^{e}"
 
   /**
   * マルチカーソル(下)

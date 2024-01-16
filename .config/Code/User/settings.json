@@ -69,4 +69,5 @@
     "wsl.localhost"
   ],
   "extensions.ignoreRecommendations": true,
+  "indentRainbow.colorOnWhiteSpaceOnly": true,
 }

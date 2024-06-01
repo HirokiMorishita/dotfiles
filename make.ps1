@@ -60,6 +60,7 @@ git submodule update --init
 winget install --id=Microsoft.WindowsTerminal -e
 winget install DevToys
 winget install --id=AutoHotkey.AutoHotkey -e
+winget install --id=Obsidian.Obsidian -e
 
 # profile
 $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"

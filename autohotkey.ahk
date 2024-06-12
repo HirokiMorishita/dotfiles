@@ -882,6 +882,35 @@ RAlt & vk1D::Reload
   * @target VSCode
   */
   LAlt & M::Send "^+!{d}"
+
+  /**
+  * 前の検索結果(ワークスペース全体)
+  *
+  * @hotkey LAlt + {Y}
+  * @target VSCode
+  */
+  LAlt & y::Send "+{F4}"
+  /**
+  * 前の検索結果(ファイル単位)
+  *
+  * @hotkey LAlt + {U}
+  * @target VSCode
+  */
+  LAlt & u::Send "+{F3}"
+  /**
+  * 次の検索結果(ファイル単位)
+  *
+  * @hotkey LAlt + {I}
+  * @target VSCode
+  */
+  LAlt & i::Send "{F3}"
+  /**
+  * 次の検索結果(ワークスペース全体)
+  *
+  * @hotkey LAlt + {O}
+  * @target VSCode
+  */
+  LAlt & o::Send "{F4}"
 #HotIf
 
 ;Kindle

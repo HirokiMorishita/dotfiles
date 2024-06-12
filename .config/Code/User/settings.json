@@ -1,5 +1,4 @@
 {
-  "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.tabSize": 2,
   "editor.wordWrap": "bounded",
@@ -70,4 +69,15 @@
   ],
   "extensions.ignoreRecommendations": true,
   "indentRainbow.colorOnWhiteSpaceOnly": true,
+  "terminal.integrated.scrollback": 10000,
+  "redhat.telemetry.enabled": false,
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  },
+  "remote.autoForwardPortsSource": "hybrid",
+  "editor.formatOnSave": true,
+  "explorer.confirmDragAndDrop": false,
+  "search.useIgnoreFiles": true,
 }

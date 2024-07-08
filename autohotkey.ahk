@@ -839,6 +839,8 @@ RAlt & vk1D::Reload
   vk1C & K::Send "{Blind}^{Tab}"
 
   ;---------- LAltキー ----------
+  ; ALTキーとの組み合わせはvscode上で設定する。
+  ; ここには無変換+pのhelpに乗せるためだけに記載している。
   /**
   * フォーカス移動(左)
   *
@@ -874,14 +876,14 @@ RAlt & vk1D::Reload
   * @hotkey LAlt+{.}
   * @target VSCode
   */
-  LAlt & .::Send "^+!{r}"
+  LAlt & .::Send "!{.}"
   /**
   * エディタ分割(↓)
   *
   * @hotkey LAlt+{M}
   * @target VSCode
   */
-  LAlt & M::Send "^+!{d}"
+  LAlt & M::Send "!{m}"
 
   /**
   * 前の検索結果(ワークスペース全体)
@@ -889,28 +891,28 @@ RAlt & vk1D::Reload
   * @hotkey LAlt + {Y}
   * @target VSCode
   */
-  LAlt & y::Send "+{F4}"
+  LAlt & y::Send "!{y}"
   /**
   * 前の検索結果(ファイル単位)
   *
   * @hotkey LAlt + {U}
   * @target VSCode
   */
-  LAlt & u::Send "+{F3}"
+  LAlt & u::Send "!{u}"
   /**
   * 次の検索結果(ファイル単位)
   *
   * @hotkey LAlt + {I}
   * @target VSCode
   */
-  LAlt & i::Send "{F3}"
+  LAlt & i::Send "!{i}"
   /**
   * 次の検索結果(ワークスペース全体)
   *
   * @hotkey LAlt + {O}
   * @target VSCode
   */
-  LAlt & o::Send "{F4}"
+  LAlt & o::Send "!{o}"
 #HotIf
 
 ;Kindle

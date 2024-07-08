@@ -208,12 +208,12 @@ vk1D & [::Send "{Esc}"
 vk1D & Space::Send "{BS}"
 
 /**
- * 半角/全角
+ * IMEオフ
  *
  * @hotkey 無変換+変換
  * @target デフォルト
  */
-vk1D & vk1C::Send "{vkF3sc029}"
+vk1D & vk1C::Send "{vk1Dsc07B}"
 
 ;---------- 変換キー ----------
 vk1C::Return
@@ -489,12 +489,12 @@ vk1C & 0::Send "#!{0}"
 vk1C & Space::Send "{Delete}"
 
 /**
- * 半角/全角
+ * IMEオン
  *
  * @hotkey 変換+無変換
  * @target デフォルト
  */
-vk1C & vk1D::Send "{vkF3sc029}"
+vk1C & vk1D::Send "{vk1Csc079}"
 ;---------- LAlt ----------
 /**
  * 1

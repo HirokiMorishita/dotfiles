@@ -823,20 +823,6 @@ RAlt & vk1D::Reload
   * @target VSCode
   */
   vk1C & L::Send "^+{z}"
-  /**
-  * タブ切り替え(←)
-  *
-  * @hotkey 変換+{J}
-  * @target VSCode
-  */
-  vk1C & J::Send "{Blind}^+{Tab}"
-  /**
-  * タブ切り替え(→)
-  *
-  * @hotkey 変換+{K}
-  * @target VSCode
-  */
-  vk1C & K::Send "{Blind}^{Tab}"
 
   ;---------- LAltキー ----------
   ; ALTキーとの組み合わせはvscode上で設定する。
@@ -1048,6 +1034,54 @@ RAlt & vk1D::Reload
   vk1C & B::Send "^{d}"
 #HotIf
 
+;Obsidian
+#HotIf WinActive("ahk_exe Obsidian.exe")
+  ;---------- 無変換キー ----------
+
+  /**
+  * コードを折りたたみ
+  *
+  * @hotkey 無変換+{W}
+  * @target Obsidian
+  */
+  vk1D & W::Send "{Blind}^+{[}"
+  /**
+  * コードを展開
+  *
+  * @hotkey 無変換+{E}
+  * @target Obsidian
+  */
+  vk1D & E::Send "{Blind}^+{]}"
+
+  /**
+  * リネーム
+  *
+  * @hotkey 無変換+{R}
+  * @target Obsidian
+  */
+  vk1D & R:: {
+    Send "^{0}"
+    Send "{Blind}{F2}"
+  }
+
+  ;---------- 変換キー ----------
+
+  /**
+  * アンドゥ
+  *
+  * @hotkey 変換+{H}
+  * @target Obsidian
+  */
+  vk1C & H::Send "^{z}"
+  /**
+  * リドゥ
+  *
+  * @hotkey 変換+{L}
+  * @target Obsidian
+  */
+  vk1C & L::Send "^+{z}"
+
+#HotIf
 
 /**
  * 設定されたホットキー/ホットストリングを一覧表示

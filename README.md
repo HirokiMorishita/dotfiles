@@ -33,6 +33,7 @@ cd ~/.dotfiles
       - IMEオフ
     - 変換キー
       - IMEオン
+  - windows 11の場合は Microsoft IME>全般>詳細設定>全般>キー設定から変更
 
 ## usage
 ### alias

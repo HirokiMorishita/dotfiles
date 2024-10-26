@@ -1,5 +1,5 @@
 alias a='fuzzy_alias_look_command'
-alias h='history | fzf --reverse'
+alias h='fuzzy_history_look_command'
 alias e='explorer.exe .'
 alias r='exec bash'
 alias ..='cd ..'
@@ -37,6 +37,7 @@ alias open='open'
 
 bind -x '"\C-g": fuzzy_ghq_cd_bind'
 bind -x '"\C-a": fuzzy_alias_look_bind'
+bind -x '"\C-h": fuzzy_history_look_bind'
 
 fuzzy_alias_look_command() {
   local selected_alias
@@ -51,6 +52,23 @@ fuzzy_alias_look_bind() {
   if [ -n "$selected_alias" ]; then
     READLINE_LINE="$selected_alias"
     READLINE_POINT=${#selected_alias}
+  fi
+}
+
+fuzzy_history_look_command() {
+  local selected_history
+  selected_history=$(history | fzf --reverse | awk '{print $2}')
+  if [ -n "$selected_history" ]; then
+    $selected_history
+  fi
+}
+
+fuzzy_history_look_bind() {
+  local selected_history
+  selected_history=$(history | fzf --reverse | awk '{print $2}')
+  if [ -n "$selected_history" ]; then
+    READLINE_LINE="$selected_history"
+    READLINE_POINT=${#selected_history}
   fi
 }
 

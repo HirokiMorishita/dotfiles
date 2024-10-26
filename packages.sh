@@ -20,7 +20,6 @@ utils=(
   "locales"
   "bash-completion"
   "nkf"
-  "zstd"
 )
 utils_arch=(
   "${utils[@]}"

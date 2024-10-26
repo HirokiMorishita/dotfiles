@@ -112,17 +112,6 @@ install_min() {
   curl -L https://github.com/dandavison/delta/releases/download/0.16.5/git-delta-musl_0.16.5_amd64.deb -o /tmp/git-delta.deb \
   && sudo dpkg -i /tmp/git-delta.deb
 
-  curl -L https://github.com/muesli/duf/releases/download/v0.8.0/duf_0.8.0_linux_amd64.deb -o /tmp/duf.deb \
-  && sudo dpkg -i /tmp/duf.deb
-
-  # dpkgがzstdに対応していないので、xzでアーカイブしなおす
-  curl -L https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb -o /tmp/lsd.deb \
-  && ar x --output=/tmp/ /tmp/lsd.deb \
-  && (zstd -d < /tmp/control.tar.zst | xz > /tmp/control.tar.xz) \
-  && (zstd -d < /tmp/data.tar.zst | xz > /tmp/data.tar.xz) \
-  && ar -m -c -a sdsd /tmp/lsd.deb debian-binary /tmp/control.tar.xz /tmp/data.tar.xz \
-  && sudo dpkg -i /tmp/lsd.deb
-
   curl -L https://github.com/BurntSushi/ripgrep/releases/download/14.0.3/ripgrep_14.0.3-1_amd64.deb -o /tmp/ripgrep.deb \
   && sudo dpkg -i /tmp/ripgrep.deb
 

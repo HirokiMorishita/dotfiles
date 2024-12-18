@@ -55,7 +55,7 @@ fuzzy_alias_look_bind() {
 
 fuzzy_history_look_command() {
   local selected_history
-  selected_history=$(history | fzf --reverse | awk '{print $2}')
+  selected_history=$(history | tac | fzf +m --prompt="History>" | xargs bash -c 'echo ${@:1}')
   if [ -n "$selected_history" ]; then
     $selected_history
   fi
@@ -63,7 +63,7 @@ fuzzy_history_look_command() {
 
 fuzzy_history_look_bind() {
   local selected_history
-  selected_history=$(history | fzf --reverse | awk '{print $2}')
+  selected_history=$(history | tac | fzf +m --prompt="History>" | xargs bash -c 'echo ${@:1}')
   if [ -n "$selected_history" ]; then
     READLINE_LINE="$selected_history"
     READLINE_POINT=${#selected_history}

@@ -1037,6 +1037,13 @@ RAlt & vk1D::Reload
 ;Obsidian
 #HotIf WinActive("ahk_exe Obsidian.exe")
   ;---------- 無変換キー ----------
+  /**
+  * クイックスナッチャー
+  *
+  * @hotkey 無変換+{T}
+  * @target VSCode
+  */
+  vk1D & T::Send "^{o}"
 
   /**
   * コードを折りたたみ
@@ -1064,6 +1071,21 @@ RAlt & vk1D::Reload
     Send "{Blind}{F2}"
   }
 
+  /**
+  * ジャンプ
+  *
+  * @hotkey 無変換+{G}
+  * @target Obsidian
+  */
+  vk1D & G::Send "^{g}"
+
+  /**
+  * デイリーノート
+  *
+  * @hotkey 無変換+{Enter}
+  * @target VSCode
+  */
+  vk1D & Enter::Send "^+{Enter}"
   ;---------- 変換キー ----------
 
   /**
@@ -1080,6 +1102,38 @@ RAlt & vk1D::Reload
   * @target Obsidian
   */
   vk1C & L::Send "^+{z}"
+
+  /**
+  * チェックトグル
+  *
+  * @hotkey 変換+{C}
+  * @target VSCode
+  */
+  vk1C & C::Send "^{l}"
+
+  /**
+  * デイリーノート タイムライン(Thino)
+  *
+  * @hotkey 無変換+{Enter}
+  * @target VSCode
+  */
+  vk1C & Enter::Send "+{Enter}"
+
+
+  /**
+  * 前日のデイリーノート
+  *
+  * @hotkey 変換+{Y}
+  * @target Obsidian
+  */
+  vk1C & Y::Send "^+{h}"
+  /**
+  * 前日のデイリーノート
+  *
+  * @hotkey 変換+{O}
+  * @target Obsidian
+  */
+  vk1C & O::Send "^+{l}"
 
 #HotIf
 

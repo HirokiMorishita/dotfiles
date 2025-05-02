@@ -1,398 +1,373 @@
 {
-  "$help": "https://aka.ms/terminal-documentation",
-  "$schema": "https://aka.ms/terminal-profiles-schema",
-  "actions": [
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 7
+            },
+            "id": "User.switchToTab.D7681B66"
+        },
+        {
+            "command": 
+            {
+                "action": "nextTab"
+            },
+            "id": "User.nextTab.0"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 6
+            },
+            "id": "User.switchToTab.787314EB"
+        },
+        {
+            "command": 
+            {
+                "action": "openSettings"
+            },
+            "id": "User.openSettings.D3F0B923"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 5
+            },
+            "id": "User.prevTab.0"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 2
+            },
+            "id": "User.switchToTab.87C324ED"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 5
+            },
+            "id": "User.switchToTab.75247157"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "id": "User.splitPane.D5151347"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "right"
+            },
+            "id": "User.moveFocus.87C324ED"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 1
+            },
+            "id": "User.switchToTab.2A0DA8E0"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 0
+            },
+            "id": "User.switchToTab.D3F0B923"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "right"
+            },
+            "id": "User.splitPane.864CD510"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "down"
+            },
+            "id": "User.moveFocus.F747588A"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollUp"
+            },
+            "id": "User.scrollUp.0"
+        },
+        {
+            "command": "scrollUpPage",
+            "id": "User.scrollUpPage"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.10B260D2"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 4
+            },
+            "id": "User.switchToTab.F747588A"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollDown"
+            },
+            "id": "User.scrollDown.0"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 3
+            },
+            "id": "User.switchToTab.6CD791B"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "up"
+            },
+            "id": "User.moveFocus.6CD791B"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 8
+            },
+            "id": "User.switchToTab.ED268D78"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "left"
+            },
+            "id": "User.moveFocus.2A0DA8E0"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "right",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.FEF0D40B"
+        },
+        {
+            "command": "scrollDownPage",
+            "id": "User.scrollDownPage"
+        }
+    ],
+    "alwaysShowTabs": true,
+    "copyOnSelect": true,
+    "defaultProfile": "{c0c023f9-a917-4db0-af64-68de344d1ad4}",
+    "initialCols": 120,
+    "initialRows": 30,
+    "keybindings": 
+    [
+        {
+            "id": null,
+            "keys": "alt+shift+minus"
+        },
+        {
+            "id": "User.prevTab.0",
+            "keys": "ctrl+shift+tab"
+        },
+        {
+            "id": "User.scrollUpPage",
+            "keys": "shift+pgup"
+        },
+        {
+            "id": "User.switchToTab.787314EB",
+            "keys": "alt+7"
+        },
+        {
+            "id": "User.nextTab.0",
+            "keys": "ctrl+tab"
+        },
+        {
+            "id": "User.openSettings.D3F0B923",
+            "keys": "ctrl+shift+p"
+        },
+        {
+            "id": "User.switchToTab.75247157",
+            "keys": "alt+6"
+        },
+        {
+            "id": "User.moveFocus.2A0DA8E0",
+            "keys": "alt+left"
+        },
+        {
+            "id": "User.switchToTab.87C324ED",
+            "keys": "alt+3"
+        },
+        {
+            "id": null,
+            "keys": "alt+shift+plus"
+        },
+        {
+            "id": "User.switchToTab.D7681B66",
+            "keys": "alt+8"
+        },
+        {
+            "id": "User.scrollUp.0",
+            "keys": "ctrl+shift+up"
+        },
+        {
+            "id": "User.splitPane.D5151347",
+            "keys": "ctrl+alt+shift+d"
+        },
+        {
+            "id": "User.switchToTab.D3F0B923",
+            "keys": "alt+1"
+        },
+        {
+            "id": "User.splitPane.864CD510",
+            "keys": "ctrl+alt+shift+r"
+        },
+        {
+            "id": "User.moveFocus.F747588A",
+            "keys": "alt+down"
+        },
+        {
+            "id": "User.splitPane.10B260D2",
+            "keys": "alt+minus"
+        },
+        {
+            "id": "User.switchToTab.F747588A",
+            "keys": "alt+5"
+        },
+        {
+            "id": "User.switchToTab.2A0DA8E0",
+            "keys": "alt+2"
+        },
+        {
+            "id": "User.scrollDown.0",
+            "keys": "ctrl+shift+down"
+        },
+        {
+            "id": "User.switchToTab.6CD791B",
+            "keys": "alt+4"
+        },
+        {
+            "id": "User.moveFocus.6CD791B",
+            "keys": "alt+up"
+        },
+        {
+            "id": "User.switchToTab.ED268D78",
+            "keys": "alt+9"
+        },
+        {
+            "id": "User.splitPane.FEF0D40B",
+            "keys": "alt+shift+\\"
+        },
+        {
+            "id": "User.scrollDownPage",
+            "keys": "shift+pgdn"
+        },
+        {
+            "id": "User.moveFocus.87C324ED",
+            "keys": "alt+right"
+        }
+    ],
+    "launchMode": "maximized",
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
     {
-      "command": {
-        "action": "nextTab"
-      },
-      "id": "User.nextTab.0",
-      "keys": "ctrl+tab"
+        "defaults": 
+        {
+            "bellStyle": "none",
+            "colorScheme": "Campbell (modified)",
+            "font": 
+            {
+                "face": "Fira Code"
+            }
+        },
+        "list": 
+        [
+            {
+                "colorScheme": "Campbell (modified)",
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Ubuntu-20.04",
+                "guid": "{c0c023f9-a917-4db0-af64-68de344d1ad4}",
+                "hidden": false,
+                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+                "name": "Ubuntu-20.04",
+                "startingDirectory": "~"
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            }
+        ]
     },
-    {
-      "command": {
-        "action": "switchToTab",
-        "index": 6
-      },
-      "id": "User.switchToTab.787314EB",
-      "keys": "alt+7"
-    },
-    {
-      "command": {
-        "action": "openSettings"
-      },
-      "id": "User.openSettings.D3F0B923",
-      "keys": "ctrl+shift+p"
-    },
-    {
-      "command": {
-        "action": "switchToTab",
-        "index": 5
-      },
-      "id": "User.switchToTab.75247157",
-      "keys": "alt+6"
-    },
-    {
-      "command": {
-        "action": "switchToTab",
-        "index": 2
-      },
-      "id": "User.switchToTab.87C324ED",
-      "keys": "alt+3"
-    },
-    {
-      "command": {
-        "action": "switchToTab",
-        "index": 5
-      },
-      "id": "User.prevTab.0",
-      "keys": "ctrl+shift+tab"
-    },
-    {
-      "command": "unbound",
-      "keys": "alt+shift+minus"
-    },
-    {
-      "command": "unbound",
-      "keys": "alt+shift+plus"
-    },
-    {
-      "command": {
-        "action": "switchToTab",
-        "index": 7
-      },
-      "id": "User.switchToTab.D7681B66",
-      "keys": "alt+8"
-    },
-    {
-      "command": {
-        "action": "splitPane",
-        "split": "down"
-      },
-      "id": "User.splitPane.D5151347",
-      "keys": "ctrl+alt+shift+d"
-    },
-    {
-      "command": {
-        "action": "switchToTab",
-        "index": 0
-      },
-      "id": "User.switchToTab.D3F0B923",
-      "keys": "alt+1"
-    },
-    {
-      "command": {
-        "action": "splitPane",
-        "split": "right"
-      },
-      "id": "User.splitPane.864CD510",
-      "keys": "ctrl+alt+shift+r"
-    },
-    {
-      "command": {
-        "action": "moveFocus",
-        "direction": "down"
-      },
-      "id": "User.moveFocus.F747588A",
-      "keys": "alt+down"
-    },
-    {
-      "command": {
-        "action": "scrollUp"
-      },
-      "id": "User.scrollUp.0",
-      "keys": "ctrl+shift+up"
-    },
-    {
-      "command": "scrollUpPage",
-      "id": "User.scrollUpPage",
-      "keys": "shift+pgup"
-    },
-    {
-      "command": {
-        "action": "splitPane",
-        "split": "down",
-        "splitMode": "duplicate"
-      },
-      "id": "User.splitPane.10B260D2",
-      "keys": "alt+minus"
-    },
-    {
-      "command": {
-        "action": "switchToTab",
-        "index": 4
-      },
-      "id": "User.switchToTab.F747588A",
-      "keys": "alt+5"
-    },
-    {
-      "command": {
-        "action": "switchToTab",
-        "index": 1
-      },
-      "id": "User.switchToTab.2A0DA8E0",
-      "keys": "alt+2"
-    },
-    {
-      "command": {
-        "action": "scrollDown"
-      },
-      "id": "User.scrollDown.0",
-      "keys": "ctrl+shift+down"
-    },
-    {
-      "command": {
-        "action": "switchToTab",
-        "index": 3
-      },
-      "id": "User.switchToTab.6CD791B",
-      "keys": "alt+4"
-    },
-    {
-      "command": {
-        "action": "moveFocus",
-        "direction": "up"
-      },
-      "id": "User.moveFocus.6CD791B",
-      "keys": "alt+up"
-    },
-    {
-      "command": {
-        "action": "switchToTab",
-        "index": 8
-      },
-      "id": "User.switchToTab.ED268D78",
-      "keys": "alt+9"
-    },
-    {
-      "command": {
-        "action": "moveFocus",
-        "direction": "left"
-      },
-      "id": "User.moveFocus.2A0DA8E0",
-      "keys": "alt+left"
-    },
-    {
-      "command": {
-        "action": "splitPane",
-        "split": "right",
-        "splitMode": "duplicate"
-      },
-      "id": "User.splitPane.FEF0D40B",
-      "keys": "alt+shift+\\"
-    },
-    {
-      "command": "scrollDownPage",
-      "id": "User.scrollDownPage",
-      "keys": "shift+pgdn"
-    },
-    {
-      "command": {
-        "action": "moveFocus",
-        "direction": "right"
-      },
-      "id": "User.moveFocus.87C324ED",
-      "keys": "alt+right"
-    }
-  ],
-  "alwaysShowTabs": true,
-  "copyOnSelect": true,
-  "defaultProfile": "{c0c023f9-a917-4db0-af64-68de344d1ad4}",
-  "initialCols": 120,
-  "initialRows": 30,
-  "keybindings": [
-    {
-      "id": null,
-      "keys": "alt+shift+minus"
-    },
-    {
-      "id": "User.prevTab.0",
-      "keys": "ctrl+shift+tab"
-    },
-    {
-      "id": "User.scrollUpPage",
-      "keys": "shift+pgup"
-    },
-    {
-      "id": "User.switchToTab.787314EB",
-      "keys": "alt+7"
-    },
-    {
-      "id": "User.nextTab.0",
-      "keys": "ctrl+tab"
-    },
-    {
-      "id": "User.openSettings.D3F0B923",
-      "keys": "ctrl+shift+p"
-    },
-    {
-      "id": "User.switchToTab.75247157",
-      "keys": "alt+6"
-    },
-    {
-      "id": "User.moveFocus.2A0DA8E0",
-      "keys": "alt+left"
-    },
-    {
-      "id": "User.switchToTab.87C324ED",
-      "keys": "alt+3"
-    },
-    {
-      "id": null,
-      "keys": "alt+shift+plus"
-    },
-    {
-      "id": "User.switchToTab.D7681B66",
-      "keys": "alt+8"
-    },
-    {
-      "id": "User.scrollUp.0",
-      "keys": "ctrl+shift+up"
-    },
-    {
-      "id": "User.splitPane.D5151347",
-      "keys": "ctrl+alt+shift+d"
-    },
-    {
-      "id": "User.switchToTab.D3F0B923",
-      "keys": "alt+1"
-    },
-    {
-      "id": "User.splitPane.864CD510",
-      "keys": "ctrl+alt+shift+r"
-    },
-    {
-      "id": "User.moveFocus.F747588A",
-      "keys": "alt+down"
-    },
-    {
-      "id": "User.splitPane.10B260D2",
-      "keys": "alt+minus"
-    },
-    {
-      "id": "User.switchToTab.F747588A",
-      "keys": "alt+5"
-    },
-    {
-      "id": "User.switchToTab.2A0DA8E0",
-      "keys": "alt+2"
-    },
-    {
-      "id": "User.scrollDown.0",
-      "keys": "ctrl+shift+down"
-    },
-    {
-      "id": "User.switchToTab.6CD791B",
-      "keys": "alt+4"
-    },
-    {
-      "id": "User.moveFocus.6CD791B",
-      "keys": "alt+up"
-    },
-    {
-      "id": "User.switchToTab.ED268D78",
-      "keys": "alt+9"
-    },
-    {
-      "id": "User.splitPane.FEF0D40B",
-      "keys": "alt+shift+\\"
-    },
-    {
-      "id": "User.scrollDownPage",
-      "keys": "shift+pgdn"
-    },
-    {
-      "id": "User.moveFocus.87C324ED",
-      "keys": "alt+right"
-    }
-  ],
-  "launchMode": "maximized",
-  "newTabMenu": [
-    {
-      "type": "remainingProfiles"
-    }
-  ],
-  "profiles": {
-    "defaults": {
-      "bellStyle": "none",
-      "colorScheme": "Campbell (modified)",
-      "font": {
-        "face": "Fira Code"
-      }
-    },
-    "list": [
-      {
-        "colorScheme": "Campbell (modified)",
-        "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Ubuntu-20.04",
-        "guid": "{c0c023f9-a917-4db0-af64-68de344d1ad4}",
-        "hidden": false,
-        "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
-        "name": "Ubuntu-20.04",
-        "startingDirectory": "~"
-      },
-      {
-        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-        "hidden": false,
-        "name": "Windows PowerShell"
-      },
-      {
-        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-        "hidden": false,
-        "name": "Command Prompt"
-      }
-    ]
-  },
-  "schemes": [
-    {
-      "background": "#0C0C0C",
-      "black": "#0C0C0C",
-      "blue": "#0037DA",
-      "brightBlack": "#767676",
-      "brightBlue": "#3B78FF",
-      "brightCyan": "#61D6D6",
-      "brightGreen": "#16C60C",
-      "brightPurple": "#B4009E",
-      "brightRed": "#E74856",
-      "brightWhite": "#F2F2F2",
-      "brightYellow": "#F9F1A5",
-      "cursorColor": "#FFFFFF",
-      "cyan": "#3A96DD",
-      "foreground": "#F2F2F2",
-      "green": "#13A10E",
-      "name": "Campbell (modified)",
-      "purple": "#881798",
-      "red": "#C50F1F",
-      "selectionBackground": "#FFFFFF",
-      "white": "#CCCCCC",
-      "yellow": "#C19C00"
-    },
-    {
-      "background": "#300A24",
-      "black": "#171421",
-      "blue": "#0037DA",
-      "brightBlack": "#767676",
-      "brightBlue": "#08458F",
-      "brightCyan": "#2C9FB3",
-      "brightGreen": "#26A269",
-      "brightPurple": "#A347BA",
-      "brightRed": "#C01C28",
-      "brightWhite": "#F2F2F2",
-      "brightYellow": "#A2734C",
-      "cursorColor": "#FFFFFF",
-      "cyan": "#3A96DD",
-      "foreground": "#FFFFFF",
-      "green": "#26A269",
-      "name": "Ubuntu-ColorScheme",
-      "purple": "#881798",
-      "red": "#C21A23",
-      "selectionBackground": "#FFFFFF",
-      "white": "#CCCCCC",
-      "yellow": "#A2734C"
-    }
-  ],
-  "showTabsInTitlebar": true,
-  "showTerminalTitleInTitlebar": true,
-  "startOnUserLogin": false,
-  "themes": [],
-  "wordDelimiters": " ./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}~?\u2502"
+    "schemes": 
+    [
+        {
+            "background": "#0C0C0C",
+            "black": "#0C0C0C",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#3B78FF",
+            "brightCyan": "#61D6D6",
+            "brightGreen": "#16C60C",
+            "brightPurple": "#B4009E",
+            "brightRed": "#E74856",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9F1A5",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#F2F2F2",
+            "green": "#13A10E",
+            "name": "Campbell (modified)",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#C19C00"
+        }
+    ],
+    "showTabsInTitlebar": true,
+    "showTerminalTitleInTitlebar": true,
+    "startOnUserLogin": false,
+    "themes": [],
+    "wordDelimiters": " ./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}~?\u2502"
 }

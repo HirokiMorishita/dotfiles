@@ -1026,12 +1026,12 @@ RAlt & vk1D::Reload
 #HotIf WinActive("ahk_exe chrome.exe")
 
   /**
-  * ブックマーク追加
+  * Obsidian Web Clipperでクリップ
   *
-  * @hotkey 変換+{B}
+  * @hotkey 無変換+{S}
   * @target Chrome
   */
-  vk1C & B::Send "^{d}"
+  vk1D & S::Send "+!{O}"
 #HotIf
 
 ;Obsidian
@@ -1080,6 +1080,14 @@ RAlt & vk1D::Reload
   vk1D & G::Send "^{g}"
 
   /**
+  * リンクにジャンプ
+  *
+  * @hotkey 無変換+{B}
+  * @target Obsidian
+  */
+  vk1D & B::Send "^+{g}"
+
+  /**
   * デイリーノート
   *
   * @hotkey 無変換+{Enter}
@@ -1094,14 +1102,14 @@ RAlt & vk1D::Reload
   * @hotkey 変換+{H}
   * @target Obsidian
   */
-  vk1C & H::Send "^{z}"
+  vk1C & H::Send "^!{Left}"
   /**
   * リドゥ
   *
   * @hotkey 変換+{L}
   * @target Obsidian
   */
-  vk1C & L::Send "^+{z}"
+  vk1C & L::Send "^!{Right}"
 
   /**
   * チェックトグル
@@ -1110,30 +1118,6 @@ RAlt & vk1D::Reload
   * @target VSCode
   */
   vk1C & C::Send "^{l}"
-
-  /**
-  * デイリーノート タイムライン(Thino)
-  *
-  * @hotkey 無変換+{Enter}
-  * @target VSCode
-  */
-  vk1C & Enter::Send "+{Enter}"
-
-
-  /**
-  * 前日のデイリーノート
-  *
-  * @hotkey 変換+{Y}
-  * @target Obsidian
-  */
-  vk1C & Y::Send "^+{h}"
-  /**
-  * 前日のデイリーノート
-  *
-  * @hotkey 変換+{O}
-  * @target Obsidian
-  */
-  vk1C & O::Send "^+{l}"
 
 #HotIf
 

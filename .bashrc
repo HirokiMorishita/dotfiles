@@ -47,3 +47,9 @@ if [ -d $HOME/.asdf ] ; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+# include .bashrc.local if it exists
+if [ -f "$HOME/.bashrc.local" ]; then
+  . "$HOME/.bashrc.local"
+fi

@@ -1034,6 +1034,18 @@ RAlt & vk1D::Reload
   vk1D & S::Send "+!{O}"
 #HotIf
 
+;chrome
+#HotIf WinActive("ahk_exe CLIPStudioPaint.exe")
+
+  /**
+  * デフォルトの挙動に戻す
+  *
+  * @hotkey Ctrl+{Space}
+  * @target Chrome
+  */
+  ^Space::Send "^{Space}"
+#HotIf
+
 ;Obsidian
 #HotIf WinActive("ahk_exe Obsidian.exe")
   ;---------- 無変換キー ----------

@@ -33,9 +33,7 @@ install() {
   fi
 
   if !(type cargo > /dev/null 2>&1); then
-    asdf plugin-add rust https://github.com/asdf-community/asdf-rust.git
-    asdf install rust latest
-    asdf global rust latest
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   fi
 
   cd $DOTFILES

@@ -14,11 +14,10 @@ mkdir -p $XDG_CONFIG_HOME
 install() {
   install_min
 
-  echo "install asdf"
-  if [ ! -d ~/.asdf ]; then
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+  echo "install mise"
+  if [ ! -d ~/.local/bin/mise ]; then
+    curl https://mise.run | sh
   fi
-  . $HOME/.asdf/asdf.sh
 
   echo "install python dependencies"
   sudo apt install -y build-essential libssl-dev zlib1g-dev \
@@ -27,13 +26,7 @@ install() {
 
   if !(type ghq > /dev/null 2>&1); then
     echo "install ghq"
-    asdf plugin add ghq
-    asdf install ghq latest
-    asdf global ghq latest
-  fi
-
-  if !(type cargo > /dev/null 2>&1); then
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    mise use -g ghq
   fi
 
   cd $DOTFILES

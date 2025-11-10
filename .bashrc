@@ -1,4 +1,3 @@
-export PATH="$HOME/.cargo/bin:$PATH"
 if (type "wslpath" > /dev/null 2>&1); then
   export PATH=$PATH:"$(wslpath "$(wslvar USERPROFILE)")/AppData/Local/Programs/Microsoft VS Code/bin"
 fi
@@ -41,11 +40,6 @@ if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ] ; then
   source /usr/share/doc/fzf/examples/completion.bash
 fi
 
-if [ -d $HOME/.asdf ] ; then
-  . $HOME/.asdf/asdf.sh
-  . $HOME/.asdf/completions/asdf.bash
-fi
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 
@@ -54,4 +48,4 @@ if [ -f "$HOME/.bashrc.local" ]; then
   . "$HOME/.bashrc.local"
 fi
 
-. "$HOME/.cargo/env"
+eval "$(~/.local/bin/mise activate bash)"

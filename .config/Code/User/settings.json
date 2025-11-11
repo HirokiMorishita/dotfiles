@@ -80,4 +80,5 @@
   "editor.formatOnSave": true,
   "explorer.confirmDragAndDrop": false,
   "search.useIgnoreFiles": true,
+  "powershell.powerShellDefaultVersion": "PowerShell 7",
 }

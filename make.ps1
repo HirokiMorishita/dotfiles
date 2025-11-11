@@ -61,7 +61,9 @@ winget install --id=Microsoft.WindowsTerminal -e
 winget install DevToys
 winget install --id=AutoHotkey.AutoHotkey -e
 winget install --id=Obsidian.Obsidian -e
-winget install rustlang.rustup
+winget install Microsoft.PowerShell
+winget install jdx.mise
+echo 'mise activate pwsh | Out-String | Invoke-Expression' >> $HOME\Documents\PowerShell\Profile.ps1
 
 # profile
 $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"

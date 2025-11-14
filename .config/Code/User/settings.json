@@ -7,7 +7,7 @@
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.acceptSuggestionOnEnter": "off",
-  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.semanticTokenColorCustomizations": {
     "enabled": true
   },
@@ -54,9 +54,6 @@
     "sync": false
   },
   "workbench.startupEditor": "none",
-  "aws.suppressPrompts": {
-    "regionAddAutomatically": true
-  },
   "[markdown]": {
     "editor.quickSuggestions": {
       "other": true,
@@ -64,21 +61,29 @@
       "strings": true
     },
   },
-  "security.allowedUNCHosts": [
-    "wsl.localhost"
-  ],
   "extensions.ignoreRecommendations": true,
-  "indentRainbow.colorOnWhiteSpaceOnly": true,
   "terminal.integrated.scrollback": 10000,
-  "redhat.telemetry.enabled": false,
   "files.watcherExclude": {
+    "**/.ammonite": true,
     "**/.bloop": true,
     "**/.metals": true,
-    "**/.ammonite": true
+    "**/node_modules/*/**": true
   },
   "remote.autoForwardPortsSource": "hybrid",
   "editor.formatOnSave": true,
   "explorer.confirmDragAndDrop": false,
   "search.useIgnoreFiles": true,
   "powershell.powerShellDefaultVersion": "PowerShell 7",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "scala": true
+  },
+  "security.allowedUNCHosts": [
+    "wsl.localhost"
+  ],
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
 }

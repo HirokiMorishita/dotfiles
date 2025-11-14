@@ -1,7 +1,3 @@
-if (type "wslpath" > /dev/null 2>&1); then
-  export PATH=$PATH:"$(wslpath "$(wslvar USERPROFILE)")/AppData/Local/Programs/Microsoft VS Code/bin"
-fi
-
 
 export LESS='-R'
 export FZF_DEFAULT_COMMAND='fd --type f'

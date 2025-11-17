@@ -9,7 +9,9 @@ if (type vivid > /dev/null 2>&1); then
   export LS_COLORS="$(vivid generate snazzy)"
 fi
 
-eval "$(starship init bash)"
+if (type starship > /dev/null 2>&1); then
+  eval "$(starship init bash)"
+fi
 
 DOTFILES="$HOME/.dotfiles"
 export FORGIT_FZF_DEFAULT_OPTS="
@@ -44,4 +46,6 @@ if [ -f "$HOME/.bashrc.local" ]; then
   . "$HOME/.bashrc.local"
 fi
 
-eval "$(~/.local/bin/mise activate bash)"
+if (type mise > /dev/null 2>&1); then
+  eval "$(~/.local/bin/mise activate bash)"
+fi

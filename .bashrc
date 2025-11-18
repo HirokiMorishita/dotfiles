@@ -46,6 +46,6 @@ if [ -f "$HOME/.bashrc.local" ]; then
   . "$HOME/.bashrc.local"
 fi
 
-if (type mise > /dev/null 2>&1); then
+if (type ~/.local/bin/mise > /dev/null 2>&1); then
   eval "$(~/.local/bin/mise activate bash)"
 fi

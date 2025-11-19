@@ -43,7 +43,7 @@
   },
   "terminal.integrated.defaultProfile.windows": "Ubuntu 20.04",
   "terminal.integrated.fontFamily": "Fira Code",
-  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?、。「」【】『』（）！？　てにをはがのともへでや",
+  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
   "dotfiles.repository": "git@github.com:HirokiMorishita/dotfiles.git",
   "dotfiles.targetPath": "~/.dotfiles",
   "dotfiles.installCommand": "",
@@ -86,4 +86,7 @@
   ],
   "javascript.preferences.importModuleSpecifier": "non-relative",
   "typescript.preferences.importModuleSpecifier": "non-relative",
+  "editor.wordSegmenterLocales": [
+    "ja"
+  ],
 }

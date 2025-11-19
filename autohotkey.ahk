@@ -1053,7 +1053,7 @@ RAlt & vk1D::Reload
   * クイックスナッチャー
   *
   * @hotkey 無変換+{T}
-  * @target VSCode
+  * @target Obsidian
   */
   vk1D & T::Send "^{o}"
 
@@ -1103,7 +1103,7 @@ RAlt & vk1D::Reload
   * デイリーノート
   *
   * @hotkey 無変換+{Enter}
-  * @target VSCode
+  * @target Obsidian
   */
   vk1D & Enter::Send "^+{Enter}"
   ;---------- 変換キー ----------

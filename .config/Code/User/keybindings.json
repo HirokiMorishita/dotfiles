@@ -87,7 +87,7 @@
     "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
-    "key": "alt+oem_comma",
+    "key": "alt+oem_period",
     "command": "workbench.action.splitEditorRight"
   },
   {

@@ -17,7 +17,6 @@
   "editor.bracketPairColorization.enabled": true,
   "explorer.confirmDelete": false,
   "files.autoSave": "onFocusChange",
-  "workbench.iconTheme": "vscode-icons",
   "vsicons.dontShowNewVersionMessage": true,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.profiles.windows": {

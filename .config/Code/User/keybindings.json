@@ -62,21 +62,6 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+g",
-    "command": "extension.jumpy-word",
-    "when": "editorTextFocus && !jumpy.isJumpyMode"
-  },
-  {
-    "key": "ctrl+g",
-    "command": "extension.jumpy-exit",
-    "when": "editorTextFocus && jumpy.isJumpyMode"
-  },
-  {
-    "key": "escape",
-    "command": "extension.jumpy-exit",
-    "when": "editorTextFocus && jumpy.isJumpyMode"
-  },
-  {
     "key": "ctrl+b",
     "command": "editor.action.goToDeclaration",
     "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"

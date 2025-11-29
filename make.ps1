@@ -38,7 +38,6 @@ $PACKAGES = @(
   "fzf"
   "ghq"
   "jq"
-  "powertoys"
   "ripgrep"
   "gh"
   "ctrl2cap"
@@ -62,7 +61,9 @@ winget install DevToys
 winget install --id=AutoHotkey.AutoHotkey -e
 winget install --id=Obsidian.Obsidian -e
 winget install Microsoft.PowerShell
+winget install --id Microsoft.PowerToys --source winget
 winget install jdx.mise
+winget install --id=NickeManarin.ScreenToGif -e
 echo 'mise activate pwsh | Out-String | Invoke-Expression' >> $HOME\Documents\PowerShell\Profile.ps1
 
 # profile

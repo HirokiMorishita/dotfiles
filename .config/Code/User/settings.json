@@ -88,4 +88,6 @@
   "editor.wordSegmenterLocales": [
     "ja"
   ],
+  "screencastMode.keyboardOverlayTimeout": 3000,
+  "editor.fontSize": 16,
 }

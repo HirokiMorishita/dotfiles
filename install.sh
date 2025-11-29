@@ -22,7 +22,8 @@ install() {
   echo "install python dependencies"
   sudo apt install -y build-essential libssl-dev zlib1g-dev \
     libbz2-dev libreadline-dev libsqlite3-dev curl \
-    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
+    mingw-w64
 
   if !(type ghq > /dev/null 2>&1); then
     echo "install ghq"

@@ -219,13 +219,6 @@ vk1D & vk1C::Send "{vk1Dsc07B}"
 vk1C::Return
 
 /**
- * 仮想デスクトップの切り替え(左)
- *
- * @hotkey 変換+{Y}
- * @target デフォルト
- */
-vk1C & Y::Send "#^{Left}"
-/**
  * ウィンドウの切り替え(左)
  *
  * @hotkey 変換+{U}
@@ -239,13 +232,6 @@ vk1C & U::ShiftAltTab
  * @target デフォルト
  */
 vk1C & I::AltTab
-/**
- * 仮想デスクトップの切り替え(右)
- *
- * @hotkey 変換+{O}
- * @target デフォルト
- */
-vk1C & O::Send "#^{Right}"
 
 /**
  * 戻る
@@ -342,29 +328,6 @@ vk1C & R::Send "{Blind}{F5}"
  * @target デフォルト
  */
 vk1C & T::Send "{Blind}^{t}"
-
-/**
- * Chromeを開く
- *
- * @hotkey 変換+{A}
- * @target デフォルト
- */
-vk1C & A::Run "C:\Program Files\Google\Chrome\Application\chrome.exe"
-
-/**
- * Slackを開く
- *
- * @hotkey 変換+{S}
- * @target デフォルト
- */
-vk1C & S::Run "C:\Users\" . A_UserName . "\AppData\Local\slack\slack.exe"
-/**
- * VSCodeを開く
- *
- * @hotkey 変換+{D}
- * @target デフォルト
- */
-vk1C & D::Run "C:\Users\" . A_UserName . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 /**
  * 置換
  *
@@ -380,105 +343,6 @@ vk1C & F::Send "{Blind}^{h}"
  * @target デフォルト
  */
 vk1C & G::Run "wt.exe"
-/**
- * 仮想デスクトップ切り替え(左)
- *
- * @hotkey 変換+{Z}
- * @target デフォルト
- */
-vk1C & Z::Send "{Blind}#^{Left}"
-/**
- * 仮想デスクトップを閉じる
- *
- * @hotkey 変換+{X}
- * @target デフォルト
- */
-vk1C & X::Send "{Blind}#^{F4}"
-/**
- * 仮想デスクトップを開く
- *
- * @hotkey 変換+{C}
- * @target デフォルト
- */
-vk1C & C::Send "{Blind}#^d"
-/**
- * 仮想デスクトップ切り替え(右)
- *
- * @hotkey 変換+{V}
- * @target デフォルト
- */
-vk1C & V::Send "{Blind}#^{Right}"
-
-/**
- * タスクバーのピン止めメニューを開く
- *
- * @hotkey 変換+{1}
- * @target デフォルト
- */
-vk1C & 1::Send "#!{1}"
-/**
- * タスクバーのピン止めメニューを開く
- *
- * @hotkey 変換+{2}
- * @target デフォルト
- */
-vk1C & 2::Send "#!{2}"
-/**
- * タスクバーのピン止めメニューを開く
- *
- * @hotkey 変換+{3}
- * @target デフォルト
- */
-vk1C & 3::Send "#!{3}"
-/**
- * タスクバーのピン止めメニューを開く
- *
- * @hotkey 変換+{4}
- * @target デフォルト
- */
-vk1C & 4::Send "#!{4}"
-/**
- * タスクバーのピン止めメニューを開く
- *
- * @hotkey 変換+{5}
- * @target デフォルト
- */
-vk1C & 5::Send "#!{5}"
-/**
- * タスクバーのピン止めメニューを開く
- *
- * @hotkey 変換+{6}
- * @target デフォルト
- */
-vk1C & 6::Send "#!{6}"
-/**
- * タスクバーのピン止めメニューを開く
- *
- * @hotkey 変換+{7}
- * @target デフォルト
- */
-vk1C & 7::Send "#!{7}"
-/**
- * タスクバーのピン止めメニューを開く
- *
- * @hotkey 変換+{8}
- * @target デフォルト
- */
-vk1C & 8::Send "#!{8}"
-/**
- * タスクバーのピン止めメニューを開く
- *
- * @hotkey 変換+{9}
- * @target デフォルト
- */
-vk1C & 9::Send "#!{9}"
-/**
- * タスクバーのピン止めメニューを開く
- *
- * @hotkey 変換+{0}
- * @target デフォルト
- */
-vk1C & 0::Send "#!{0}"
 
 /**
  * Delete

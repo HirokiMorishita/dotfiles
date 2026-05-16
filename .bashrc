@@ -7,6 +7,10 @@ export LANG=ja_JP.utf-8
 
 export PATH=$PATH:"/mnt/c/Users/$(whoami)/AppData/Local/Programs/Microsoft VS Code/bin"
 
+if (type ~/.local/bin/mise > /dev/null 2>&1); then
+  eval "$(~/.local/bin/mise activate bash)"
+fi
+
 if (type vivid > /dev/null 2>&1); then
   export LS_COLORS="$(vivid generate snazzy)"
 fi
@@ -16,10 +20,9 @@ if (type starship > /dev/null 2>&1); then
 fi
 
 DOTFILES="$HOME/.dotfiles"
-export FORGIT_FZF_DEFAULT_OPTS="
---bind='alt-i:preview-up,alt-u:preview-down'
-"
-source "$DOTFILES/forgit/forgit.plugin.zsh"
+export FORGIT_FZF_DEFAULT_OPTS="--bind='alt-i:preview-up,alt-u:preview-down'"
+export FORGIT_LOG_FZF_OPTS="--bind='ctrl-y:execute-silent(echo -n {2} | xclip -selection clipboard)'"
+source "$DOTFILES/forgit/forgit.plugin.sh"
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
@@ -46,8 +49,4 @@ fi
 # include .bashrc.local if it exists
 if [ -f "$HOME/.bashrc.local" ]; then
   . "$HOME/.bashrc.local"
-fi
-
-if (type ~/.local/bin/mise > /dev/null 2>&1); then
-  eval "$(~/.local/bin/mise activate bash)"
 fi

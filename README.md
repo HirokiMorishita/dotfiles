@@ -16,7 +16,8 @@ powershell -ExecutionPolicy Unrestricted ./make.ps1
 ctrl2capの反映には再起動が必要
 ### wsl
 ```
-ln -s $(wslpath "$(wslvar USERPROFILE)")/.dotfiles ~/.dotfiles
+WIN_HOME=$(powershell.exe -NoProfile -Command '$env:USERPROFILE' | tr -d '\r')
+ln -s "$(wslpath "$WIN_HOME")/.dotfiles" ~/.dotfiles
 cd ~/.dotfiles
 ./install.sh
 ```
@@ -37,7 +38,7 @@ cd ~/.dotfiles
 
 ## usage
 ### alias
-`a` コマンドか `ctrl+a` でalias一覧表示
+`a` コマンド でalias一覧表示
 ### shortcut
 `無変換 + p`でショートカット一覧表示
 大まかには以下の通り

@@ -4,7 +4,7 @@
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 160,
   "editor.renderWhitespace": "all",
-  "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "Cascadia Code",
   "editor.fontLigatures": true,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.acceptSuggestionOnCommitCharacter": false,
@@ -41,7 +41,7 @@
     }
   },
   "terminal.integrated.defaultProfile.windows": "Ubuntu 20.04",
-  "terminal.integrated.fontFamily": "Fira Code",
+  "terminal.integrated.fontFamily": "Cascadia Code",
   "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
   "dotfiles.repository": "git@github.com:HirokiMorishita/dotfiles.git",
   "dotfiles.targetPath": "~/.dotfiles",

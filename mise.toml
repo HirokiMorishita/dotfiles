@@ -1,0 +1,11 @@
+[tools]
+"github:cli/cli" = "2.92.0"
+"github:x-motemen/ghq" = "1.10.1"
+"github:junegunn/fzf" = "0.72.0"
+"github:starship/starship" = "1.25.1"
+"github:dandavison/delta" = "0.19.2"
+"github:sharkdp/bat" = "0.26.1"
+"github:sharkdp/vivid" = "0.11.1"
+"github:sharkdp/fd" = "10.4.2"
+"github:BurntSushi/ripgrep" = "15.1.0"
+gh = "latest"

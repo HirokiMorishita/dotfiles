@@ -496,7 +496,7 @@ RAlt & C::Send "#+{c}"
  * @hotkey RAlt+{V}
  * @target デフォルト
  */
-RAlt & V::Run "devtoys:"
+RAlt & V::Run EnvGet("APPDATA") "\Microsoft\Windows\Start Menu\Programs\DevToys Preview.lnk"
 
 /**
  * script のリロード

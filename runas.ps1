@@ -1,4 +1,3 @@
-fsutil 8dot3name set 1
 $DOTFILES = "$env:USERPROFILE\.dotfiles"
 $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"
 
@@ -54,9 +53,6 @@ foreach ($disableFeature in $disableFeatures) {
   }
 }
 
-# 権限が必要みたいなので管理者権限でインストール
-scoop install firacode
-
 # editorconfig
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.editorconfig -Value $DOTFILES\.editorconfig
 
@@ -82,12 +78,7 @@ Set-Service ssh-agent -StartupType Automatic
 Start-Service ssh-agent
 Get-Service ssh-agent
 
-# ctrl2cap
-Push-Location "$env:USERPROFILE\scoop\apps\ctrl2cap\current"
-ctrl2cap.exe /install
-Pop-Location
-
-wsl --install -d Ubuntu-20.04
+wsl --install -d Ubuntu-26.04
 wsl --update
 wsl --shutdown
 

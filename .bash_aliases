@@ -3,8 +3,8 @@ alias h='fuzzy_history_look_command'
 alias e='explorer.exe .'
 alias r='exec bash'
 alias ..='cd ..'
-alias ..2='cd ../..'
-alias ..3='cd ../../..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias pbcopy='nkf -sc | clip.exe'
 
 alias g='git'
@@ -19,37 +19,22 @@ alias gma='git commit --amend'
 # ga, gd, or etc from forgit
 
 alias spr='fuzzy_start_github_pr_review'
-alias fpr='fuzzy_finish_github_pr_review'
+alias fpr='finish_github_pr_review'
 
 alias ncat='bat'
-alias ntop='htop'
 alias ngrep='rg'
 alias nfind='fd'
-alias nping='prettyping'
 
 alias fcd='fuzzy_cd'
-alias fcdr='fuzzy_cd_parent'
 alias fgcd='fuzzy_ghq_cd_command'
 
 alias open='open'
-
-bind -x '"\C-g": fuzzy_ghq_cd_bind'
-bind -x '"\C-a": fuzzy_alias_look_bind'
-bind -x '"\C-h": fuzzy_history_look_bind'
 
 fuzzy_alias_look_command() {
   local selected_alias
   selected_alias=$(alias | fzf | sed -n "s/^.*='\([^']*\)'/\1/p")
   if [ -n "$selected_alias" ]; then
     $selected_alias
-  fi
-}
-fuzzy_alias_look_bind() {
-  local selected_alias
-  selected_alias=$(alias | fzf | sed -n 's/.*alias\([^=]*\)=.*/\1/p')
-  if [ -n "$selected_alias" ]; then
-    READLINE_LINE="$selected_alias"
-    READLINE_POINT=${#selected_alias}
   fi
 }
 
@@ -61,15 +46,6 @@ fuzzy_history_look_command() {
   fi
 }
 
-fuzzy_history_look_bind() {
-  local selected_history
-  selected_history=$(history | tac | fzf +m --prompt="History>" | xargs bash -c 'echo ${@:1}')
-  if [ -n "$selected_history" ]; then
-    READLINE_LINE="$selected_history"
-    READLINE_POINT=${#selected_history}
-  fi
-}
-
 fuzzy_ghq_cd_command() {
   local selected_dir
   selected_dir=$(ghq list | fzf)
@@ -78,35 +54,11 @@ fuzzy_ghq_cd_command() {
   fi
 }
 
-fuzzy_ghq_cd_bind() {
-  local selected_dir
-  selected_dir=$(ghq list | fzf)
-  if [ -n "$selected_dir" ]; then
-    local tmp
-    tmp="cd $(ghq root)/$selected_dir"
-    READLINE_LINE="$tmp"
-    READLINE_POINT=${#tmp}
-  fi
-}
-
 fuzzy_cd() {
   local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
+  dir=$(fd ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
-}
-fuzzy_cd_parent() {
-  local declare dirs=()
-  get_parent_dirs() {
-    if [[ -d "${1}" ]]; then dirs+=("$1"); else return; fi
-    if [[ "${1}" == '/' ]]; then
-      for _dir in "${dirs[@]}"; do echo $_dir; done
-    else
-      get_parent_dirs $(dirname "$1")
-    fi
-  }
-  local DIR=$(get_parent_dirs $(realpath "${1:-$PWD}") | fzf-tmux --tac)
-  cd "$DIR"
 }
 
 
@@ -132,34 +84,24 @@ fuzzy_start_github_pr_review() {
   fi
 }
 
-fuzzy_finish_github_pr_review() {
-  local default_branch
-  default_branch=${1:-"$(git remote show origin | grep 'HEAD branch' | awk '{print $NF}')"}
-  finish_github_pr_review ${default_branch}
-}
-
-# Tさんのスクリプト
 start_github_pr_review () {
     REPOSITORY=${1}
     BASE_BRANCH=${2}
     PULL_REQUEST_ID=${3}
 
-    nothing_to_commit=`git status | grep "nothing to commit"`
-    if [ -z "$nothing_to_commit" ] ; then
-        echo "You have something to commit."
-        return
-    fi
+    REPO_NAME=$(basename $(git remote get-url origin) .git)
+    REVIEW_DIR="../${REPO_NAME}-pr-review-${PULL_REQUEST_ID}"
 
     echo "Starting review."
 
-    git checkout $BASE_BRANCH
-    git branch -D review/base review/remote review/working
-
     git fetch $REPOSITORY $BASE_BRANCH:review/base
-    git fetch $REPOSITORY pull/${PULL_REQUEST_ID}/head:review/remote
 
-    git checkout review/base
-    git checkout -b review/working
+    git worktree remove "$REVIEW_DIR" --force 2>/dev/null
+    git worktree add "$REVIEW_DIR" review/base
+
+    cd "$REVIEW_DIR"
+
+    git fetch $REPOSITORY pull/${PULL_REQUEST_ID}/head:review/remote
 
     git merge --squash review/remote
     git submodule update --init
@@ -167,12 +109,8 @@ start_github_pr_review () {
 }
 
 finish_github_pr_review () {
-    BASE_BRANCH=${1}
-
-    git reset --hard HEAD
-    git clean -df
-
-    git checkout $BASE_BRANCH
-    git submodule update --init
-    git branch -D review/base review/remote review/working
+  CURRENT_DIR=$(basename $PWD)
+  REPO_NAME=$(basename $(git remote get-url origin) .git)
+  cd ../${REPO_NAME}
+  git worktree remove $CURRENT_DIR
 }

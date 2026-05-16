@@ -4,8 +4,6 @@
 # envs
 $newPath = @(
   "$env:USERPROFILE\bin"
-  "$env:USERPROFILE\scoop\shims"
-  "$env:USERPROFILE\scoop\apps\git\current\usr\bin"
   "$env:LOCALAPPDATA\Microsoft\WindowsApps"
 ) -join ";"
 
@@ -16,54 +14,19 @@ $ErrorActionPreference = "Stop"
 
 $DOTFILES = "$env:USERPROFILE\.dotfiles"
 
-try {
-  Get-Command -Name scoop -ErrorAction Stop
-}
-catch [System.Management.Automation.CommandNotFoundException] {
-  Invoke-Expression (new-object net.webclient).downloadstring("https://get.scoop.sh")
-}
-
-# git is required by `scoop bucket add *`
-
-$UTILS = @(
-  # scoop needs dark and innounp
-  "innounp"
-  "dark"
-  "7zip"
-)
-
-$PACKAGES = @(
-  "bat"
-  "fd"
-  "fzf"
-  "ghq"
-  "jq"
-  "ripgrep"
-  "gh"
-  "ctrl2cap"
-  "less"
-  "delta"
-)
-scoop install $UTILS
-scoop bucket add versions
-scoop bucket add extras
-scoop bucket add nerd-fonts
-scoop bucket add sysinternals
-scoop update *
-scoop install $PACKAGES
-
 Set-Location $DOTFILES
 git config --global core.autoCRLF false
 git submodule update --init
 
-winget install --id=Microsoft.WindowsTerminal -e
-winget install DevToys
-winget install --id=AutoHotkey.AutoHotkey -e
-winget install --id=Obsidian.Obsidian -e
-winget install Microsoft.PowerShell
-winget install --id Microsoft.PowerToys --source winget
-winget install jdx.mise
-winget install --id=NickeManarin.ScreenToGif -e
+winget install -e --id Microsoft.WindowsTerminal --version 1.24.11321.0
+winget install -e --id DevToys-app.DevToys --version 2.0-preview.9
+winget install -e --id AutoHotkey.AutoHotkey --version 2.0.26
+winget install -e --id Obsidian.Obsidian --version 1.10.6
+winget install -e --id Microsoft.PowerShell --version  7.5.5.0
+winget install -e --id Microsoft.Sysinternals.Ctrl2Cap --version 3.0
+winget install -e --id Microsoft.PowerToys --version 0.96.0 --source winget
+winget install -e --id jdx.mise --version 2025.11.9
+winget install -e --id NickeManarin.ScreenToGif --version 2.42.1
 echo 'mise activate pwsh | Out-String | Invoke-Expression' >> $HOME\Documents\PowerShell\Profile.ps1
 
 # profile

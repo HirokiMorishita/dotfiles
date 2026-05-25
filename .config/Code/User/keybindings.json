@@ -160,5 +160,13 @@
     "key": "shift+f4",
     "command": "-references-view.prev",
     "when": "reference-list.hasResult && references-view.canNavigate"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpen"
   }
 ]

@@ -1,331 +1,118 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
-    [
+    "actions": [
         {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 7
-            },
-            "id": "User.switchToTab.D7681B66"
-        },
-        {
-            "command": 
-            {
+            "command": {
                 "action": "nextTab"
             },
             "id": "User.nextTab.0"
         },
         {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 6
+            "command": {
+                "action": "splitPane",
+                "split": "up"
             },
-            "id": "User.switchToTab.787314EB"
+            "id": "User.splitPane.B39B174B"
         },
         {
-            "command": 
-            {
-                "action": "openSettings"
-            },
-            "id": "User.openSettings.D3F0B923"
-        },
-        {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 2
-            },
-            "id": "User.switchToTab.87C324ED"
-        },
-        {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 5
-            },
-            "id": "User.switchToTab.75247157"
-        },
-        {
-            "command": 
-            {
-                "action": "moveFocus",
-                "direction": "left"
-            },
-            "id": "User.moveFocus.2A0DA8E0"
-        },
-        {
-            "command": 
-            {
+            "command": {
                 "action": "prevTab"
             },
             "id": "User.prevTab.0"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "down"
             },
             "id": "User.splitPane.D5151347"
         },
         {
-            "command": 
-            {
-                "action": "moveFocus",
-                "direction": "right"
-            },
-            "id": "User.moveFocus.87C324ED"
-        },
-        {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 1
-            },
-            "id": "User.switchToTab.2A0DA8E0"
-        },
-        {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 0
-            },
-            "id": "User.switchToTab.D3F0B923"
-        },
-        {
-            "command": 
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "right"
             },
             "id": "User.splitPane.864CD510"
         },
         {
-            "command": 
-            {
-                "action": "moveFocus",
-                "direction": "down"
-            },
-            "id": "User.moveFocus.F747588A"
-        },
-        {
-            "command": 
-            {
-                "action": "scrollUp"
-            },
-            "id": "User.scrollUp.0"
-        },
-        {
-            "command": "scrollUpPage",
-            "id": "User.scrollUpPage"
-        },
-        {
-            "command": 
-            {
-                "action": "moveFocus",
-                "direction": "up"
-            },
-            "id": "User.moveFocus.6CD791B"
-        },
-        {
-            "command": 
-            {
+            "command": {
                 "action": "splitPane",
-                "split": "down",
-                "splitMode": "duplicate"
+                "split": "left"
             },
-            "id": "User.splitPane.10B260D2"
-        },
-        {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 4
-            },
-            "id": "User.switchToTab.F747588A"
-        },
-        {
-            "command": 
-            {
-                "action": "scrollDown"
-            },
-            "id": "User.scrollDown.0"
-        },
-        {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 3
-            },
-            "id": "User.switchToTab.6CD791B"
-        },
-        {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 8
-            },
-            "id": "User.switchToTab.ED268D78"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "right",
-                "splitMode": "duplicate"
-            },
-            "id": "User.splitPane.FEF0D40B"
-        },
-        {
-            "command": "scrollDownPage",
-            "id": "User.scrollDownPage"
+            "id": "User.splitPane.21DBB4A1"
         }
     ],
     "alwaysShowTabs": true,
     "copyOnSelect": true,
-    "defaultProfile": "{c0c023f9-a917-4db0-af64-68de344d1ad4}",
+    "defaultProfile": "{26d47a3b-caf0-59d4-bb51-9878113a5d15}",
     "initialCols": 120,
     "initialRows": 30,
-    "keybindings": 
-    [
+    "keybindings": [
         {
-            "id": "User.nextTab.0",
-            "keys": "ctrl+tab"
-        },
-        {
-            "id": "User.switchToTab.787314EB",
-            "keys": "alt+7"
-        },
-        {
-            "id": "User.scrollUpPage",
-            "keys": "shift+pgup"
+            "id": "Terminal.OpenNewTab",
+            "keys": "ctrl+t"
         },
         {
             "id": "User.prevTab.0",
             "keys": "ctrl+shift+tab"
         },
         {
-            "id": null,
-            "keys": "alt+shift+minus"
+            "id": "User.nextTab.0",
+            "keys": "ctrl+tab"
         },
         {
-            "id": "User.openSettings.D3F0B923",
+            "id": null,
+            "keys": "ctrl+shift+t"
+        },
+        {
+            "id": "Terminal.OpenSettingsUI",
             "keys": "ctrl+shift+p"
         },
         {
-            "id": "User.switchToTab.75247157",
-            "keys": "alt+6"
-        },
-        {
-            "id": "User.moveFocus.2A0DA8E0",
-            "keys": "alt+left"
-        },
-        {
-            "id": "User.switchToTab.87C324ED",
-            "keys": "alt+3"
+            "id": null,
+            "keys": "ctrl+shift+w"
         },
         {
             "id": null,
-            "keys": "alt+shift+plus"
+            "keys": "ctrl+comma"
         },
         {
-            "id": "User.switchToTab.D7681B66",
-            "keys": "alt+8"
+            "id": "Terminal.ClosePane",
+            "keys": "ctrl+w"
         },
         {
-            "id": "User.scrollUp.0",
-            "keys": "ctrl+shift+up"
+            "id": "User.splitPane.21DBB4A1",
+            "keys": "alt+n"
         },
         {
             "id": "User.splitPane.D5151347",
             "keys": "ctrl+alt+shift+d"
         },
         {
-            "id": "User.switchToTab.D3F0B923",
-            "keys": "alt+1"
-        },
-        {
             "id": "User.splitPane.864CD510",
-            "keys": "ctrl+alt+shift+r"
+            "keys": "alt+shift+n"
         },
         {
-            "id": "User.moveFocus.F747588A",
-            "keys": "alt+down"
-        },
-        {
-            "id": "User.splitPane.10B260D2",
-            "keys": "alt+minus"
-        },
-        {
-            "id": "User.switchToTab.F747588A",
-            "keys": "alt+5"
-        },
-        {
-            "id": "User.switchToTab.2A0DA8E0",
-            "keys": "alt+2"
-        },
-        {
-            "id": "User.scrollDown.0",
-            "keys": "ctrl+shift+down"
-        },
-        {
-            "id": "User.switchToTab.6CD791B",
-            "keys": "alt+4"
-        },
-        {
-            "id": "User.moveFocus.6CD791B",
-            "keys": "alt+up"
-        },
-        {
-            "id": "User.switchToTab.ED268D78",
-            "keys": "alt+9"
-        },
-        {
-            "id": "User.splitPane.FEF0D40B",
-            "keys": "alt+shift+\\"
-        },
-        {
-            "id": "User.scrollDownPage",
-            "keys": "shift+pgdn"
-        },
-        {
-            "id": "User.moveFocus.87C324ED",
-            "keys": "alt+right"
+            "id": "User.splitPane.B39B174B",
+            "keys": "alt+comma"
         }
     ],
     "launchMode": "maximized",
-    "newTabMenu": 
-    [
+    "newTabMenu": [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
-    {
-        "defaults": 
-        {
+    "profiles": {
+        "defaults": {
             "bellStyle": "none",
             "colorScheme": "Campbell (modified)",
-            "font": 
-            {
+            "font": {
                 "face": "Cascadia Code"
             }
         },
-        "list": 
-        [
-            {
-                "colorScheme": "Campbell (modified)",
-                "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Ubuntu-20.04",
-                "guid": "{c0c023f9-a917-4db0-af64-68de344d1ad4}",
-                "hidden": false,
-                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
-                "name": "Ubuntu-20.04",
-                "startingDirectory": "~"
-            },
+        "list": [
             {
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
@@ -344,14 +131,14 @@
             },
             {
                 "guid": "{26d47a3b-caf0-59d4-bb51-9878113a5d15}",
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Ubuntu-26.04",
                 "hidden": false,
                 "name": "Ubuntu-26.04",
                 "source": "Microsoft.WSL"
             }
         ]
     },
-    "schemes": 
-    [
+    "schemes": [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",

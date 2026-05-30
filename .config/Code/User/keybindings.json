@@ -72,12 +72,20 @@
     "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
-    "key": "alt+oem_period",
-    "command": "workbench.action.splitEditorRight"
+    "key": "alt+n",
+    "command": "workbench.action.splitEditorLeft"
   },
   {
     "key": "alt+m",
     "command": "workbench.action.splitEditorDown"
+  },
+  {
+    "key": "alt+oem_comma",
+    "command": "workbench.action.splitEditorUp"
+  },
+  {
+    "key": "alt+shift+n",
+    "command": "workbench.action.splitEditorRight"
   },
   {
     "key": "f5",

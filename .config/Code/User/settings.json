@@ -20,11 +20,11 @@
   "vsicons.dontShowNewVersionMessage": true,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.profiles.windows": {
-    "Ubuntu 20.04": {
+    "Ubuntu 26.04": {
       "path": "C:\\WINDOWS\\System32\\wsl.exe",
       "args": [
         "-d",
-        "Ubuntu-20.04"
+        "Ubuntu-26.04"
       ]
     },
     "PowerShell": {
@@ -40,7 +40,7 @@
       "icon": "terminal-cmd"
     }
   },
-  "terminal.integrated.defaultProfile.windows": "Ubuntu 20.04",
+  "terminal.integrated.defaultProfile.windows": "Ubuntu 26.04",
   "terminal.integrated.fontFamily": "Cascadia Code",
   "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
   "dotfiles.repository": "git@github.com:HirokiMorishita/dotfiles.git",
@@ -83,8 +83,8 @@
   "security.allowedUNCHosts": [
     "wsl.localhost"
   ],
-  "javascript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "js.preferences.importModuleSpecifier": "non-relative",
+  "ts.preferences.importModuleSpecifier": "non-relative",
   "editor.wordSegmenterLocales": [
     "ja"
   ],

@@ -13,6 +13,7 @@
 	autoCRLF = false
   quotepath = false
   commentChar = ";"
+  symlinks = true
 [color]
   ui      = true
 [diff]

@@ -90,4 +90,11 @@
   ],
   "screencastMode.keyboardOverlayTimeout": 3000,
   "editor.fontSize": 16,
+  "files.exclude": {
+    "**/.DS_Store": false,
+    "**/.git": false,
+    "**/.hg": false,
+    "**/.svn": false,
+    "**/Thumbs.db": false
+  },
 }

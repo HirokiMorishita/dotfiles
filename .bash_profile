@@ -25,3 +25,7 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
   PATH="$HOME/.local/bin:$PATH"
 fi
+
+if (type ~/.local/bin/mise > /dev/null 2>&1); then
+  eval "$(~/.local/bin/mise activate bash --shims)"
+fi

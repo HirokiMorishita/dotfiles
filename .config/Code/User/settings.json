@@ -83,8 +83,6 @@
   "security.allowedUNCHosts": [
     "wsl.localhost"
   ],
-  "js.preferences.importModuleSpecifier": "non-relative",
-  "ts.preferences.importModuleSpecifier": "non-relative",
   "editor.wordSegmenterLocales": [
     "ja"
   ],
@@ -97,4 +95,5 @@
     "**/.svn": false,
     "**/Thumbs.db": false
   },
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
 }

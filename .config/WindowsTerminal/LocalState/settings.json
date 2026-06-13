@@ -50,7 +50,7 @@
     "initialRows": 30,
     "keybindings": [
         {
-            "id": "Terminal.OpenNewTab",
+            "id": "Terminal.OpenNewTabDropdown",
             "keys": "ctrl+t"
         },
         {
@@ -96,6 +96,10 @@
         {
             "id": "User.splitPane.B39B174B",
             "keys": "alt+comma"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+space"
         }
     ],
     "launchMode": "maximized",
@@ -130,11 +134,17 @@
                 "name": "Command Prompt"
             },
             {
-                "guid": "{26d47a3b-caf0-59d4-bb51-9878113a5d15}",
                 "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Ubuntu-26.04",
+                "guid": "{26d47a3b-caf0-59d4-bb51-9878113a5d15}",
                 "hidden": false,
                 "name": "Ubuntu-26.04",
                 "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{5fb123f1-af88-5b5c-8953-d14a8def1978}",
+                "hidden": false,
+                "name": "PowerShell 7",
+                "source": "Windows.Terminal.PowershellCore"
             }
         ]
     },

@@ -24,7 +24,7 @@ winget install -e --id AutoHotkey.AutoHotkey --version 2.0.26
 winget install -e --id Obsidian.Obsidian --version 1.10.6
 winget install -e --id Microsoft.PowerShell --version  7.5.5.0
 winget install -e --id Microsoft.Sysinternals.Ctrl2Cap --version 3.0
-winget install -e --id Microsoft.PowerToys --version 0.96.0 --source winget
+winget install -e --id Microsoft.PowerToys --version 0.100.0 --source winget
 winget install -e --id jdx.mise --version 2025.11.9
 winget install -e --id NickeManarin.ScreenToGif --version 2.42.1
 echo 'mise activate pwsh | Out-String | Invoke-Expression' >> $HOME\Documents\PowerShell\Profile.ps1
